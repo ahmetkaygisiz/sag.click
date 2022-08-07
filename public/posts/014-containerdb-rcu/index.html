@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="tr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Container DB ve RCU - &lt; ahmetkaygisiz /&gt;</title>
+
+  
+  
+  <meta name="description" content="Merhabalar,
+Oracle&rsquo;ın SOA-OSB gibi ortamlarının kurulum aşamalarından biri olan RCU (Repository Creation Utility) adımı için db bağlantısını yapmak ve can sıkıcı/heves kırıcı Oracle DB kurulumunu en hafif yarayla atlatabilmek için bu yazıyı yazıyorum. Daha önce Oracle DB kurulumu yapmış olsam da bir sürü zincirleme sebepten Ubuntu ve Fedora üzerinde kurulum yaparken problem yaşadım. Bu noktada büyük bir nimet olan Docker yardımıma koştu. Her ne kadar container db&rsquo;ler ile çalışmamış olsam da hem yeni bir yol bulmak hem de Oracle Support&rsquo;taki &ldquo;tek ayağını kaldırarak mouse&rsquo;u diğer elinle kullanıp kuruluma başlarsan oluyor&rdquo; çözümlerinden kurtulmak benim için güzel oldu." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  <script
+    defer
+    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
+  
+
+  
+  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Container DB ve RCU" />
+<meta property="og:description" content="Merhabalar,
+Oracle&rsquo;ın SOA-OSB gibi ortamlarının kurulum aşamalarından biri olan RCU (Repository Creation Utility) adımı için db bağlantısını yapmak ve can sıkıcı/heves kırıcı Oracle DB kurulumunu en hafif yarayla atlatabilmek için bu yazıyı yazıyorum. Daha önce Oracle DB kurulumu yapmış olsam da bir sürü zincirleme sebepten Ubuntu ve Fedora üzerinde kurulum yaparken problem yaşadım. Bu noktada büyük bir nimet olan Docker yardımıma koştu. Her ne kadar container db&rsquo;ler ile çalışmamış olsam da hem yeni bir yol bulmak hem de Oracle Support&rsquo;taki &ldquo;tek ayağını kaldırarak mouse&rsquo;u diğer elinle kullanıp kuruluma başlarsan oluyor&rdquo; çözümlerinden kurtulmak benim için güzel oldu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/014-containerdb-rcu/" />
+<meta property="article:published_time" content="2022-02-20T18:38:43+03:00" />
+<meta property="article:modified_time" content="2022-02-20T18:38:43+03:00" />
+
+  
+  <meta itemprop="name" content="Container DB ve RCU">
+<meta itemprop="description" content="Merhabalar,
+Oracle&rsquo;ın SOA-OSB gibi ortamlarının kurulum aşamalarından biri olan RCU (Repository Creation Utility) adımı için db bağlantısını yapmak ve can sıkıcı/heves kırıcı Oracle DB kurulumunu en hafif yarayla atlatabilmek için bu yazıyı yazıyorum. Daha önce Oracle DB kurulumu yapmış olsam da bir sürü zincirleme sebepten Ubuntu ve Fedora üzerinde kurulum yaparken problem yaşadım. Bu noktada büyük bir nimet olan Docker yardımıma koştu. Her ne kadar container db&rsquo;ler ile çalışmamış olsam da hem yeni bir yol bulmak hem de Oracle Support&rsquo;taki &ldquo;tek ayağını kaldırarak mouse&rsquo;u diğer elinle kullanıp kuruluma başlarsan oluyor&rdquo; çözümlerinden kurtulmak benim için güzel oldu.">
+<meta itemprop="datePublished" content="2022-02-20T18:38:43+03:00" />
+<meta itemprop="dateModified" content="2022-02-20T18:38:43+03:00" />
+<meta itemprop="wordCount" content="829">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Container DB ve RCU"/>
+<meta name="twitter:description" content="Merhabalar,
+Oracle&rsquo;ın SOA-OSB gibi ortamlarının kurulum aşamalarından biri olan RCU (Repository Creation Utility) adımı için db bağlantısını yapmak ve can sıkıcı/heves kırıcı Oracle DB kurulumunu en hafif yarayla atlatabilmek için bu yazıyı yazıyorum. Daha önce Oracle DB kurulumu yapmış olsam da bir sürü zincirleme sebepten Ubuntu ve Fedora üzerinde kurulum yaparken problem yaşadım. Bu noktada büyük bir nimet olan Docker yardımıma koştu. Her ne kadar container db&rsquo;ler ile çalışmamış olsam da hem yeni bir yol bulmak hem de Oracle Support&rsquo;taki &ldquo;tek ayağını kaldırarak mouse&rsquo;u diğer elinle kullanıp kuruluma başlarsan oluyor&rdquo; çözümlerinden kurtulmak benim için güzel oldu."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+    
+    <a class="" href="/">cd ~</a>
+    
+    <a class="" href="/whoami/">whoami</a>
+    
+    <a class="" href="/categorylist/">categories</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="twitter"
+      style="--url: url(./twitter.svg)"
+      href="https://twitter.com/kaaygisiz"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/ahmetkaygisiz"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      
+      <time datetime="2022-02-20 18:38:43 &#43;0300 &#43;03">20 Feb 2022</time>
+      
+      
+    </p>
+    <h1>Container DB ve RCU</h1>
+  </header>
+  <section class="post-content"><p>Merhabalar,</p>
+<p>Oracle&rsquo;ın SOA-OSB gibi ortamlarının kurulum aşamalarından biri olan RCU (Repository Creation Utility) adımı için db bağlantısını yapmak ve can sıkıcı/heves kırıcı Oracle DB kurulumunu en hafif yarayla atlatabilmek için bu yazıyı yazıyorum. Daha önce Oracle DB kurulumu yapmış olsam da bir sürü zincirleme sebepten Ubuntu ve Fedora üzerinde kurulum yaparken problem yaşadım. Bu noktada büyük bir nimet olan Docker yardımıma koştu. Her ne kadar container db&rsquo;ler ile çalışmamış olsam da hem yeni bir yol bulmak hem de Oracle Support&rsquo;taki &ldquo;tek ayağını kaldırarak mouse&rsquo;u diğer elinle kullanıp kuruluma başlarsan oluyor&rdquo; çözümlerinden kurtulmak benim için güzel oldu.</p>
+<p>Bir önceki yazımda FMW kurulumu yapmıştık. Şimdi de RCU ile DB bağlantı adımına geçeceğiz. Bu kurulum aşamalarını parça parça yapmamın nedeni SOA/OSB ya da benzer teknolojiler için ortak kurulum adımları olması. Tekrara düşmemek için parça parça ilerlemek istedim. Haydi geçelim şimdi kuruluma.</p>
+<h3 id="oracle-db-image-çekilmesi">Oracle DB Image Çekilmesi</h3>
+<p>hub.docker.com adresine gidip oracle xe $version diye arattığımızda containerize edilmiş birden fazla kullanıma hazır image karşımıza çıkıyor. Burada ana container&rsquo;ı çekip üzerinde değişiklik yapıp yeniden kendi etiketinizle image&rsquo;i yükleyebiliyorsunuz. Ben de bu imagelerden <a href="https://hub.docker.com/r/pvargacl/oracle-xe-18.4.0">bir tanesini</a> buldum. Sayfaya gittğimizde zaten bize 2 adımda bu image&rsquo;i ayağa kaldırabileceğimiz söylenmiş.</p>
+<p>Öncelikle pull adımını gerçekleştiriyoruz.  Bu pull adımı uzun sürebilir çünkü bu image boyutu 12.7 GB.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull pvargacl/oracle-xe-18.4.0:latest
+</code></pre></div><p>Image tamamen çekildikten sonra bir kontrol ediyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">☁  ~  docker images                               
+REPOSITORY                  TAG       IMAGE ID       CREATED         SIZE
+pvargacl/oracle-xe-18.4.0   latest    9f03e56c9bd3   <span style="color:#ae81ff">13</span> months ago   12.7GB
+</code></pre></div><p>Şimdi de bu image&rsquo;i çalışan bir container haline getirmemiz gerekiyor. Onu da docker run ile çalıştırıyoruz. Yaklaşık bir dakika sonra da docker ps ile sağlıklı şekilde ayağa kalkıp kalkmadığını kontrol ediyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name oracle18 -d -p 1521:1521 pvargacl/oracle-xe-18.4.0
+☁  ~  docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED              STATUS                        PORTS                                                 NAMES
+a78fb39a9002   pvargacl/oracle-xe-18.4.0   <span style="color:#e6db74">&#34;/bin/sh -c &#39;exec </span>$O<span style="color:#e6db74">…&#34;</span>   About a minute ago   Up About a minute <span style="color:#f92672">(</span>healthy<span style="color:#f92672">)</span>   0.0.0.0:1521-&gt;1521/tcp, :::1521-&gt;1521/tcp, 5500/tcp   oracle18
+</code></pre></div><p>Bu image&rsquo;i hazırlayan arkadaşımız parolaları yönetebilmemiz için bir script hazırlamış. Bunu doğrudan çalıştırdığımızda sysdba vb. roller için parolayı değiştirmiş oluyoruz. Ben de sadece development ortamında kullanacağım ve kritik bir bilgi olmadığı için basit bir parola set ediyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#docker exec &lt;container name&gt; ./setPassword.sh &lt;your password&gt;</span>
+docker exec oracle18 ./setPassword.sh Welcome1
+</code></pre></div><p>Parolayı değiştirdik, bu script neredeydi nasıl çalıştı onu da bir kontrol edelim. Container içerisine aşağıdaki komut ile terminaline düşelim.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container exec -it oracle18 sh
+</code></pre></div><p>Sonrasında neredeyim hangi dosyalar var diye kontrol ediyorum. Aşağıda görüldüğü gibi kök dizine giriş yaptık ve burada setPassword scripti link olarak verilmiş. Yani bir üst adımda parametre olarak verdiğimiz değer burada setPassword&rsquo;e verildi ve DB&rsquo;de parolalar güncellenmiş oldu.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh-4.2# pwd
+/
+sh-4.2# ls -lrta
+total <span style="color:#ae81ff">24</span>
+...
+lrwxrwxrwx.   <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">26</span> Apr  <span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">2020</span> setPassword.sh -&gt; /opt/oracle/setPassword.sh
+lrwxrwxrwx.   <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">19</span> Apr  <span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">2020</span> docker-entrypoint-initdb.d -&gt; /opt/oracle/scripts
+dr-xr-x---.   <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">16</span> Apr  <span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">2020</span> root
+-rwxr-xr-x.   <span style="color:#ae81ff">1</span> root root    <span style="color:#ae81ff">0</span> May <span style="color:#ae81ff">22</span> 08:18 .dockerenv
+drwxr-xr-x.   <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">2508</span> May <span style="color:#ae81ff">22</span> 08:18 etc
+...
+</code></pre></div><p>Hazır container içerisindeyiz veritabanına da bir bağlanalım.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh-4.2# sqlplus sys/Welcome1@//localhost:1521/XE as sysdba
+
+SQL*Plus: Release 18.0.0.0.0 - Production on Sat May <span style="color:#ae81ff">22</span> 08:35:54 <span style="color:#ae81ff">2021</span>
+Version 18.4.0.0.0
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 1982, 2018, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 18c Express Edition Release 18.0.0.0.0 - Production
+Version 18.4.0.0.0
+
+SQL&gt;
+</code></pre></div><h3 id="container-databases-cdb-and-pluggable-databases-pdb">Container Databases (CDB) and Pluggable Databases (PDB)</h3>
+<p>Her şey güzel veritabanımızı oluşturduk ve bağlandık. E tamam o zaman hemen RCU çalıştırıp işimi halledeyim dedim cahil ben. Bir iki denemeden sonra baktım olmuyor başlığını yazmış olduğum 2 kavram ile karşılaştım. Container Databases ve Pluggable Databases.</p>
+<p>Container Database: Çoklu ve daha geniş yapıları desteleyen, içerisinde birden fazla pluggable database gibi yapıları içerebilen, sanal veritabanları oluşturabileceğiniz veritabanı sistemi diyerek anladığım kadarıyla tanımlıyorum.</p>
+<p>Pluggable Database: Aslında kullanıcı tarafından bakıldığında normal bir veritabanı gibi gözüken fakat Container DB&rsquo;ler içerisinde yaşamını sürdüren veritabanı yapısı. Pluggable DB oluşturduğunuzda normal kurulum yapıldığındaki veritabanı sisteminden farklı gözükmüyor.</p>
+<p>RCU bizden Pluggable Database istediği için container db&rsquo;miz içerisinde bir PDB oluşturmamız gerekiyor. DBBeaver kullanıyorum ben db bağlantıları SQL Editor vs için. Aşağıdaki bilgilerle bağlantı oluşturdum.</p>
+<ul>
+<li>Host/Port : localhost 1521</li>
+<li>Service Name : XE</li>
+<li>Auth : sys as sysdba</li>
+<li>Pass : Welcome1</li>
+</ul>
+<p>PDB oluşturmamız gerekiyor. Aşağıdaki komut ile PDB&rsquo;leri listeleyebiliyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> name, pdb <span style="color:#66d9ef">FROM</span>   v$services <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> name;
+</code></pre></div><p>Alttaki SQL komutu ile yeni bir PDB oluşturuyoruz. SQL success döndükten sonra, bu veritabanına da sys/Welcome1 ile giriş yapıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">CREATE</span> PLUGGABLE <span style="color:#66d9ef">DATABASE</span> soapdb
+<span style="color:#66d9ef">ADMIN</span> <span style="color:#66d9ef">USER</span> soaadm IDENTIFIED <span style="color:#66d9ef">BY</span> Welcome1
+FILE_NAME_CONVERT <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;/opt/oracle/oradata/XE/pdbseed/&#39;</span>, 
+                     <span style="color:#e6db74">&#39;/opt/oracle/oradata/XE/soapdb/&#39;</span>);
+</code></pre></div><p>soaadm kullanıcısına SYSDBA yetkisini veriyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">GRANT</span> SYSDBA <span style="color:#66d9ef">to</span> soaadm;
+</code></pre></div><p>Veritabanı kısmında yapmamız gereken adımlar tamam şimdi sırada RCU&rsquo;nun çalıştırılmasında.</p>
+<h3 id="rcu">RCU</h3>
+<p>Burada yapacağım şey sadece RCU&rsquo;nun çalıştırılması ve bağlantının sağlandığını göstermek. SOA için farklı OSB için farklı tablolar seçileceği için onların kurulumu ayrı ayrı yazılarda anlatırım muhtemelen.</p>
+<p>1- RCU&rsquo;u çalıştırıyoruz.
+<img src="/014-rcu-1.png" alt="RCU-1">
+2- Go go go.
+<img src="/014-rcu-2.png" alt="RCU-2">
+3- Repository oluştur diyoruz.
+<img src="/014-rcu-3.png" alt="RCU-3">
+4- PDB için oluşturduğumuz kullanıcı ve URL bilgilerini giriyoruz.
+<img src="/014-rcu-4.png" alt="RCU-4">
+5- Görüldüğü gibi bağlantı başarılı oldu. Bu aşamadan sonra da tabloların oluşturulma aşaması geliyor.
+<img src="/014-rcu-5.png" alt="RCU-5"></p>
+<h3 id="sonuç">Sonuç</h3>
+<p>Bu aşamaları ben uzata uzata yazdım hem öğretmek hem de size aktarabilmek için. Biraz uğraştırıcı gibi gelmiş olabilir belki ama doğrudan Oracle DB kurulumunu denedikten sonra o kadar da problemli bir konu olmadığını görüyorsunuz.</p>
+<p>Hevesimizin daim olduğu günlerde/yazılarda görüşmek üzere.</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="post-nav">
+     
+    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/013-oracle-fmw-silent/"><span>Oracle FMW Infrastructure Silent Installation</span><span>→</span></a>
+    
+  </nav>
+  
+
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

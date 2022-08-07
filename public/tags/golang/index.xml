@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on &lt; ahmetkaygisiz /&gt;</title>
+    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/golang/</link>
+    <description>Recent content in golang on &lt; ahmetkaygisiz /&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>tr</language>
+    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 11 Apr 2021 18:23:40 +0300</lastBuildDate><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Gopher-I</title>
+      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/012-go-gopher-1/</link>
+      <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
+      
+      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/012-go-gopher-1/</guid>
+      <description>Merhaba,
+Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&amp;rsquo;de go kurulum aşamasını, &amp;ldquo;Hello, World!&amp;rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
+İndirme ve Kurulum  Gugıl&amp;rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&amp;rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.</description>
+    </item>
+    
+  </channel>
+</rss>

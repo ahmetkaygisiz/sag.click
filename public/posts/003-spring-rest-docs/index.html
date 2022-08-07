@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="tr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Spring Rest Docs - &lt; ahmetkaygisiz /&gt;</title>
+
+  
+  
+  <meta name="description" content="Merhabalar,
+Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  <script
+    defer
+    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
+  
+
+  
+  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Spring Rest Docs" />
+<meta property="og:description" content="Merhabalar,
+Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/003-spring-rest-docs/" />
+<meta property="article:published_time" content="2020-08-11T16:29:53+03:00" />
+<meta property="article:modified_time" content="2020-08-11T16:29:53+03:00" />
+
+  
+  <meta itemprop="name" content="Spring Rest Docs">
+<meta itemprop="description" content="Merhabalar,
+Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum.">
+<meta itemprop="datePublished" content="2020-08-11T16:29:53+03:00" />
+<meta itemprop="dateModified" content="2020-08-11T16:29:53+03:00" />
+<meta itemprop="wordCount" content="1111">
+
+
+
+<meta itemprop="keywords" content="git," />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Rest Docs"/>
+<meta name="twitter:description" content="Merhabalar,
+Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+    
+    <a class="" href="/">cd ~</a>
+    
+    <a class="" href="/whoami/">whoami</a>
+    
+    <a class="" href="/categorylist/">categories</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="twitter"
+      style="--url: url(./twitter.svg)"
+      href="https://twitter.com/kaaygisiz"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/ahmetkaygisiz"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      
+      <time datetime="2020-08-11 16:29:53 &#43;0300 &#43;03">11 Aug 2020</time>
+      
+      
+    </p>
+    <h1>Spring Rest Docs</h1>
+  </header>
+  <section class="post-content"><p>Merhabalar,</p>
+<p>Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum.</p>
+<p>Şimdi gelelim Spring REST Docs avantajlarına :</p>
+<p>Test temelli oluşturulur. Döküman hazırlarken hem testinizi yapmış hem de dökümanınızı hazırlamış olursunuz.
+JSON ve XML formatını destekler.
+Hypermedia&rsquo;yı destekler (Grafik, ses, video, düz metin, linkler).
+CURL ve HTTP&rsquo;yi destekler.
+Dezavantajları :</p>
+<p>Manuel bir şekilde asciidoctor ile oluşturulduğu için yazım konusu biraz sizi oyalayabilir. Fakat bunun döküman konusunda size esneklik sağlayacağını da unutmamak gerek.
+Yol haritası şu şekildedir.
+TEST -&gt; SNIPPETS -&gt; ASCIIDOC -&gt; FINAL DOCS</p>
+<p>Default olarak bir testten 6 adet snippets oluşturulur. Bunlar :</p>
+<p>curl-request
+http-request
+http-response
+httpie-request
+request-body
+response-body
+Şimdi gelelim projemize. Spring Boot Starter adresinden Lombok, Spring Web, Spring Data JPA, H2 Database bağımlılıkları olan bir uygulama oluşturalım ve IDE&rsquo;de projeyi açalım. Spring REST Docs için gerekli olan 3 bağımlılık daha var. Bunlardan birisi spring-boot-starter-test, diğeri junit ve sonuncusu da spring-restdocs-mockmvc. Aşağıdaki bağımlılıkları da dependencies alanına ekliyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Added for REST Docs --&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.restdocs<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-restdocs-mockmvc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-test<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>junit<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>junit<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>4.13<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p>Sonrasında, uygulamada dökümantasyonu yapacak/hazırlayacak olan plugin asciidoctor&rsquo;u plugin alanına ekliyoruz. configuration tagları arasındaki sourceDirectory bizim index.html sayfamızı oluşturacak tasarımı oluşturan index.adoc dosyasını içeriyor. outputDirectory ise package safhasında oluşturulacak snippets ve index.html sayfasının oluşturulacak dizinini belirtiyor. outputDirectory belirtilmezse default olarak maven&rsquo;de target/generated-snippets dosyasının altında dosyalar oluşturuluyor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;plugin&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.asciidoctor<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.5.8<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;executions&gt;</span>
+        <span style="color:#f92672">&lt;execution&gt;</span>
+            <span style="color:#f92672">&lt;id&gt;</span>generate-docs<span style="color:#f92672">&lt;/id&gt;</span>
+            <span style="color:#f92672">&lt;phase&gt;</span>prepare-package<span style="color:#f92672">&lt;/phase&gt;</span>
+            <span style="color:#f92672">&lt;goals&gt;</span>
+                <span style="color:#f92672">&lt;goal&gt;</span>process-asciidoc<span style="color:#f92672">&lt;/goal&gt;</span>
+            <span style="color:#f92672">&lt;/goals&gt;</span>
+            <span style="color:#f92672">&lt;configuration&gt;</span>
+                <span style="color:#f92672">&lt;backend&gt;</span>html<span style="color:#f92672">&lt;/backend&gt;</span>
+                <span style="color:#f92672">&lt;doctype&gt;</span>book<span style="color:#f92672">&lt;/doctype&gt;</span>
+                <span style="color:#f92672">&lt;sourceDirectory&gt;</span>${project.basedir}/docs/source<span style="color:#f92672">&lt;/sourceDirectory&gt;</span>
+                <span style="color:#f92672">&lt;outputDirectory&gt;</span>${project.basedir}/docs/output<span style="color:#f92672">&lt;/outputDirectory&gt;</span>
+            <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/execution&gt;</span>
+    <span style="color:#f92672">&lt;/executions&gt;</span>
+    <span style="color:#f92672">&lt;dependencies&gt;</span>
+        <span style="color:#f92672">&lt;dependency&gt;</span>
+            <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.restdocs<span style="color:#f92672">&lt;/groupId&gt;</span>
+            <span style="color:#f92672">&lt;artifactId&gt;</span>spring-restdocs-asciidoctor<span style="color:#f92672">&lt;/artifactId&gt;</span>
+            <span style="color:#f92672">&lt;version&gt;</span>${spring-restdocs.version}<span style="color:#f92672">&lt;/version&gt;</span>
+        <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;/dependencies&gt;</span>
+<span style="color:#f92672">&lt;/plugin&gt;</span>
+</code></pre></div><p>Şimdi uygulanın geliştirilme aşamasına geldik. main package altında controller, domain repository ve service isimli 4 package oluşturalım. İlk olarak applation.properties değerlerini verelim ve ardından POJO ile başlayalım. domain package&rsquo;ı içerisnde User class&rsquo;ını oluşturalım. Lombok ile @Data annotation&rsquo;ını kullandığım için setter/getter oluşturmamıza gerek yok.</p>
+<p>application.properties</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">spring.datasource.url=jdbc:h2:mem:userdb</span>
+<span style="color:#ae81ff">spring.h2.console.enabled=true</span>
+<span style="color:#ae81ff">spring.datasource.driverClassName=org.h2.Driver</span>
+<span style="color:#ae81ff">spring.datasource.username=sa</span>
+<span style="color:#ae81ff">spring.datasource.password=as</span>
+<span style="color:#ae81ff">spring.jpa.database-platform=org.hibernate.dialect.H2Dialect</span>
+</code></pre></div><p>User.java</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Data</span>
+<span style="color:#a6e22e">@Entity</span>
+<span style="color:#a6e22e">@Table</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Id</span>
+    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">IDENTITY</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> Long id<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">private</span> String username<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String firstName<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String lastName<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String phoneNumber<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+Sırada Repository var<span style="color:#f92672">.</span> 
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserRepository</span> <span style="color:#66d9ef">extends</span> JpaRepository<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">,</span> Long<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Transactional</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteByUsername</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>UserService ile Repository methodlarını implemente edelim.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Service</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">final</span> UserRepository userRepository<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">UserService</span><span style="color:#f92672">(</span>UserRepository userRepository<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userRepository</span> <span style="color:#f92672">=</span> userRepository<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span>User user<span style="color:#f92672">){</span>
+        userRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllUsers</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">return</span> userRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteUserByUsername</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">){</span>
+        userRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteByUsername</span><span style="color:#f92672">(</span>username<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span>Long id<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">return</span> userRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Son olarak REST Controller&rsquo;ı yazalım.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/api/user&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">final</span> UserService userService<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">UserController</span><span style="color:#f92672">(</span>UserService userService<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userService</span> <span style="color:#f92672">=</span> userService<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@GetMapping</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUsers</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">return</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getAllUsers</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> Long id<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">return</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@DeleteMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{username}&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteUserByUsername</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">)</span> String username<span style="color:#f92672">){</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteUserByUsername</span><span style="color:#f92672">(</span>username<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@PostMapping</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> User user<span style="color:#f92672">){</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@PutMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateEmployee</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> User user<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        User dbUser <span style="color:#f92672">=</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+
+        dbUser<span style="color:#f92672">.</span><span style="color:#a6e22e">setFirstName</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getFirstName</span><span style="color:#f92672">());</span>
+        dbUser<span style="color:#f92672">.</span><span style="color:#a6e22e">setLastName</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getLastName</span><span style="color:#f92672">());</span>
+        dbUser<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
+        dbUser<span style="color:#f92672">.</span><span style="color:#a6e22e">setPhoneNumber</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getPhoneNumber</span><span style="color:#f92672">());</span>
+        dbUser<span style="color:#f92672">.</span><span style="color:#a6e22e">setUsername</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getUsername</span><span style="color:#f92672">());</span>
+
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span>dbUser<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Uygulama ayağa kalktığında birkaç veri olsun istediğim için resources altında data.sql adında bir dosya oluşturarak içerisine 5 adet data ekliyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">user</span>(id, username, email, first_name, last_name, phone_number) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;akua&#39;</span>,<span style="color:#e6db74">&#39;ahmetkaygisiz@gmail.com&#39;</span>,<span style="color:#e6db74">&#39;ahme&#39;</span>,<span style="color:#e6db74">&#39;ka&#39;</span>,<span style="color:#e6db74">&#39;1231231212&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">user</span>(id, username, email, first_name, last_name, phone_number) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;ake&#39;</span>,<span style="color:#e6db74">&#39;ake@gmail.com&#39;</span>,<span style="color:#e6db74">&#39;ae&#39;</span>,<span style="color:#e6db74">&#39;kawq&#39;</span>,<span style="color:#e6db74">&#39;asdfasfwe&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">user</span>(id, username, email, first_name, last_name, phone_number) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;beka&#39;</span>,<span style="color:#e6db74">&#39;aasq@gmail.com&#39;</span>,<span style="color:#e6db74">&#39;me&#39;</span>,<span style="color:#e6db74">&#39;kaqwes&#39;</span>,<span style="color:#e6db74">&#39;1231231212&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">user</span>(id, username, email, first_name, last_name, phone_number) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">4</span>,<span style="color:#e6db74">&#39;dejas&#39;</span>,<span style="color:#e6db74">&#39;ahme@gmail.com&#39;</span>,<span style="color:#e6db74">&#39;hm&#39;</span>,<span style="color:#e6db74">&#39;kasqwe&#39;</span>,<span style="color:#e6db74">&#39;1231231212&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">user</span>(id, username, email, first_name, last_name, phone_number) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#39;yodwe&#39;</span>,<span style="color:#e6db74">&#39;tkaygisiz@gmail.com&#39;</span>,<span style="color:#e6db74">&#39;ahmasd&#39;</span>,<span style="color:#e6db74">&#39;kaasdfsa&#39;</span>,<span style="color:#e6db74">&#39;1231231212&#39;</span>);
+</code></pre></div><p>Uygulama ayağa kalkıyor mu kalmıyor mu kontrolünü yaptıktan sonra sırada test ve dökümantasyon var. test/java/package/ altında UserControllerTest  isimli bir controller oluşturuyorum. ve aşağıdaki eklemeleri yaparak test&rsquo;e hazır hale getiriyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>SpringRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@SpringBootTest</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserControllerTest</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Rule</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> JUnitRestDocumentation restDocumentation <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JUnitRestDocumentation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;docs/output&#34;</span><span style="color:#f92672">);</span>
+
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> WebApplicationContext context<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">private</span> MockMvc mockMvc<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Before</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUp</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span> <span style="color:#f92672">=</span> MockMvcBuilders<span style="color:#f92672">.</span><span style="color:#a6e22e">webAppContextSetup</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">context</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>documentationConfiguration<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">restDocumentation</span><span style="color:#f92672">))</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+    
+    <span style="color:#75715e">// Test methods
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><p>JUnit 4 kullanırken dökümantasyon oluşturmak için ilk olarak bir JUnitRestDocumentation değişkeni oluşturup buna @Rule annotation&rsquo;ını ekliyoruz. Dökümanların çıktı lokasyonlarını parametre olarak bu nesneye verebiliyoruz Parametre geçmezsek default olarak target/generated-snippets folderının altında oluşturuyor.</p>
+<p>@Before ile tüm testler yapılmadan önce gerekli dökümantasyon ayarlarının da yapılması için bir setUp fonksiyonu yazıyoruz. Sıra testlerin yapılarak dökümanlarımızın oluşturulmasında.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">perform</span><span style="color:#f92672">(</span>get<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/api/user/1&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">))</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andExpect</span><span style="color:#f92672">(</span>status<span style="color:#f92672">().</span><span style="color:#a6e22e">isOk</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>MockMvcResultHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>document<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user/get-user-by-id&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>getUserById() methodunda RestDocumentationRequestBuilder&rsquo;ın static methodu olan get() ile get çağrısı yapıyoruz. gelen cevabın JSON olacağını belirtip gelen cevabın 200 olmasını bekleyip print() methodu ile output klasörü altında document() fonksiyonunda belirtilen user/get-user-by-id folder&rsquo;ı altında yukarıda belirttiğim 6 adet snippets&rsquo;in oluşmasını sağlıyoruz. Diğer dökümante ettiğimiz methodlar da aşağıdaki gibi. Güncelleme ve Ekleme fonksiyonunda @ResponseBody beklediğimiz için bir User oluşturup bunu ObjectMapper ile String olarak .content() fonksiyonuna parametre vererek gönderdik.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getUsers</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">perform</span><span style="color:#f92672">(</span>get<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/api/user&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">))</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andExpect</span><span style="color:#f92672">(</span>status<span style="color:#f92672">().</span><span style="color:#a6e22e">isOk</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>MockMvcResultHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>document<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user/get-all-users&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteUserByUsername</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">perform</span><span style="color:#f92672">(</span>delete<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/api/user/beka&#34;</span><span style="color:#f92672">))</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andExpect</span><span style="color:#f92672">(</span>status<span style="color:#f92672">().</span><span style="color:#a6e22e">isOk</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>MockMvcResultHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>document<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user/delete-user-by-username&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addUser</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+        User u1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">();</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setUsername</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test@tim.com&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setFirstName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mest&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setLastName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;oldum&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setPhoneNumber</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;1231231222&#34;</span><span style="color:#f92672">);</span>
+
+        String body <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">()).</span><span style="color:#a6e22e">valueToTree</span><span style="color:#f92672">(</span>u1<span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">perform</span><span style="color:#f92672">(</span>post<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/api/user&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">contentType</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">content</span><span style="color:#f92672">(</span>body<span style="color:#f92672">))</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">andExpect</span><span style="color:#f92672">(</span>status<span style="color:#f92672">().</span><span style="color:#a6e22e">isOk</span><span style="color:#f92672">())</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>MockMvcResultHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">())</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>document<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user/add-user&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateUser</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+        User u1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">();</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>5L<span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setUsername</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test@tim.com&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setFirstName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mest&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setLastName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;oldum&#34;</span><span style="color:#f92672">);</span>
+        u1<span style="color:#f92672">.</span><span style="color:#a6e22e">setPhoneNumber</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;1231231222&#34;</span><span style="color:#f92672">);</span>
+
+        String body <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">()).</span><span style="color:#a6e22e">valueToTree</span><span style="color:#f92672">(</span>u1<span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">perform</span><span style="color:#f92672">(</span>put<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/api/user/5&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">contentType</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">content</span><span style="color:#f92672">(</span>body<span style="color:#f92672">))</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andExpect</span><span style="color:#f92672">(</span>status<span style="color:#f92672">().</span><span style="color:#a6e22e">isOk</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>MockMvcResultHandlers<span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>document<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user/update-user-by-id&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>Son olarak docs/source dosyasındaki index.adoc ile dökümanımızın yapısını hazırlayalım.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">= User CRUD REST Service API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: right
+:toclevels: 4
+:sectlinks:
+:sourcedir: ../../docs/output
+DocWriter : &lt;ahmetkaygisiz17@gmail.com&gt;
+
+== User CRUD Rest Service
+This REST API developed by Ahmet Kaygisiz for learning Tutorial Spring Boot Rest Docs. 
+RestDocsTutorial has following functions.
+
+=== Get All Users
+
+[%collapsible]
+====
+*Curl*
+include::{sourcedir}/user/get-all-users/curl-request.adoc[]
+
+*HTTP Request*
+include::{sourcedir}/user/get-all-users/http-request.adoc[]
+
+
+*HTTP Response*
+include::{sourcedir}/user/get-all-users/http-response.adoc[]
+
+*HTTPIE Request*
+include::{sourcedir}/user/get-all-users/httpie-request.adoc[]
+
+*Request Body*
+include::{sourcedir}/user/get-all-users/request-body.adoc[]
+
+*Response Body*
+include::{sourcedir}/user/get-all-users/response-body.adoc[]
+====
+
+=== Get User By ID
+[%collapsible]
+====
+*Curl*
+include::{sourcedir}/user/get-user-by-id/curl-request.adoc[]
+
+*HTTP Request*
+include::{sourcedir}/user/get-user-by-id/http-request.adoc[]
+
+*HTTP Response*
+include::{sourcedir}/user/get-user-by-id/http-response.adoc[]
+
+*HTTPIE Request*
+include::{sourcedir}/user/get-user-by-id/httpie-request.adoc[]
+
+*Request Body*
+include::{sourcedir}/user/get-user-by-id/request-body.adoc[]
+
+*Response Body*
+include::{sourcedir}/user/get-user-by-id/response-body.adoc[]
+====
+
+=== Delete User By Username
+[%collapsible]
+====
+*Curl*
+include::{sourcedir}/user/delete-user-by-username/curl-request.adoc[]
+
+*HTTP Request*
+include::{sourcedir}/user/delete-user-by-username/http-request.adoc[]
+
+*HTTP Response*
+include::{sourcedir}/user/delete-user-by-username/http-response.adoc[]
+
+*HTTPIE Request*
+include::{sourcedir}/user/delete-user-by-username/httpie-request.adoc[]
+
+*Request Body*
+include::{sourcedir}/user/delete-user-by-username/request-body.adoc[]
+
+*Response Body*
+include::{sourcedir}/user/delete-user-by-username/response-body.adoc[]
+====
+
+=== Add User
+[%collapsible]
+====
+*Curl*
+include::{sourcedir}/user/add-user/curl-request.adoc[]
+
+*HTTP Request*
+include::{sourcedir}/user/add-user/http-request.adoc[]
+
+*HTTP Response*
+include::{sourcedir}/user/add-user/http-response.adoc[]
+
+*HTTPIE Request*
+include::{sourcedir}/user/add-user/httpie-request.adoc[]
+
+*Request Body*
+include::{sourcedir}/user/add-user/request-body.adoc[]
+
+*Response Body*
+include::{sourcedir}/user/add-user/response-body.adoc[]
+====
+
+=== Update User
+[%collapsible]
+====
+*Curl*
+include::{sourcedir}/user/update-user-by-id/curl-request.adoc[]
+
+*HTTP Request*
+include::{sourcedir}/user/update-user-by-id/http-request.adoc[]
+
+*HTTP Response*
+include::{sourcedir}/user/update-user-by-id/http-response.adoc[]
+
+*HTTPIE Request*
+include::{sourcedir}/user/update-user-by-id/httpie-request.adoc[]
+
+*Request Body*
+include::{sourcedir}/user/update-user-by-id/request-body.adoc[]
+
+*Response Body*
+include::{sourcedir}/user/update-user-by-id/response-body.adoc[]
+====
+</code></pre></div><p>Biraz uzun gelebilir bunu yazmakla mı uğraşacağım diyebilirsiniz fakat yapılan sadece 4 adet copy-paste ve folder isimlerinin değiştirilmesi. Kendinize ait bir sistem oturttukça bu size daha rahat gelecektir. Uygulamada mvn clean package yürüterek output dosyamızdaki snippets ve index.html dosyamızın oluştuğunu görüyoruz.</p>
+<p><img src="/003-spring_rest_docs.jpeg" alt="Example image"></p>
+<p>Bu yazı bir miktar uzun oldu fakat umarım işe yarar olmuştur.</p>
+<p>İyi çalışmalar dilerim.</p>
+<p>Kodlar : <a href="https://github.com/ahmetkaygisiz/SpringRESTDocsCRUD">https://github.com/ahmetkaygisiz/SpringRESTDocsCRUD</a></p>
+<p>Kaynak : <a href="https://docs.spring.io/spring-restdocs/docs/2.0.4.RELEASE/reference/html5/">https://docs.spring.io/spring-restdocs/docs/2.0.4.RELEASE/reference/html5/</a></p>
+</section>
+
+  
+  
+  <footer class="post-tags">
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/git">git</a>
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="post-nav">
+    
+    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/004-spark-rest-api/"><span>←</span><span>Spark Rest Api</span></a>
+     
+    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/002-bulktelnet/"><span>Script - Bulktelnet</span><span>→</span></a>
+    
+  </nav>
+  
+
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

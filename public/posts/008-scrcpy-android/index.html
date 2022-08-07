@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="tr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Scrcpy Android - &lt; ahmetkaygisiz /&gt;</title>
+
+  
+  
+  <meta name="description" content="Merhaba,
+Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&rsquo;de &ldquo;Hello World!&rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.
+Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link ." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  <script
+    defer
+    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
+  
+
+  
+  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Scrcpy Android" />
+<meta property="og:description" content="Merhaba,
+Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&rsquo;de &ldquo;Hello World!&rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.
+Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/008-scrcpy-android/" />
+<meta property="article:published_time" content="2020-11-30T17:25:35+03:00" />
+<meta property="article:modified_time" content="2020-11-30T17:25:35+03:00" />
+
+  
+  <meta itemprop="name" content="Scrcpy Android">
+<meta itemprop="description" content="Merhaba,
+Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&rsquo;de &ldquo;Hello World!&rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.
+Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link .">
+<meta itemprop="datePublished" content="2020-11-30T17:25:35+03:00" />
+<meta itemprop="dateModified" content="2020-11-30T17:25:35+03:00" />
+<meta itemprop="wordCount" content="555">
+
+
+
+<meta itemprop="keywords" content="linux,crontab,bash," />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scrcpy Android"/>
+<meta name="twitter:description" content="Merhaba,
+Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&rsquo;de &ldquo;Hello World!&rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.
+Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link ."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+    
+    <a class="" href="/">cd ~</a>
+    
+    <a class="" href="/whoami/">whoami</a>
+    
+    <a class="" href="/categorylist/">categories</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="twitter"
+      style="--url: url(./twitter.svg)"
+      href="https://twitter.com/kaaygisiz"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/ahmetkaygisiz"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      
+      <time datetime="2020-11-30 17:25:35 &#43;0300 &#43;03">30 Nov 2020</time>
+      
+      
+    </p>
+    <h1>Scrcpy Android</h1>
+  </header>
+  <section class="post-content"><p>Merhaba,</p>
+<p>Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&rsquo;de &ldquo;Hello World!&rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.</p>
+<p>Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun <a href="https://github.com/Genymobile/scrcpy/blob/master/BUILD.md">link</a> . Gerekli kurulum işlemleri adımları belirtilmiş. Ben önce snap ile yüklemeyi sonra da doğrudan repo üzerinden nasıl kurulur onu anlatmak istiyorum.</p>
+<p>Snap ile scrcpy Kurulumu</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo snap install scrcpy
+</code></pre></div><p>Yukarıdaki komut ile scrcpy&rsquo;i yükledik. Telefonunuzu usb kablosu ile bilgisayara bağladık. Uygulamayı çalıştırmak için telefonunuzun Developer Options&rsquo;ı açık olmalı ve o menü altında USB Debugging seçeneğini de açık olmalıdır. Uygulamayı başlatmak için aşağıdaki komutu kullanıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap run scrcpy
+</code></pre></div><p>Uygulamayı başlattığınızda, telefonunuz sizden bağlantı için onay vermenizi isteyecek. Onayı verdikten sonra telefonunuzu desktop üzerinden yönetebilir hale geliyorsunuz.</p>
+<p>Repo ile Kurulum
+Bu aşamada scrcpy&rsquo;nin github reposunu bilgisayarımıza çekip sonra bu projeyi build ederek kurulumu tamamlayacağız. Benim bu seçenek üzerinden gitme sebeplerimden birisi de wireless üzerinden de bağlantı sağlayabilmemizi sağlayan gerekli araçları da yükleyip ortak ağ üzerinden kabloya gerek kalmadan ekran paylaşımı yapabilmek.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># bağımlılıkların yüklenmesi</span>
+sudo apt install ffmpeg libsdl2-2.0-0 adb
+
+<span style="color:#75715e"># istemci build bağımlıkları</span>
+sudo apt install gcc git pkg-config meson ninja-build <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                 libavcodec-dev libavformat-dev libavutil-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                 libsdl2-dev
+
+<span style="color:#75715e"># server build bağımlılığı JDK</span>
+sudo apt install openjdk-8-jdk
+</code></pre></div><p>Yukarıdaki bağımlılıkları kurduk. Şimdi geldi Android SDK ve CommandLine Tool&rsquo;larının kurulumuna. Şu <a href="https://developer.android.com/studio/index.html">link</a> içerisinden altlarda bulunan Command Line Tools başlığı altındaki zip dosyalarından işletim sistemimize uygun olanını indiriyoruz. Android Debugging Bridge (ADB) isimli komut için de şu <a href="https://developer.android.com/studio/releases/platform-tools.html">adresten</a> gerekli paketi indiriyoruz.</p>
+<p>Bu indirilen dosyaları installation path&rsquo;inize extract ediyoruz. Örneğin /data/installation/AndroidSDK pathi içerisine ben iki dosyayı çıkarttım. Kurulum öncesinde ANDROID_SDK_ROOT pathini terminal&rsquo;e tanımlıyoruz. Ben zsh shell&rsquo;ini kullandığım için aşağıdaki komut ile .zshrc dosyamı açıyorum. Eğer bash kullanıyorsanız ..bashrc dosyasına ortam değişkenini ekleyebilirsiniz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export JAVA_HOME<span style="color:#f92672">=</span>/data/java/latest
+export ANDROID_SDK_ROOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/data/installations/AndroidSDK&#34;</span>
+export PATH<span style="color:#f92672">=</span>$JAVA_HOME/bin:$ANDROID_SDK_ROOT/platform-tools/:$PATH
+</code></pre></div><p>Sistem değişkenlerini tanımlayıp çıkış yaptıktan sonra aşağıdaki şekilde kontrolleri yapmamız faydalı olur.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo $ANDROID_SDK_ROOT
+echo $JAVA_HOME
+</code></pre></div><p>Burada build ile ilgili aldığım license hataları sebebiyle aşağıdaki gibi cmdline-tools klasörüne girip sdkmanager ile gerekli lisansların yüklenmesini sağlıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /data/installations/AndroidSDK/cmdline-tools/bin/
+./sdkmanager --licenses --sdk_root<span style="color:#f92672">=</span>$ANDROID_SDK_ROOT
+</code></pre></div><p>Projeyi Github&rsquo;dan çekiyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/Genymobile/scrcpy <span style="color:#f92672">&amp;&amp;</span> cd scrcpy
+</code></pre></div><p>ve build ediyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">meson x --buildtype release --strip -Db_lto<span style="color:#f92672">=</span>true
+ninja -Cx
+</code></pre></div><p>BUILD SUCCESS mesajını görene kadar sevinmiyoruz. Build tamamlandığında son olarak scrcpy komutunu yüklüyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ninja -Cx install
+</code></pre></div><p>ve ta daaa. Uygulamayı başlatmak için komut satırına aşağıdaki komutu yazıyoruz ve telefonumuzun ekranı ile karşılaşıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scrcpy
+</code></pre></div><p>scrcpy ile Kablosuz Bağlantı
+Telefonunuz ile ortak bir ağa bağlandığınızda ekran paylaşımı yapmak için aşağıdaki adımları takip etmeniz yeterli.</p>
+<p>0 - Başlangıçta telefonuz bilgisayara usb kablosuyla takılı olmalı<br>
+1 - Telefonunuzun IP adresini kontrol edin. (Settings &gt; About Phone &gt; IP Address<br>
+2 - Bu komutu yazarak ADB TCPIP portunu belirtin :<br></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    adb tcpip <span style="color:#ae81ff">5555</span>
+</code></pre></div><p>3- Telefonunuzun IP&rsquo;sini aşağıdaki $DEVICE_IP kısmına yazın.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">adb connect $DEVICE_IP:5555
+<span style="color:#75715e"># connected to $DEVICE_IP:5555</span>
+</code></pre></div><p>4- Connected ifadesini gördükten sonra usb bağlantısını çıkartıyoruz.
+5- <code>bash scrcpy</code> komutunu giriyoruz.</p>
+<p>Kablosuz bağlantı da bu şekilde. Kablosuz bağlantıda bazı gecikmeler olabiliyor normal olarak. Bit hızı ve çözünürlük düşürülerek daha hızlı kullanmak, gecikme yaşamaktan daha iyi bir seçenek olduğu için aşağıdaki komut ile scrcpy&rsquo;i başlatabilirsiniz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scrcpy --bit-rate 2M --max-size <span style="color:#ae81ff">800</span>
+</code></pre></div><p>Bu yazıda benden bu kadar.
+Görüşmek üzere.</p>
+<p>Kaynaklar :
+<a href="https://github.com/Genymobile/scrcpy/blob/master/BUILD.md">https://github.com/Genymobile/scrcpy/blob/master/BUILD.md</a>
+<a href="https://www.genymotion.com/blog/open-source-project-scrcpy-now-works-wirelessly">https://www.genymotion.com/blog/open-source-project-scrcpy-now-works-wirelessly</a></p>
+</section>
+
+  
+  
+  <footer class="post-tags">
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/linux">linux</a>
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/crontab">crontab</a>
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/bash">bash</a>
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="post-nav">
+    
+    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/009-hugo-and-netlify/"><span>←</span><span>Hugo and Netlify</span></a>
+     
+    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/007-crontab-price-alarm/"><span>Crontab Price Alarm</span><span>→</span></a>
+    
+  </nav>
+  
+
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

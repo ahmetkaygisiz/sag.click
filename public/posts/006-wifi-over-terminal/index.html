@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="tr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Wifi Over Terminal - &lt; ahmetkaygisiz /&gt;</title>
+
+  
+  
+  <meta name="description" content="Selamlar Efendim,
+Bugün, bana arada sırada gelen &ldquo;Nvidia Driver&rsquo;ı da neymiş yauv&rdquo; gazının sonucunda yine siyah ekranla kala kaldığım bir maceraya atıldım. Bu macera esnasında daha önce herhangi bir wifi ağına Terminal&rsquo;den bağlanmadığımı farkettim ve nasıl bağlanabileceğimi araştırıp buraya da not etmek istedim. Şuan çalıştığım makinenin OS&rsquo;i Debian 10 (buster) yazıya başlamadan bunu da belirteyim.
+Buradaki kaynakta Network Manager nasıl kullanılır oldukça güzel bir şekilde anlatmış. Ben de buradaki kaynağı takip ederek uygulamaya başlıyorum." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  <script
+    defer
+    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
+  
+
+  
+  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Wifi Over Terminal" />
+<meta property="og:description" content="Selamlar Efendim,
+Bugün, bana arada sırada gelen &ldquo;Nvidia Driver&rsquo;ı da neymiş yauv&rdquo; gazının sonucunda yine siyah ekranla kala kaldığım bir maceraya atıldım. Bu macera esnasında daha önce herhangi bir wifi ağına Terminal&rsquo;den bağlanmadığımı farkettim ve nasıl bağlanabileceğimi araştırıp buraya da not etmek istedim. Şuan çalıştığım makinenin OS&rsquo;i Debian 10 (buster) yazıya başlamadan bunu da belirteyim.
+Buradaki kaynakta Network Manager nasıl kullanılır oldukça güzel bir şekilde anlatmış. Ben de buradaki kaynağı takip ederek uygulamaya başlıyorum." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/006-wifi-over-terminal/" />
+<meta property="article:published_time" content="2020-09-14T17:21:14+03:00" />
+<meta property="article:modified_time" content="2020-09-14T17:21:14+03:00" />
+
+  
+  <meta itemprop="name" content="Wifi Over Terminal">
+<meta itemprop="description" content="Selamlar Efendim,
+Bugün, bana arada sırada gelen &ldquo;Nvidia Driver&rsquo;ı da neymiş yauv&rdquo; gazının sonucunda yine siyah ekranla kala kaldığım bir maceraya atıldım. Bu macera esnasında daha önce herhangi bir wifi ağına Terminal&rsquo;den bağlanmadığımı farkettim ve nasıl bağlanabileceğimi araştırıp buraya da not etmek istedim. Şuan çalıştığım makinenin OS&rsquo;i Debian 10 (buster) yazıya başlamadan bunu da belirteyim.
+Buradaki kaynakta Network Manager nasıl kullanılır oldukça güzel bir şekilde anlatmış. Ben de buradaki kaynağı takip ederek uygulamaya başlıyorum.">
+<meta itemprop="datePublished" content="2020-09-14T17:21:14+03:00" />
+<meta itemprop="dateModified" content="2020-09-14T17:21:14+03:00" />
+<meta itemprop="wordCount" content="339">
+
+
+
+<meta itemprop="keywords" content="spark,java,rest," />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wifi Over Terminal"/>
+<meta name="twitter:description" content="Selamlar Efendim,
+Bugün, bana arada sırada gelen &ldquo;Nvidia Driver&rsquo;ı da neymiş yauv&rdquo; gazının sonucunda yine siyah ekranla kala kaldığım bir maceraya atıldım. Bu macera esnasında daha önce herhangi bir wifi ağına Terminal&rsquo;den bağlanmadığımı farkettim ve nasıl bağlanabileceğimi araştırıp buraya da not etmek istedim. Şuan çalıştığım makinenin OS&rsquo;i Debian 10 (buster) yazıya başlamadan bunu da belirteyim.
+Buradaki kaynakta Network Manager nasıl kullanılır oldukça güzel bir şekilde anlatmış. Ben de buradaki kaynağı takip ederek uygulamaya başlıyorum."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+    
+    <a class="" href="/">cd ~</a>
+    
+    <a class="" href="/whoami/">whoami</a>
+    
+    <a class="" href="/categorylist/">categories</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="twitter"
+      style="--url: url(./twitter.svg)"
+      href="https://twitter.com/kaaygisiz"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/ahmetkaygisiz"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      
+      <time datetime="2020-09-14 17:21:14 &#43;0300 &#43;03">14 Sep 2020</time>
+      
+      
+    </p>
+    <h1>Wifi Over Terminal</h1>
+  </header>
+  <section class="post-content"><p>Selamlar Efendim,</p>
+<p>Bugün, bana arada sırada gelen &ldquo;Nvidia Driver&rsquo;ı da neymiş yauv&rdquo; gazının sonucunda yine siyah ekranla kala kaldığım bir maceraya atıldım. Bu macera esnasında daha önce herhangi bir wifi ağına Terminal&rsquo;den bağlanmadığımı farkettim ve nasıl bağlanabileceğimi araştırıp buraya da not etmek istedim. Şuan çalıştığım makinenin OS&rsquo;i Debian 10 (buster) yazıya başlamadan bunu da belirteyim.</p>
+<p>Buradaki kaynakta Network Manager nasıl kullanılır oldukça güzel bir şekilde anlatmış. Ben de buradaki kaynağı takip ederek uygulamaya başlıyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli general status
+</code></pre></div><p>Bulunduğumuz cihazın bağlantı durumunu kontrol etmek için yukarıdaki komutu kullanıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection show
+</code></pre></div><p>Bu komut ile de daha önce giriş yaptığımız kaydettiğimiz ağları listeliyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli con up $network_name
+</code></pre></div><p>Eğer daha önce kaydettiğimiz ağlardan birisine bağlanmak istiyorsak, yukarıdaki komut&rsquo;a bağlanacağımız ağın adını vererek bağlanabiliyoruz. Bağlantıyı ilk defa kuracak ise aşağıdaki adımları takip ediyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kaygisiz@akua:~$ nmcli device status
+DEVICE           TYPE      STATE         CONNECTION      
+br-f9614c6c587f  bridge    connected     br-f9614c6c587f 
+wlp3s0           wifi      disconnected  --              
+</code></pre></div><p>Bilgisayarımızdaki cihazların durumunu görüntülüyoruz. Buradaki Type&rsquo;ı wifi olan device adını bir kenara yazıyoruz. Benim durumum için bu wlp3s0.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kaygisiz@akua:~$ nmcli dev wifi list
+IN-USE  SSID               MODE   CHAN  RATE        SIGNAL  BARS  SECURI
+        Akua               Infra  <span style="color:#ae81ff">1</span>     <span style="color:#ae81ff">117</span> Mbit/s  <span style="color:#ae81ff">100</span>     ****  WPA2  
+</code></pre></div><p>Bağlanabileceğimiz wifi ağlarını listeleyip, bağlanmak istediğimiz ağın SSID&rsquo;sini de aklımızın bir kısmına atıyoruz. Bağlanacağımız ağı, bağlantılar listesine ekliyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># nmcli con add con-name $network_name ifname $device_name type wifi ssid $ssidName</span>
+kaygisiz@akua:~$ nmcli con add con-name Wifi_Hayrati ifname wlp3s0 type wifi ssid Akua
+Connection <span style="color:#e6db74">&#39;Wifi_Hayrati&#39;</span> <span style="color:#f92672">(</span>$UUID<span style="color:#f92672">)</span> successfully added.
+</code></pre></div><p>Burada Wifi_Hayrati olarak  eklediğim değer değişken. Ağı nasıl tanıtmak istiyorsanız o şekilde ekleyebilirsiniz. Babam_Sagolsun, Vefa_Sadece_Semt_Adi_Degil  vb. Ağ sahibinin sizdeki yerine göre doldurabilirsiniz. :)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># nmcli con modify $network_name wifi-sec.key-mgmt wpa-psk</span>
+kaygisiz@akua:~$ nmcli con modify Wifi_Hayrati wifi-sec.key-mgmt wpa-psk
+<span style="color:#75715e"># nmcli con modify $network_name wifi-sec.psk $password</span>
+kaygisiz@akua:~$ nmcli con modify Wifi_Hayrati wifi-sec.psk $password
+</code></pre></div><p>Burada ağın koruma şeklinin WPA2 olması durumuna göre tanımlamayı yapıp parolamızı ekliyoruz. Artık ağ bilgilerini kaydettik, sırada bağlanmak var.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># nmcli con up $network_name</span>
+kaygisiz@akua:~$ nmcli con up Wifi_Hayrati
+Connection successfully activated <span style="color:#f92672">(</span>D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/8<span style="color:#f92672">)</span>
+</code></pre></div><p>Son olarak bağlantıya up diyerek mutlu sona ulaşıyoruz.</p>
+<p>CLI güzel hoş fakat GUI için şükretmek gerekiyor. Bol öğrenmeli günlerde görüşmek üzere.</p>
+</section>
+
+  
+  
+  <footer class="post-tags">
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/spark">spark</a>
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/java">java</a>
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/rest">rest</a>
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="post-nav">
+    
+    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/007-crontab-price-alarm/"><span>←</span><span>Crontab Price Alarm</span></a>
+     
+    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/005-except-ssh/"><span>Except Ssh</span><span>→</span></a>
+    
+  </nav>
+  
+
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

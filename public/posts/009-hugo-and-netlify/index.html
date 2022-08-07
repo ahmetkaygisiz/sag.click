@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="tr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Hugo and Netlify - &lt; ahmetkaygisiz /&gt;</title>
+
+  
+  
+  <meta name="description" content="Selamlar,
+Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp; Netlify&rsquo;dan bahsedeceğim." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  <script
+    defer
+    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
+
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
+  
+
+  
+  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Hugo and Netlify" />
+<meta property="og:description" content="Selamlar,
+Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp; Netlify&rsquo;dan bahsedeceğim." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/009-hugo-and-netlify/" />
+<meta property="article:published_time" content="2020-11-30T17:25:35+03:00" />
+<meta property="article:modified_time" content="2020-11-30T17:25:35+03:00" />
+
+  
+  <meta itemprop="name" content="Hugo and Netlify">
+<meta itemprop="description" content="Selamlar,
+Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp; Netlify&rsquo;dan bahsedeceğim.">
+<meta itemprop="datePublished" content="2020-11-30T17:25:35+03:00" />
+<meta itemprop="dateModified" content="2020-11-30T17:25:35+03:00" />
+<meta itemprop="wordCount" content="805">
+
+
+
+<meta itemprop="keywords" content="linux,crontab,bash," />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo and Netlify"/>
+<meta name="twitter:description" content="Selamlar,
+Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp; Netlify&rsquo;dan bahsedeceğim."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+    
+    <a class="" href="/">cd ~</a>
+    
+    <a class="" href="/whoami/">whoami</a>
+    
+    <a class="" href="/categorylist/">categories</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="twitter"
+      style="--url: url(./twitter.svg)"
+      href="https://twitter.com/kaaygisiz"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/ahmetkaygisiz"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      
+      <time datetime="2020-11-30 17:25:35 &#43;0300 &#43;03">30 Nov 2020</time>
+      
+      
+    </p>
+    <h1>Hugo and Netlify</h1>
+  </header>
+  <section class="post-content"><p>Selamlar,</p>
+<p>Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp; Netlify&rsquo;dan bahsedeceğim.</p>
+<p>HUGO
+Hugo; golang dili ile yazılmış bir statik web site oluşturmaya yarayan bir frameworktür. Kendilerinin en hızlı web site oluşturucu olduklarını iddia ediyorlar. Golang ile yazılmış olması ve <a href="https://gohugo.io/about/what-is-hugo/#how-fast-is-hugo">şuradaki</a> benchmark videosu bizlere inanmamak için pek bir sebep bırakmıyor. Hızlı bir şekilde hugo kurulumuna başlayalım. Ben debian tabanlı bir işletim sistemi üzerinden gideceğim. Diğer OS&rsquo;ler için tüm kurulum talimatları için <a href="https://gohugo.io/getting-started/installing/">buraki linki</a> takip edebilirsiniz.</p>
+<p>Hugo default olarak Debian 10&rsquo;de kuruluydu fakat versiyon olarak oldukça eskiydi. Hugo versiyonu kontrolü için hugo version komutunu kullanabilirsiniz. Bu versiyonu yükseltmek için <a href="https://github.com/gohugoio/hugo/releases">hugo releases</a> sayfasına gidip ilgili paketi indiriyoruz. hugo_extended_* ile başlayan bir paketi indirmenizi tavsiye ederim. Yazıya başlamadan önce kullandığım tema aşağıdaki hatayı verdiği için ben de önce normal sonra extended paketi yüklemek mecburiyetinde kaldım.</p>
+<p>failed to transform &ldquo;<em>.scss&rdquo; (text/scss): resource &ldquo;scss/styles/</em>.scss_a4e369375f17bb89f2019364cbe7a830&rdquo; not found in file cache
+İndirdiğim .deb uzantılı paketi kuruyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># deb paketini yükledim.</span>
+sudo dpkg -i hugo_extended_0.79.0_Linux-64bit.deb
+
+<span style="color:#75715e"># versiyon kontrolü yapıyorum.</span>
+hugo version
+
+<span style="color:#75715e"># ve çıktıda 0.79 ifadesini görüyorum.</span>
+<span style="color:#75715e"># Hugo Static Site Generator v0.79.0-1415EFDC/extended linux/amd64 BuildDate: 2020-11-27T09:16:17Z</span>
+</code></pre></div><p>Hugo hazır. Uygulamamızı Github üzerinden Netlify&rsquo;e çekeceğimiz için Github&rsquo;da boş bir repo oluşturalım. Sonra local&rsquo;de aşağıdaki adımları takip edelim.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># hugo ile yeni site oluştur ve bu klasörün içerisine gir</span>
+hugo new site blog-with-hugo <span style="color:#f92672">&amp;&amp;</span> $_
+
+<span style="color:#75715e"># git reposu haline getir.</span>
+git init
+</code></pre></div><p>blog-with-hugo isimli dosyamızı web sitemizi ve bunu bir repo haline getirdik. Şimdi <a href="https://themes.gohugo.io/">themes.gohugo.io</a> adresinden kendi isteğimize göre bir tema seçiyoruz. Seçtiğimiz temanın kendi Github sayfasına da gitmenizi tavsiye ediyorum temanızla ilgili ek bilgileri bulabilirsiniz. Seçtiğimiz temayı bulduğumuz git reposuna submodule olarak ekliyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
+</code></pre></div><p>Sonrasında temadaki talimalatları takip ediyorum. Temada bulunan config.toml dosyasını ana dizindeki config.toml ile değiştiriyorum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># kopyala</span>
+cp themes/hugo-theme-codex/exampleSite/config.toml .
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># düzenle</span>
+vim config.toml
+</code></pre></div><p>Dosyanın en başında bulunan themesDir = &ldquo;../../&rdquo; ifadesini siliyorum ve kendi bilgilerini girmek istediğim alanları değiştiriyorum. Index Page&rsquo;i ekliyorum ve ilk blog postumu aşağıdaki komut ile oluşturuyorum. ilk-post sizin postunuzun başlığı oluyor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new blog/ilk-post.md
+</code></pre></div><p>Değiştirmek için contents/blog/ilk-post.md dosyasına içeriği yazıyoruz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">---
+title: &#34;Ilk Post&#34;
+date: 2020-11-30T12:38:56+03:00
+# url
+slug: &#34;first-post&#34;
+description: &#34;Bu Hugo&#39;daki İlk Paylaşımım&#34;
+keywords: [&#34;hugo&#34;,&#34;go&#34;,&#34;netlify&#34;]
+draft: false
+tags: [&#34;hugo&#34;,&#34;go&#34;,&#34;netlify&#34;]
+math: false
+toc: true
+---
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">## The standard Lorem Ipsum passage
+&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&#34;
+</code></pre></div><p>Son olarak hugo&rsquo;yu çalıştırıyorum. Uygulama :1313 portunu kullanıyor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -D
+</code></pre></div><p>localhost:1313&rsquo;e giderek siteyi kontrol ettik her şey çok güzel gözüküyor. Sırada bunu Github&rsquo;a göndermek var.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add *
+git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+git branch -M main
+git remote add origin git@github.com:<span style="color:#e6db74">${</span>your-username<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>your-repo<span style="color:#e6db74">}</span>.git
+git push -u origin main
+</code></pre></div><p>Netlify
+Sırada hosting adımı var. Netlify hesabınız yoksa ise <a href="https://app.netlify.com/signup">https://app.netlify.com/signup</a> adresinden kayıt olup. Panele ilerliyoruz.</p>
+<p>New Site from Git butonuna tıklıyoruz. Continuous Deployment seçenekleri içerisinde Github&rsquo;ı ya da sizin reponuz hangi platformdaysa onu seçiyoruz. Sonraki adımda kodumuzu gönderdiğimiz repoyu seçiyoruz ve default değerler ile Deploy Site diyoruz. Eğer temanız Netlify&rsquo;deki versiyonu destekliyorsa siteniz yayınlanmış oluyor. Benimki gibi bir versiyon uyuşmama durumunda aşağıdaki hatayı alacaksınız.</p>
+<p>HUGO-THEME-CODEX theme does not support Hugo version 0.54.0. Minimum version required is 0.72.0
+Bunun çözümü için Deploy Settings &gt; Environment &gt; Environtment Variables adımlarını takip ediyoruz. Edit Variables diyerek Key-&gt; HUGO_VERSION Value-&gt; 0.79.0 yazıp kaydediyoruz. Tekrar Deploys menüsüne dönüp Trigger Deploy&rsquo;a basıyoruz.</p>
+<p>Ve ta da Netlify Build Complete. Sitemiz yayında.</p>
+<p>General &gt; Site Settings &gt; Change Site Name  adımlarını takip ederek sitemizin başındaki random oluşturulmuş kısmı değiştirebiliyoruz.</p>
+<p>Sonuç : <a href="https://ahmetkaygisiz.netlify.app/">https://ahmetkaygisiz.netlify.app/</a></p>
+<p>Custom Domain Name Ekleme
+Netlify bize site ayarlarında ikinci adım olarak zaten Add a custom domain to your site şeklinde seçenek sunuyor. Bu seçeneğe tıklıyoruz. Benim 3-5 liraya aldığım boşta duran bir domain name&rsquo;im vardı bu yazı için bunu kullanacağım. Siz de kendinize, domain name satan bir siteden bunu black friday indirimleriyle ucuza alabilirsiniz.</p>
+<p>Netlify&rsquo;de Domain Settings&rsquo;e gidip yazdığımız Domain Name Options&rsquo;ına tıklayarak DNS name&rsquo;i ayarla diyoruz. Burada bize 4 adet nameserver adresi veriliyor. Bunları domain aldığımız siteye gidip nameservers kısmına giriyoruz. Aktifleştirme maksimum 24 saat içerisinde yapılacaktır.</p>
+<p>Sonuç : <a href="http://ahmetkaygisiz.online">http://ahmetkaygisiz.online</a></p>
+<p>Final
+Bu yazının sonuna geldik. Blogger gibi sitelerde hazır sitelerde, size esneklik tanımayan yerlerde çalışmaktansa başlangıçta biraz emek harcayarak sizin de elinizin değdiği bir siteye sahip olmak bence daha güzel. Umarım faydalı olmuştur.</p>
+<p>Güzel günler dilerim.</p>
+</section>
+
+  
+  
+  <footer class="post-tags">
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/linux">linux</a>
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/crontab">crontab</a>
+     
+    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/bash">bash</a>
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="post-nav">
+    
+    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/010-quarkus-framework-nedir/"><span>←</span><span>Quarkus Framework Nedir</span></a>
+     
+    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/008-scrcpy-android/"><span>Scrcpy Android</span><span>→</span></a>
+    
+  </nav>
+  
+
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

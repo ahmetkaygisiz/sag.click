@@ -1,0 +1,73 @@
+baseURL = "http://sag.click"
+title = "< ahmetkaygisiz />"
+author = "Ahmet Kaygısız"
+copyright = "Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved."
+paginate = 7
+languageCode = "tr"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+ignoreErrors = ["error-remote-getjson"]
+
+# ------------------------------
+theme = "paper"
+
+[params]
+  disableHLJS = false                            # don't use highlight.js
+  twitter = 'kaaygisiz'               		 # twitter.com/YOUR_TWITTER_ID
+  github = 'ahmetkaygisiz'                       # github.com/YOUR_GITHUB_ID
+# ------------------------------
+# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    identifier = "index"
+    name = "cd ~"
+    url = "/"
+    weight = 9
+
+  [[menu.main]]
+    identifier = "about"
+    name = "whoami"
+    url = "/whoami/"
+    weight = 10
+  [[menu.main]]
+    identifier = "ls ~/categories"
+    name = "categories"
+    url = "/categorylist/"
+    weight = 11
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
