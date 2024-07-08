@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -14,21 +14,53 @@
 
 
 
-<html lang="tr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="tr"
+>
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>Oracle FMW Infrastructure Silent Installation - &lt; ahmetkaygisiz /&gt;</title>
 
   
+  <meta name="theme-color" />
+
+  
+  
+  
   
   <meta name="description" content="Selamlar,
 Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure&rsquo;ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
 JDK Oracle&rsquo;dan java 1." />
-  <meta name="author" content="" />
+  <meta name="author" content="&lt; ahmetkaygisiz /&gt;" />
   
 
   
@@ -37,288 +69,376 @@ JDK Oracle&rsquo;dan java 1." />
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://sag.click/main.min.css" />
 
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click/github.svg" />
+  
+  
+
+  
+  
   <script
     defer
-    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    src="http://sag.click/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
 
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
-
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
-  
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
   
 
   
-  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+  <link rel="icon" href="http://sag.click/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.80.0" />
-
-  
-  
+  <meta name="generator" content="Hugo 0.128.2">
 
   
   
   
   
   
-  
-  
-  
-  
-  <meta property="og:title" content="Oracle FMW Infrastructure Silent Installation" />
-<meta property="og:description" content="Selamlar,
-Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure&rsquo;ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
-JDK Oracle&rsquo;dan java 1." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/013-oracle-fmw-silent/" />
-<meta property="article:published_time" content="2021-04-18T18:32:01+03:00" />
-<meta property="article:modified_time" content="2021-04-18T18:32:01+03:00" />
 
+
+  
   
   <meta itemprop="name" content="Oracle FMW Infrastructure Silent Installation">
-<meta itemprop="description" content="Selamlar,
-Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure&rsquo;ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
-JDK Oracle&rsquo;dan java 1.">
-<meta itemprop="datePublished" content="2021-04-18T18:32:01+03:00" />
-<meta itemprop="dateModified" content="2021-04-18T18:32:01+03:00" />
-<meta itemprop="wordCount" content="666">
-
-
-
-<meta itemprop="keywords" content="" />
+  <meta itemprop="description" content="Selamlar,
+Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure’ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
+JDK Oracle’dan java 1.">
+  <meta itemprop="datePublished" content="2021-04-18T18:32:01+03:00">
+  <meta itemprop="dateModified" content="2021-04-18T18:32:01+03:00">
+  <meta itemprop="wordCount" content="666">
+  
+  <meta property="og:url" content="http://sag.click/posts/013-oracle-fmw-silent/">
+  <meta property="og:site_name" content="&lt; ahmetkaygisiz /&gt;">
+  <meta property="og:title" content="Oracle FMW Infrastructure Silent Installation">
+  <meta property="og:description" content="Selamlar,
+Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure’ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
+JDK Oracle’dan java 1.">
+  <meta property="og:locale" content="tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-04-18T18:32:01+03:00">
+    <meta property="article:modified_time" content="2021-04-18T18:32:01+03:00">
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Oracle FMW Infrastructure Silent Installation"/>
-<meta name="twitter:description" content="Selamlar,
-Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure&rsquo;ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
-JDK Oracle&rsquo;dan java 1."/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Oracle FMW Infrastructure Silent Installation">
+  <meta name="twitter:description" content="Selamlar,
+Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure’ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.
+JDK Oracle’dan java 1.">
 
+  
+  
+  
+  <link rel="canonical" href="http://sag.click/posts/013-oracle-fmw-silent/" />
   
   
 </head>
 
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://sag.click/"
+      >&lt; ahmetkaygisiz /&gt;</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
 
-  <body class="not-ready" data-menu="true">
-    <header class="header">
-  
-  <p class="logo">
-    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
-  </p>
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
   
 
   <script>
-    let bodyClx = document.body.classList;
-    let btnDark = document.querySelector('.btn-dark');
-    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
-    let darkVal = localStorage.getItem('dark');
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    let setDark = (isDark) => {
-      bodyClx[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
-    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
-    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
-    sysDark.addEventListener('change', (event) => setDark(event.matches));
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
   </script>
 
-  
-  
-  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
     
-    <a class="" href="/">cd ~</a>
     
-    <a class="" href="/whoami/">whoami</a>
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >cd ~</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/whoami/"
+        >whoami</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categorylist/"
+        >categories</a
+      >
+      
+    </nav>
     
-    <a class="" href="/categorylist/">categories</a>
-    
-  </nav>
-  
 
-  
-  <nav class="social">
     
-    <a
-      class="twitter"
-      style="--url: url(./twitter.svg)"
-      href="https://twitter.com/kaaygisiz"
-      target="_blank"
-    ></a>
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/kaaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/ahmetkaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
     
-    <a
-      class="github"
-      style="--url: url(./github.svg)"
-      href="https://github.com/ahmetkaygisiz"
-      target="_blank"
-    ></a>
-    
-  </nav>
-  
+  </div>
 </header>
 
 
-    <main class="main">
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
 
-<article class="post-single">
-  <header class="post-title">
-    <p>
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Oracle FMW Infrastructure Silent Installation</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
       
-      <time datetime="2021-04-18 18:32:01 &#43;0300 &#43;03">18 Apr 2021</time>
+      <time>Apr 18, 2021</time>
       
       
-    </p>
-    <h1>Oracle FMW Infrastructure Silent Installation</h1>
+      
+      
+    </div>
+    
   </header>
-  <section class="post-content"><p>Selamlar,</p>
+
+  <section><p>Selamlar,</p>
 <p>Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure&rsquo;ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.</p>
 <h3 id="jdk">JDK</h3>
 <p><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">Oracle&rsquo;dan</a> java 1.8&rsquo;in JDK paketini kendimize uygun olanını <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html#license-lightbox">jdk-8u281-linux-x64.tar.gz</a> indiriyorum. İndirdiğim paketi java pathime çıkarıyorum.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># paketi java pathine çıkar</span>
-tar -xzf jdk-8u281-linux-i586.tar.gz -C /data/java
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># linkimizi oluşturuyoruz</span>
-ln -s /data/java/jdk1.8.0_281 /data/java/latest
-</code></pre></div><p>.zshrc dosyamda JAVA_HOME&rsquo;u tanımlayıp export ediyorum. Bunu yapmamızın sebebi her oturum açtığımızda tanımlanan genel sistem değişkenleri arasında JAVA_HOME&rsquo;un da bizim istediğimiz adresi göstermesi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/.zshrc
-<span style="color:#75715e"># .zshrc uygun bir kısma ekliyoruz şu satırları</span>
-export JAVA_HOME<span style="color:#f92672">=</span>/data/java/latest
-
-export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:</span>$JAVA_HOME<span style="color:#e6db74">/bin&#34;</span>
-<span style="color:#75715e"># export </span>
-source .zshrc
-
-<span style="color:#75715e"># kontrol ettim</span>
-java -version
-<span style="color:#75715e"># java version &#34;1.8.0_281&#34;</span>
-</code></pre></div><h3 id="fmw-infrastructure">FMW Infrastructure</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># paketi java pathine çıkar</span>
+</span></span><span style="display:flex;"><span>tar -xzf jdk-8u281-linux-i586.tar.gz -C /data/java
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># linkimizi oluşturuyoruz</span>
+</span></span><span style="display:flex;"><span>ln -s /data/java/jdk1.8.0_281 /data/java/latest
+</span></span></code></pre></div><p>.zshrc dosyamda JAVA_HOME&rsquo;u tanımlayıp export ediyorum. Bunu yapmamızın sebebi her oturum açtığımızda tanımlanan genel sistem değişkenleri arasında JAVA_HOME&rsquo;un da bizim istediğimiz adresi göstermesi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.zshrc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .zshrc uygun bir kısma ekliyoruz şu satırları</span>
+</span></span><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/data/java/latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:</span>$JAVA_HOME<span style="color:#e6db74">/bin&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># export </span>
+</span></span><span style="display:flex;"><span>source .zshrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># kontrol ettim</span>
+</span></span><span style="display:flex;"><span>java -version
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># java version &#34;1.8.0_281&#34;</span>
+</span></span></code></pre></div><h3 id="fmw-infrastructure">FMW Infrastructure</h3>
 <p><a href="https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html#license-lightbox">Fusion Middleware Infrastructure Installer</a> (1.5 GB) 12.2.1.4 versiyonunu indiriyorum. Burada ihtiyacımız olan 2 adet konfigürasyon dosyası var. Birincisi oraInventory adresini belirteceğimiz oraInst.loc, ikincisi de fmw response file. Oluşturduğum dosyalar aşağıdaki gibi.</p>
 <p>oraInst.loc</p>
 <p>Burada inst_group kulumu yapacağımız kullanıcı grup adı, inventory_loc da oraInventory adresimiz olmalıdır.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">inst_group<span style="color:#f92672">=</span>kaaygisiz
-inventory_loc<span style="color:#f92672">=</span>/data/fmw/oraInventory
-</code></pre></div><p>Response file da değiştirdiğim tek değişken ORACLE_HOME=/data/fmw/12.2.1.4 değeri. Burada kurulumu yapacağımız path&rsquo;i belirtiyoruz. Burada ben kendi dev ortamımı kurduğum için çoğu değer default. Sizin kendi ihtiyaçlarınıza göre <a href="https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ouirf/sample-response-files-silent-installation-and-deinstallation.html#GUID-19DEEA75-CC63-47D4-BDC7-038E133490E0">dökümanlardan</a> takip ederek gerekli değişiklikleri yapabilirsiniz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ENGINE<span style="color:#f92672">]</span>
- 
-<span style="color:#75715e">#DO NOT CHANGE THIS.</span>
-Response File Version<span style="color:#f92672">=</span>1.0.0.0.0
- 
-<span style="color:#f92672">[</span>GENERIC<span style="color:#f92672">]</span>
- 
-<span style="color:#75715e">#Set this to true if you wish to skip software updates</span>
-DECLINE_AUTO_UPDATES<span style="color:#f92672">=</span>true
-
-<span style="color:#75715e">#My Oracle Support User Name</span>
-MOS_USERNAME<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#My Oracle Support Password</span>
-MOS_PASSWORD<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#If the Software updates are already downloaded and available on your local system,</span>
-<span style="color:#75715e">#then specify the path to the directory where these patches are available and</span>
-<span style="color:#75715e">#set SPECIFY_DOWNLOAD_LOCATION to true</span>
-AUTO_UPDATES_LOCATION<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#Proxy Server Name to connect to My Oracle Support</span>
-SOFTWARE_UPDATES_PROXY_SERVER<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#Proxy Server Port</span>
-SOFTWARE_UPDATES_PROXY_PORT<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#Proxy Server Username</span>
-SOFTWARE_UPDATES_PROXY_USER<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#Proxy Server Password</span>
-SOFTWARE_UPDATES_PROXY_PASSWORD<span style="color:#f92672">=</span>
-
-<span style="color:#75715e">#The oracle home location. This can be an existing Oracle Home or a new Oracle Home</span>
-ORACLE_HOME<span style="color:#f92672">=</span>/data/fmw/12.2.1.4
- 
-<span style="color:#75715e">#Set this variable value to the Installation Type selected. </span>
-<span style="color:#75715e">#e.g. Fusion Middleware Infrastructure, Fusion Middleware Infrastructure With Examples.</span>
-INSTALL_TYPE<span style="color:#f92672">=</span>Fusion Middleware Infrastructure
- 
-<span style="color:#75715e">#Provide the My Oracle Support Username. If you wish to ignore Oracle Configuration Manager</span>
-<span style="color:#75715e">#configuration provide empty string for user name.</span>
-MYORACLESUPPORT_USERNAME<span style="color:#f92672">=</span>
- 
-<span style="color:#75715e">#Provide the My Oracle Support Password</span>
-MYORACLESUPPORT_PASSWORD<span style="color:#f92672">=</span>
- 
-<span style="color:#75715e">#Set this to true if you wish to decline the security updates. </span>
-<span style="color:#75715e">#Setting this to true and providing empty string for</span>
-<span style="color:#75715e">#My Oracle Support username will ignore the Oracle Configuration Manager configuration</span>
-DECLINE_SECURITY_UPDATES<span style="color:#f92672">=</span>true
- 
-<span style="color:#75715e">#Set this to true if My Oracle Support Password is specified</span>
-SECURITY_UPDATES_VIA_MYORACLESUPPORT<span style="color:#f92672">=</span>false
- 
-<span style="color:#75715e">#Provide the Proxy Host</span>
-PROXY_HOST<span style="color:#f92672">=</span>
- 
-<span style="color:#75715e">#Provide the Proxy Port</span>
-PROXY_PORT<span style="color:#f92672">=</span>
- 
-<span style="color:#75715e">#Provide the Proxy Username</span>
-PROXY_USER<span style="color:#f92672">=</span>
- 
-<span style="color:#75715e">#Provide the Proxy Password</span>
-PROXY_PWD<span style="color:#f92672">=</span>
- 
-<span style="color:#75715e">#Type String (URL format) Indicates the OCM Repeater URL </span>
-<span style="color:#75715e">#which should be of the format [scheme[Http/Https]]://[repeater host]:[repeater port]</span>
-COLLECTOR_SUPPORTHUB_URL<span style="color:#f92672">=</span>
-</code></pre></div><p>Dosyalarım hazır, kurulum paketim hazır. -silent değişkeni ile wizard olmadan kurulum yapacağımızı belirttik. -responseFile ile ihtiyaç duyulan değişken değerlerini şu dosyamdan oku dedik ve son olarak da Oracle ürün bilgilerimizi tutan oraInst.loc dosyasını da -invPtrLoc ile verdik.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>inst_group<span style="color:#f92672">=</span>kaaygisiz
+</span></span><span style="display:flex;"><span>inventory_loc<span style="color:#f92672">=</span>/data/fmw/oraInventory
+</span></span></code></pre></div><p>Response file da değiştirdiğim tek değişken ORACLE_HOME=/data/fmw/12.2.1.4 değeri. Burada kurulumu yapacağımız path&rsquo;i belirtiyoruz. Burada ben kendi dev ortamımı kurduğum için çoğu değer default. Sizin kendi ihtiyaçlarınıza göre <a href="https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ouirf/sample-response-files-silent-installation-and-deinstallation.html#GUID-19DEEA75-CC63-47D4-BDC7-038E133490E0">dökümanlardan</a> takip ederek gerekli değişiklikleri yapabilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ENGINE<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#DO NOT CHANGE THIS.</span>
+</span></span><span style="display:flex;"><span>Response File Version<span style="color:#f92672">=</span>1.0.0.0.0
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GENERIC<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Set this to true if you wish to skip software updates</span>
+</span></span><span style="display:flex;"><span>DECLINE_AUTO_UPDATES<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#My Oracle Support User Name</span>
+</span></span><span style="display:flex;"><span>MOS_USERNAME<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#My Oracle Support Password</span>
+</span></span><span style="display:flex;"><span>MOS_PASSWORD<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#If the Software updates are already downloaded and available on your local system,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#then specify the path to the directory where these patches are available and</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#set SPECIFY_DOWNLOAD_LOCATION to true</span>
+</span></span><span style="display:flex;"><span>AUTO_UPDATES_LOCATION<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Proxy Server Name to connect to My Oracle Support</span>
+</span></span><span style="display:flex;"><span>SOFTWARE_UPDATES_PROXY_SERVER<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Proxy Server Port</span>
+</span></span><span style="display:flex;"><span>SOFTWARE_UPDATES_PROXY_PORT<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Proxy Server Username</span>
+</span></span><span style="display:flex;"><span>SOFTWARE_UPDATES_PROXY_USER<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Proxy Server Password</span>
+</span></span><span style="display:flex;"><span>SOFTWARE_UPDATES_PROXY_PASSWORD<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#The oracle home location. This can be an existing Oracle Home or a new Oracle Home</span>
+</span></span><span style="display:flex;"><span>ORACLE_HOME<span style="color:#f92672">=</span>/data/fmw/12.2.1.4
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Set this variable value to the Installation Type selected. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#e.g. Fusion Middleware Infrastructure, Fusion Middleware Infrastructure With Examples.</span>
+</span></span><span style="display:flex;"><span>INSTALL_TYPE<span style="color:#f92672">=</span>Fusion Middleware Infrastructure
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Provide the My Oracle Support Username. If you wish to ignore Oracle Configuration Manager</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#configuration provide empty string for user name.</span>
+</span></span><span style="display:flex;"><span>MYORACLESUPPORT_USERNAME<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Provide the My Oracle Support Password</span>
+</span></span><span style="display:flex;"><span>MYORACLESUPPORT_PASSWORD<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Set this to true if you wish to decline the security updates. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Setting this to true and providing empty string for</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#My Oracle Support username will ignore the Oracle Configuration Manager configuration</span>
+</span></span><span style="display:flex;"><span>DECLINE_SECURITY_UPDATES<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Set this to true if My Oracle Support Password is specified</span>
+</span></span><span style="display:flex;"><span>SECURITY_UPDATES_VIA_MYORACLESUPPORT<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Provide the Proxy Host</span>
+</span></span><span style="display:flex;"><span>PROXY_HOST<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Provide the Proxy Port</span>
+</span></span><span style="display:flex;"><span>PROXY_PORT<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Provide the Proxy Username</span>
+</span></span><span style="display:flex;"><span>PROXY_USER<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Provide the Proxy Password</span>
+</span></span><span style="display:flex;"><span>PROXY_PWD<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Type String (URL format) Indicates the OCM Repeater URL </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#which should be of the format [scheme[Http/Https]]://[repeater host]:[repeater port]</span>
+</span></span><span style="display:flex;"><span>COLLECTOR_SUPPORTHUB_URL<span style="color:#f92672">=</span>
+</span></span></code></pre></div><p>Dosyalarım hazır, kurulum paketim hazır. -silent değişkeni ile wizard olmadan kurulum yapacağımızı belirttik. -responseFile ile ihtiyaç duyulan değişken değerlerini şu dosyamdan oku dedik ve son olarak da Oracle ürün bilgilerimizi tutan oraInst.loc dosyasını da -invPtrLoc ile verdik.</p>
 <p>java -jar ile kurulumu başlatıyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/data/java/latest/bin/java -jar <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	/data/installations/oracle_installations/fmw_12.2.1.4.0_infrastructure.jar -silent <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	-responseFile /data/installations/oracle_installations/fmw-inf-12.2.1.4.rsp <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	-invPtrLoc /data/installations/oracle_installations/oraInst.loc
-</code></pre></div><h3 id="output">OUTPUT</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/data/java/latest/bin/java -jar <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	/data/installations/oracle_installations/fmw_12.2.1.4.0_infrastructure.jar -silent <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-responseFile /data/installations/oracle_installations/fmw-inf-12.2.1.4.rsp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-invPtrLoc /data/installations/oracle_installations/oraInst.loc
+</span></span></code></pre></div><h3 id="output">OUTPUT</h3>
 <p>Görüldüğü gibi kurulum başarıyla tamamlandı.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Copyright (c) 1996, 2019, Oracle and/or its affiliates. All rights reserved.
-Reading response file..
-Skipping Software Updates
-Starting check : CertifiedVersions
-Expected result: One of oracle-6, oracle-7, redhat-7, redhat-6, SuSE-11, SuSE-12, SuSE-15
-Actual Result: redhat-33
-Check complete. The overall result of this check is: Passed
-CertifiedVersions Check: Success.
-
-
-Starting check : CheckJDKVersion
-Expected result: 1.8.0_191
-Actual Result: 1.8.0_281
-Check complete. The overall result of this check is: Passed
-CheckJDKVersion Check: Success.
-
-
-Validations are enabled for this session.
-Verifying data
-Copying Files
-Percent Complete : 10
-Percent Complete : 20
-Percent Complete : 30
-Percent Complete : 40
-Percent Complete : 50
-Percent Complete : 60
-Percent Complete : 70
-Percent Complete : 80
-Percent Complete : 90
-Percent Complete : 100
-</code></pre></div><p>The installation of Oracle Fusion Middleware 12c Infrastructure 12.2.1.4.0 completed successfully.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Copyright (c) 1996, 2019, Oracle and/or its affiliates. All rights reserved.
+</span></span><span style="display:flex;"><span>Reading response file..
+</span></span><span style="display:flex;"><span>Skipping Software Updates
+</span></span><span style="display:flex;"><span>Starting check : CertifiedVersions
+</span></span><span style="display:flex;"><span>Expected result: One of oracle-6, oracle-7, redhat-7, redhat-6, SuSE-11, SuSE-12, SuSE-15
+</span></span><span style="display:flex;"><span>Actual Result: redhat-33
+</span></span><span style="display:flex;"><span>Check complete. The overall result of this check is: Passed
+</span></span><span style="display:flex;"><span>CertifiedVersions Check: Success.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Starting check : CheckJDKVersion
+</span></span><span style="display:flex;"><span>Expected result: 1.8.0_191
+</span></span><span style="display:flex;"><span>Actual Result: 1.8.0_281
+</span></span><span style="display:flex;"><span>Check complete. The overall result of this check is: Passed
+</span></span><span style="display:flex;"><span>CheckJDKVersion Check: Success.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Validations are enabled for this session.
+</span></span><span style="display:flex;"><span>Verifying data
+</span></span><span style="display:flex;"><span>Copying Files
+</span></span><span style="display:flex;"><span>Percent Complete : 10
+</span></span><span style="display:flex;"><span>Percent Complete : 20
+</span></span><span style="display:flex;"><span>Percent Complete : 30
+</span></span><span style="display:flex;"><span>Percent Complete : 40
+</span></span><span style="display:flex;"><span>Percent Complete : 50
+</span></span><span style="display:flex;"><span>Percent Complete : 60
+</span></span><span style="display:flex;"><span>Percent Complete : 70
+</span></span><span style="display:flex;"><span>Percent Complete : 80
+</span></span><span style="display:flex;"><span>Percent Complete : 90
+</span></span><span style="display:flex;"><span>Percent Complete : 100
+</span></span></code></pre></div><p>The installation of Oracle Fusion Middleware 12c Infrastructure 12.2.1.4.0 completed successfully.
 Logs successfully copied to /data/fmw/oraInventory/logs.
 İyi günler olsun.</p>
 </section>
@@ -329,25 +449,58 @@ Logs successfully copied to /data/fmw/oraInventory/logs.
   
   
   
-  <nav class="post-nav">
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/014-containerdb-rcu/"><span>←</span><span>Container DB ve RCU</span></a>
-     
-    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/012-go-gopher-1/"><span>Go Gopher-I</span><span>→</span></a>
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/014-containerdb-rcu/"
+      ><span class="mr-1.5">←</span><span>Container DB ve RCU</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/012-go-gopher-1/"
+      ><span>Go Gopher-I</span><span class="ml-1.5">→</span></a
+    >
     
   </nav>
   
+  
 
+  
+  
+
+  
+  
+
+  
+
+
+  
 </article>
 
-</main>
 
-    <footer class="footer">
-  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
-  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
-  <p>
-    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
-  </p>
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://sag.click/">&lt; ahmetkaygisiz /&gt;</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
 </footer>
 
   </body>

@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>crontab on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/crontab/</link>
-    <description>Recent content in crontab on &lt; ahmetkaygisiz /&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Crontab on &lt; ahmetkaygisiz /&gt;</title>
+    <link>http://sag.click/tags/crontab/</link>
+    <description>Recent content in Crontab on &lt; ahmetkaygisiz /&gt;</description>
+    <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 30 Nov 2020 17:25:35 +0300</lastBuildDate><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Nov 2020 17:25:35 +0300</lastBuildDate>
+    <atom:link href="http://sag.click/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo and Netlify</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/009-hugo-and-netlify/</link>
+      <link>http://sag.click/posts/009-hugo-and-netlify/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/009-hugo-and-netlify/</guid>
-      <description>Selamlar,
-Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp;amp; Netlify&amp;rsquo;dan bahsedeceğim.</description>
+      <guid>http://sag.click/posts/009-hugo-and-netlify/</guid>
+      <description>Selamlar,&#xA;Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp;amp; Netlify&amp;rsquo;dan bahsedeceğim.</description>
     </item>
-    
     <item>
       <title>Scrcpy Android</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/008-scrcpy-android/</link>
+      <link>http://sag.click/posts/008-scrcpy-android/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/008-scrcpy-android/</guid>
-      <description>Merhaba,
-Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&amp;rsquo;de &amp;ldquo;Hello World!&amp;rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.
-Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link .</description>
+      <guid>http://sag.click/posts/008-scrcpy-android/</guid>
+      <description>Merhaba,&#xA;Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&amp;rsquo;de &amp;ldquo;Hello World!&amp;rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.&#xA;Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link .</description>
     </item>
-    
     <item>
       <title>Crontab Price Alarm</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/007-crontab-price-alarm/</link>
+      <link>http://sag.click/posts/007-crontab-price-alarm/</link>
       <pubDate>Sat, 31 Oct 2020 17:25:35 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/007-crontab-price-alarm/</guid>
-      <description>Selamlar,
-Geçen günlerde hepsiburada&amp;rsquo;da bir ürün almak için belirli indirim günlerinden birini bekliyordum. Ürünün indirime girip girmediğini kontrol etmek çok zor olmasa da bunu nasıl script ile yapabilirim diye düşündüm :D. Yani sorarsanız çok gerekli miydi diye değildi. Fakat önemli olan yolda olmak dedim (çok fazla TEDX&amp;rsquo;e maruz kaldım) ve bir script hazırlamaya karar verdim. Bu script, crontab&amp;rsquo;da 1 saatte bir çalıştırılacak ve ürün indirime girdiyse bunun bildirimini bana desktop notification olarak verecekti.</description>
+      <guid>http://sag.click/posts/007-crontab-price-alarm/</guid>
+      <description>Selamlar,&#xA;Geçen günlerde hepsiburada&amp;rsquo;da bir ürün almak için belirli indirim günlerinden birini bekliyordum. Ürünün indirime girip girmediğini kontrol etmek çok zor olmasa da bunu nasıl script ile yapabilirim diye düşündüm :D. Yani sorarsanız çok gerekli miydi diye değildi. Fakat önemli olan yolda olmak dedim (çok fazla TEDX&amp;rsquo;e maruz kaldım) ve bir script hazırlamaya karar verdim. Bu script, crontab&amp;rsquo;da 1 saatte bir çalıştırılacak ve ürün indirime girdiyse bunun bildirimini bana desktop notification olarak verecekti.</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/series/</link>
+    <link>http://sag.click/series/</link>
     <description>Recent content in Series on &lt; ahmetkaygisiz /&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>tr</language>
-    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
+    <atom:link href="http://sag.click/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

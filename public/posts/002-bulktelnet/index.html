@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -14,20 +14,52 @@
 
 
 
-<html lang="tr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="tr"
+>
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>Script - Bulktelnet - &lt; ahmetkaygisiz /&gt;</title>
 
   
+  <meta name="theme-color" />
+
+  
+  
+  
   
   <meta name="description" content="Merhabalar,
 Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi." />
-  <meta name="author" content="" />
+  <meta name="author" content="&lt; ahmetkaygisiz /&gt;" />
   
 
   
@@ -36,191 +68,282 @@ Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış oldu�
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://sag.click/main.min.css" />
 
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click/github.svg" />
+  
+  
+
+  
+  
   <script
     defer
-    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    src="http://sag.click/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
 
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
-
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
-  
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
   
 
   
-  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+  <link rel="icon" href="http://sag.click/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.80.0" />
-
-  
-  
+  <meta name="generator" content="Hugo 0.128.2">
 
   
   
   
   
   
-  
-  
-  
-  
-  <meta property="og:title" content="Script - Bulktelnet" />
-<meta property="og:description" content="Merhabalar,
-Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/002-bulktelnet/" />
-<meta property="article:published_time" content="2020-07-24T16:29:53+03:00" />
-<meta property="article:modified_time" content="2020-07-24T16:29:53+03:00" />
 
+
+  
   
   <meta itemprop="name" content="Script - Bulktelnet">
-<meta itemprop="description" content="Merhabalar,
+  <meta itemprop="description" content="Merhabalar,
 Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi.">
-<meta itemprop="datePublished" content="2020-07-24T16:29:53+03:00" />
-<meta itemprop="dateModified" content="2020-07-24T16:29:53+03:00" />
-<meta itemprop="wordCount" content="322">
-
-
-
-<meta itemprop="keywords" content="bash,script,linux," />
+  <meta itemprop="datePublished" content="2020-07-24T16:29:53+03:00">
+  <meta itemprop="dateModified" content="2020-07-24T16:29:53+03:00">
+  <meta itemprop="wordCount" content="324">
+  <meta itemprop="keywords" content="Bash,Script,Linux">
+  
+  <meta property="og:url" content="http://sag.click/posts/002-bulktelnet/">
+  <meta property="og:site_name" content="&lt; ahmetkaygisiz /&gt;">
+  <meta property="og:title" content="Script - Bulktelnet">
+  <meta property="og:description" content="Merhabalar,
+Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi.">
+  <meta property="og:locale" content="tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-07-24T16:29:53+03:00">
+    <meta property="article:modified_time" content="2020-07-24T16:29:53+03:00">
+    <meta property="article:tag" content="Bash">
+    <meta property="article:tag" content="Script">
+    <meta property="article:tag" content="Linux">
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Script - Bulktelnet"/>
-<meta name="twitter:description" content="Merhabalar,
-Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi."/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Script - Bulktelnet">
+  <meta name="twitter:description" content="Merhabalar,
+Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi.">
 
+  
+  
+  
+  <link rel="canonical" href="http://sag.click/posts/002-bulktelnet/" />
   
   
 </head>
 
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://sag.click/"
+      >&lt; ahmetkaygisiz /&gt;</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
 
-  <body class="not-ready" data-menu="true">
-    <header class="header">
-  
-  <p class="logo">
-    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
-  </p>
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
   
 
   <script>
-    let bodyClx = document.body.classList;
-    let btnDark = document.querySelector('.btn-dark');
-    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
-    let darkVal = localStorage.getItem('dark');
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    let setDark = (isDark) => {
-      bodyClx[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
-    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
-    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
-    sysDark.addEventListener('change', (event) => setDark(event.matches));
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
   </script>
 
-  
-  
-  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
     
-    <a class="" href="/">cd ~</a>
     
-    <a class="" href="/whoami/">whoami</a>
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >cd ~</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/whoami/"
+        >whoami</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categorylist/"
+        >categories</a
+      >
+      
+    </nav>
     
-    <a class="" href="/categorylist/">categories</a>
-    
-  </nav>
-  
 
-  
-  <nav class="social">
     
-    <a
-      class="twitter"
-      style="--url: url(./twitter.svg)"
-      href="https://twitter.com/kaaygisiz"
-      target="_blank"
-    ></a>
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/kaaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/ahmetkaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
     
-    <a
-      class="github"
-      style="--url: url(./github.svg)"
-      href="https://github.com/ahmetkaygisiz"
-      target="_blank"
-    ></a>
-    
-  </nav>
-  
+  </div>
 </header>
 
 
-    <main class="main">
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
 
-<article class="post-single">
-  <header class="post-title">
-    <p>
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Script - Bulktelnet</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
       
-      <time datetime="2020-07-24 16:29:53 &#43;0300 &#43;03">24 Jul 2020</time>
+      <time>Jul 24, 2020</time>
       
       
-    </p>
-    <h1>Script - Bulktelnet</h1>
+      
+      
+    </div>
+    
   </header>
-  <section class="post-content"><p>
+
+  <section><p>
 Merhabalar,<br>
 Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title'ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi. Neyse sektör tarafından kabul görecek kadar Linux övdüysem scripte geçiyorum.
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">function</span> readFiles<span style="color:#f92672">()</span>
-<span style="color:#f92672">{</span> 	
-	_fileName<span style="color:#f92672">=</span>$i
-	
-	echo <span style="color:#e6db74">&#34;#### </span>$_fileName<span style="color:#e6db74"> ####&#34;</span> &gt;&gt; connected_$_hostName.txt
-	echo <span style="color:#e6db74">&#34;#### </span>$_fileName<span style="color:#e6db74"> ####&#34;</span> &gt;&gt; failed_$_hostName.txt
-
-	<span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r line; <span style="color:#66d9ef">do</span>
-
-		_host<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $line | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
-		_port<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $line | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
-
-		_str<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo exit | timeout 2s telnet $_host $_port<span style="color:#e6db74">`</span>
-		
-		<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $_str <span style="color:#f92672">==</span> *Connected* <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
-			echo $line &gt;&gt; connected_$_hostName.txt
-	        <span style="color:#66d9ef">else</span>
-			echo $line &gt;&gt; failed_$_hostName.txt
-   		<span style="color:#66d9ef">fi</span>	
-
-	<span style="color:#66d9ef">done</span> &lt; $_fileName
-
-	echo <span style="color:#e6db74">&#34; &#34;</span> &gt;&gt; connected_$_hostName.txt
-	echo <span style="color:#e6db74">&#34; &#34;</span> &gt;&gt; failed_$_hostName.txt	
-<span style="color:#f92672">}</span>
-
-_hostName<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span>
-_fileList<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>*<span style="color:#e6db74">}</span>
-touch connected_$_hostName.txt failed_$_hostName.txt
-
-<span style="color:#66d9ef">for</span> i in $_fileList
-<span style="color:#66d9ef">do</span>
-  readFiles $i
-<span style="color:#66d9ef">done</span>
-
-</code></pre></div><p>Scritimiz server:port şeklinde verilmiş basit bir txt dosyasını alarak satır satır telnet bağlantısı deniyor. Dosya formatı, scritin özelleştirilmesi size kalmış.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> readFiles<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span> 	
+</span></span><span style="display:flex;"><span>	_fileName<span style="color:#f92672">=</span>$i
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;#### </span>$_fileName<span style="color:#e6db74"> ####&#34;</span> &gt;&gt; connected_$_hostName.txt
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;#### </span>$_fileName<span style="color:#e6db74"> ####&#34;</span> &gt;&gt; failed_$_hostName.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r line; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		_host<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $line | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>		_port<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $line | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		_str<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo exit | timeout 2s telnet $_host $_port<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $_str <span style="color:#f92672">==</span> *Connected* <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>			echo $line &gt;&gt; connected_$_hostName.txt
+</span></span><span style="display:flex;"><span>	        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>			echo $line &gt;&gt; failed_$_hostName.txt
+</span></span><span style="display:flex;"><span>   		<span style="color:#66d9ef">fi</span>	
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">done</span> &lt; $_fileName
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34; &#34;</span> &gt;&gt; connected_$_hostName.txt
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34; &#34;</span> &gt;&gt; failed_$_hostName.txt	
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>_hostName<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>_fileList<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>*<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>touch connected_$_hostName.txt failed_$_hostName.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in $_fileList
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  readFiles $i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Scritimiz server:port şeklinde verilmiş basit bir txt dosyasını alarak satır satır telnet bağlantısı deniyor. Dosya formatı, scritin özelleştirilmesi size kalmış.</p>
 <p>Script <code>sh ./bulkConnection.sh file_1.txt ... file_n.txt </code>şeklinde yürütülüyor.</p>
 <p>Scripte giriş yaptıktan sonra bulunduğun sunucunun ismini $_hostname değişkenine atıyor.</p>
 <p>Verilen dosyaları parametre olarak kabul ediyor.</p>
@@ -228,21 +351,33 @@ touch connected_$_hostName.txt failed_$_hostName.txt
 <p>Her bir parametre dosyası için readFiles fonksiyonu çağırılıyor.</p>
 <p>while içerisinde host ve port değişkenleri awk ile alınıyor.</p>
 <p>Asıl macik&rsquo;in yapıldığı satırda telnet bağlantısına timeout olarak 2 saniye veriliyor. echo exit ile bu işlemden çıkılıyor ve telnet&rsquo;in verdiğin console outputu _str değişkenine atanıyor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">_str<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo exit | timeout 2s telnet $_host $_port<span style="color:#e6db74">`</span>
-</code></pre></div><p>Bu değişken sıradan bir telnet bağlantısının bağlandığında verdiği <em>connected</em> ifadesini içeriyorsa, bu başarılı bir bağlantı olarak, connected_hostname.txt dosyasına bu host:port bilgileri yazılıyor.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>_str<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo exit | timeout 2s telnet $_host $_port<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>Bu değişken sıradan bir telnet bağlantısının bağlandığında verdiği <em>connected</em> ifadesini içeriyorsa, bu başarılı bir bağlantı olarak, connected_hostname.txt dosyasına bu host:port bilgileri yazılıyor.
 Bu küçük fakat beni bir clickbottan ayıran script, tamamiyle bu kadar.</p>
 <p>Sağlıklı günleriniz olsun.</p>
 </section>
 
   
   
-  <footer class="post-tags">
+  <footer class="mt-12 flex flex-wrap">
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/bash">bash</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/bash"
+      >bash</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/script">script</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/script"
+      >script</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/linux">linux</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/linux"
+      >linux</a
+    >
     
   </footer>
   
@@ -250,25 +385,58 @@ Bu küçük fakat beni bir clickbottan ayıran script, tamamiyle bu kadar.</p>
   
   
   
-  <nav class="post-nav">
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/003-spring-rest-docs/"><span>←</span><span>Spring Rest Docs</span></a>
-     
-    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/001-git-kullanimi/"><span>Git Kullanimi</span><span>→</span></a>
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/003-spring-rest-docs/"
+      ><span class="mr-1.5">←</span><span>Spring Rest Docs</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/001-git-kullanimi/"
+      ><span>Git Kullanimi</span><span class="ml-1.5">→</span></a
+    >
     
   </nav>
   
+  
 
+  
+  
+
+  
+  
+
+  
+
+
+  
 </article>
 
-</main>
 
-    <footer class="footer">
-  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
-  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
-  <p>
-    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
-  </p>
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://sag.click/">&lt; ahmetkaygisiz /&gt;</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
 </footer>
 
   </body>

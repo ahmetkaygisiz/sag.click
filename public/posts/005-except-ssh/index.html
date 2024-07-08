@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -14,23 +14,55 @@
 
 
 
-<html lang="tr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="tr"
+>
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>Except Ssh - &lt; ahmetkaygisiz /&gt;</title>
 
+  
+  <meta name="theme-color" />
+
+  
+  
   
   
   <meta name="description" content="Selamlar,
 Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&rsquo;daki VM&rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
 *Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
 Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT&gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST$_nohupScriptexpect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_promptreturn send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım." />
-  <meta name="author" content="" />
+#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım." />
+  <meta name="author" content="&lt; ahmetkaygisiz /&gt;" />
   
 
   
@@ -39,186 +71,279 @@ Expect Komutu ile Remote Makinelerde Script Yürütülmesi
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://sag.click/main.min.css" />
 
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click/github.svg" />
+  
+  
+
+  
+  
   <script
     defer
-    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    src="http://sag.click/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
 
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
-
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
-  
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
   
 
   
-  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+  <link rel="icon" href="http://sag.click/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.80.0" />
-
-  
-  
+  <meta name="generator" content="Hugo 0.128.2">
 
   
   
   
   
   
-  
-  
-  
-  
-  <meta property="og:title" content="Except Ssh" />
-<meta property="og:description" content="Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&rsquo;daki VM&rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
-*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
-Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT&gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST$_nohupScriptexpect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_promptreturn send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/005-except-ssh/" />
-<meta property="article:published_time" content="2020-09-03T17:18:26+03:00" />
-<meta property="article:modified_time" content="2020-09-03T17:18:26+03:00" />
 
+
+  
   
   <meta itemprop="name" content="Except Ssh">
-<meta itemprop="description" content="Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&rsquo;daki VM&rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
+  <meta itemprop="description" content="Selamlar,
+Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox’daki VM’imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
 *Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
 Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT&gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST$_nohupScriptexpect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_promptreturn send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
-<meta itemprop="datePublished" content="2020-09-03T17:18:26+03:00" />
-<meta itemprop="dateModified" content="2020-09-03T17:18:26+03:00" />
-<meta itemprop="wordCount" content="558">
-
-
-
-<meta itemprop="keywords" content="linux,expect,scp,ssh," />
+#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
+  <meta itemprop="datePublished" content="2020-09-03T17:18:26+03:00">
+  <meta itemprop="dateModified" content="2020-09-03T17:18:26+03:00">
+  <meta itemprop="wordCount" content="564">
+  <meta itemprop="keywords" content="Linux,Expect,Scp,Ssh">
+  
+  <meta property="og:url" content="http://sag.click/posts/005-except-ssh/">
+  <meta property="og:site_name" content="&lt; ahmetkaygisiz /&gt;">
+  <meta property="og:title" content="Except Ssh">
+  <meta property="og:description" content="Selamlar,
+Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox’daki VM’imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
+*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
+Expect Komutu ile Remote Makinelerde Script Yürütülmesi
+#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
+  <meta property="og:locale" content="tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-09-03T17:18:26+03:00">
+    <meta property="article:modified_time" content="2020-09-03T17:18:26+03:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Expect">
+    <meta property="article:tag" content="Scp">
+    <meta property="article:tag" content="Ssh">
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Except Ssh"/>
-<meta name="twitter:description" content="Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&rsquo;daki VM&rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Except Ssh">
+  <meta name="twitter:description" content="Selamlar,
+Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox’daki VM’imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
 *Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
 Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT&gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST$_nohupScriptexpect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_promptreturn send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım."/>
+#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
 
+  
+  
+  
+  <link rel="canonical" href="http://sag.click/posts/005-except-ssh/" />
   
   
 </head>
 
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://sag.click/"
+      >&lt; ahmetkaygisiz /&gt;</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
 
-  <body class="not-ready" data-menu="true">
-    <header class="header">
-  
-  <p class="logo">
-    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
-  </p>
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
   
 
   <script>
-    let bodyClx = document.body.classList;
-    let btnDark = document.querySelector('.btn-dark');
-    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
-    let darkVal = localStorage.getItem('dark');
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    let setDark = (isDark) => {
-      bodyClx[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
-    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
-    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
-    sysDark.addEventListener('change', (event) => setDark(event.matches));
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
   </script>
 
-  
-  
-  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
     
-    <a class="" href="/">cd ~</a>
     
-    <a class="" href="/whoami/">whoami</a>
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >cd ~</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/whoami/"
+        >whoami</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categorylist/"
+        >categories</a
+      >
+      
+    </nav>
     
-    <a class="" href="/categorylist/">categories</a>
-    
-  </nav>
-  
 
-  
-  <nav class="social">
     
-    <a
-      class="twitter"
-      style="--url: url(./twitter.svg)"
-      href="https://twitter.com/kaaygisiz"
-      target="_blank"
-    ></a>
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/kaaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/ahmetkaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
     
-    <a
-      class="github"
-      style="--url: url(./github.svg)"
-      href="https://github.com/ahmetkaygisiz"
-      target="_blank"
-    ></a>
-    
-  </nav>
-  
+  </div>
 </header>
 
 
-    <main class="main">
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
 
-<article class="post-single">
-  <header class="post-title">
-    <p>
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Except Ssh</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
       
-      <time datetime="2020-09-03 17:18:26 &#43;0300 &#43;03">3 Sep 2020</time>
+      <time>Sep 3, 2020</time>
       
       
-    </p>
-    <h1>Except Ssh</h1>
+      
+      
+    </div>
+    
   </header>
-  <section class="post-content"><p>Selamlar,</p>
+
+  <section><p>Selamlar,</p>
 <p>Bugün size yine geçmişte  yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&rsquo;daki VM&rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)</p>
 <p>*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.</p>
 <p>Expect Komutu ile Remote Makinelerde Script Yürütülmesi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>_prompt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:|#|\\\$&#34;</span>
-
-_HOST<span style="color:#f92672">=</span>$1
-_USER<span style="color:#f92672">=</span>$2
-_PASS<span style="color:#f92672">=</span>$3
-_SCRIPT<span style="color:#f92672">=</span>$4
-
-_nohupScript<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash </span>$_SCRIPT<span style="color:#e6db74"> &gt; /dev/null 2&gt;&amp;1 &amp;&#34;</span>
-
-expect -c <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">	spawn ssh </span>$_USER<span style="color:#e6db74">@</span>$_HOST<span style="color:#e6db74"> </span>$_nohupScript<span style="color:#e6db74">
-</span><span style="color:#e6db74">        expect {
-</span><span style="color:#e6db74">		      &#34;</span>*asswor*<span style="color:#e6db74">&#34; { 
-</span><span style="color:#e6db74">			   send </span>$_PASS<span style="color:#e6db74">\r
-</span><span style="color:#e6db74">			   exp_continue
-</span><span style="color:#e6db74">			   interact -o -nobuffer -re </span>$_prompt<span style="color:#e6db74"> return
-</span><span style="color:#e6db74">		       send &#34;</span>exit<span style="color:#e6db74">&#34;\r
-</span><span style="color:#e6db74">		       interact
-</span><span style="color:#e6db74">		       exit
-</span><span style="color:#e6db74">		      }
-</span><span style="color:#e6db74">	      }
-</span><span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım. Scriptte parametreler :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>_prompt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:|#|\\\$&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>_HOST<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>_USER<span style="color:#f92672">=</span>$2
+</span></span><span style="display:flex;"><span>_PASS<span style="color:#f92672">=</span>$3
+</span></span><span style="display:flex;"><span>_SCRIPT<span style="color:#f92672">=</span>$4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>_nohupScript<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash </span>$_SCRIPT<span style="color:#e6db74"> &gt; /dev/null 2&gt;&amp;1 &amp;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>expect -c <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	spawn ssh </span>$_USER<span style="color:#e6db74">@</span>$_HOST<span style="color:#e6db74"> </span>$_nohupScript<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        expect {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		      &#34;</span>*asswor*<span style="color:#e6db74">&#34; { 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			   send </span>$_PASS<span style="color:#e6db74">\r
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			   exp_continue
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			   interact -o -nobuffer -re </span>$_prompt<span style="color:#e6db74"> return
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		       send &#34;</span>exit<span style="color:#e6db74">&#34;\r
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		       interact
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		       exit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım. Scriptte parametreler :</p>
 <ul>
 <li>$1 : Bağlanılacak olan adres</li>
 <li>$2 : Kullanıcı adı</li>
@@ -229,40 +354,40 @@ expect -c <span style="color:#e6db74">&#34;
 <p>expect komutu, bilgisayarla etkileşim gerektiren adından da anlaşıldığı gibi bilgisayarın bizden birşey beklediği durumlar için kullanılan ve otomasyonlar için çok kullanışlı olan bir komut. expect uzantılı dosyalar ile bir bash scripti içerisinden bu komutu yürütebileceğimiz gibi, -c parametresiyle doğrudan komut satırından gerekli işlemleri de yapabiliyoruz.</p>
 <p>spawn, expect komutunun yürütüp beklemeye almasını istediğiniz komutu verdiğiniz kısımdır. spawn komutu, verdiğiniz komutu yürütüp yeni bir process&rsquo;i bekler yani burada spawn&rsquo;dan sonra gelen expect { . . . } komutu içerisindeki olası senaryoların oluşmasını ve buradan dönecek cevabı yürütmeyi bekler.</p>
 <p>expect { . . . } alanındaki <em>asswor</em> kısmı spawn&rsquo;da yürütülen komut içerisinde bulunuyorsa curlybraces içerisindeki komutları yürütmeye  başlar. Burada birden fazla işlem vermemiz de mümkün. Mesela ssh ile ilk bağlantıda known_hosts dosyasına eklenip eklenmemesini isteme senaryosundaki aşağıdaki gibi çoklu bir expect&rsquo;i switch-case yapısı benzerliğinde kullanabilirsiniz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">expect <span style="color:#f92672">{</span>
-    <span style="color:#e6db74">&#34;*yes*&#34;</span> <span style="color:#f92672">{</span> send <span style="color:#e6db74">&#34;yes&#34;</span><span style="color:#ae81ff">\r</span> <span style="color:#f92672">}</span>
-    exit
-<span style="color:#f92672">}</span>	
-expect <span style="color:#f92672">{</span>
-	<span style="color:#e6db74">&#34;*asswor*&#34;</span> <span style="color:#f92672">{</span>  send $_PASS<span style="color:#ae81ff">\r</span>; exp_continue<span style="color:#f92672">}</span> 
-<span style="color:#f92672">}</span>
-</code></pre></div><p><em>asswor</em>&quot; { . . . } bloğu içerisinde, öncelikle parola bilgisini gönderiyoruz. exp_continue ile ssh&rsquo;ın bağlantısının yapılmasına izin veriyoruz. interact ile karşıdaki sunucudaki command promt ile iletişime geçip sunucudan çıkış için exit komutunu gönderiyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>expect <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;*yes*&#34;</span> <span style="color:#f92672">{</span> send <span style="color:#e6db74">&#34;yes&#34;</span><span style="color:#ae81ff">\r</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    exit
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>	
+</span></span><span style="display:flex;"><span>expect <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;*asswor*&#34;</span> <span style="color:#f92672">{</span>  send $_PASS<span style="color:#ae81ff">\r</span>; exp_continue<span style="color:#f92672">}</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><em>asswor</em>&quot; { . . . } bloğu içerisinde, öncelikle parola bilgisini gönderiyoruz. exp_continue ile ssh&rsquo;ın bağlantısının yapılmasına izin veriyoruz. interact ile karşıdaki sunucudaki command promt ile iletişime geçip sunucudan çıkış için exit komutunu gönderiyoruz.</p>
 <p>Expect Komutu ile Bulk SCP
 Dosya aktarımını tek tek yapmak gereksiz bir şekilde uzun sürdüğü için script ile yapmak daha mantıklı geldi ve aşağıdaki gibi bir script daha hazırladım.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>_hostFile<span style="color:#f92672">=</span>$1
-
-<span style="color:#66d9ef">function</span> extract_hosts<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    cat $_hostFile | awk -F <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#e6db74">&#39;(NF &amp;&amp; !/^($|#)/) {print $1, $2, $3, $4, $5}&#39;</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span> read _HOST _USER _PASS _FILE _DEST
-<span style="color:#66d9ef">do</span>		
-	expect -c <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">		set timeout 2
-</span><span style="color:#e6db74">		log_file bulkScp.log    
-</span><span style="color:#e6db74">		
-</span><span style="color:#e6db74">		spawn scp </span>$_FILE<span style="color:#e6db74"> </span>$_USER<span style="color:#e6db74">@</span>$_HOST<span style="color:#e6db74">:</span>$_DEST<span style="color:#e6db74">
-</span><span style="color:#e6db74">			expect {
-</span><span style="color:#e6db74">				&#34;</span>*yes*<span style="color:#e6db74">&#34; { send &#34;</span>yes<span style="color:#e6db74">&#34;\r }
-</span><span style="color:#e6db74">				exit
-</span><span style="color:#e6db74">			}	
-</span><span style="color:#e6db74">			expect {
-</span><span style="color:#e6db74">				&#34;</span>*pass*<span style="color:#e6db74">&#34; {  send </span>$_PASS<span style="color:#e6db74">\r; exp_continue} 
-</span><span style="color:#e6db74">			}
-</span><span style="color:#e6db74">		&#34;</span>
-<span style="color:#66d9ef">done</span> &lt; &lt;<span style="color:#f92672">(</span>extract_hosts<span style="color:#f92672">)</span>
-</code></pre></div><p>Host bilgilerini içeren bir adet csv dosyasından aşağıdaki column&rsquo;lar parse ediliyor ve while içerisinde satır satır expect komutuna gönderiliyor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>_hostFile<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> extract_hosts<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    cat $_hostFile | awk -F <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#e6db74">&#39;(NF &amp;&amp; !/^($|#)/) {print $1, $2, $3, $4, $5}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span> read _HOST _USER _PASS _FILE _DEST
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>		
+</span></span><span style="display:flex;"><span>	expect -c <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		set timeout 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		log_file bulkScp.log    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		spawn scp </span>$_FILE<span style="color:#e6db74"> </span>$_USER<span style="color:#e6db74">@</span>$_HOST<span style="color:#e6db74">:</span>$_DEST<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			expect {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">				&#34;</span>*yes*<span style="color:#e6db74">&#34; { send &#34;</span>yes<span style="color:#e6db74">&#34;\r }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">				exit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			}	
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			expect {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">				&#34;</span>*pass*<span style="color:#e6db74">&#34; {  send </span>$_PASS<span style="color:#e6db74">\r; exp_continue} 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; &lt;<span style="color:#f92672">(</span>extract_hosts<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Host bilgilerini içeren bir adet csv dosyasından aşağıdaki column&rsquo;lar parse ediliyor ve while içerisinde satır satır expect komutuna gönderiliyor.</p>
 <p>$1 : HOSTNAME
 $2 : USER
 $3 : PASSWORD
@@ -276,15 +401,31 @@ $5 : Remote makinede gönderilecek absolute path adresi</p>
 
   
   
-  <footer class="post-tags">
+  <footer class="mt-12 flex flex-wrap">
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/linux">linux</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/linux"
+      >linux</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/expect">expect</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/expect"
+      >expect</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/scp">scp</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/scp"
+      >scp</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/ssh">ssh</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/ssh"
+      >ssh</a
+    >
     
   </footer>
   
@@ -292,25 +433,58 @@ $5 : Remote makinede gönderilecek absolute path adresi</p>
   
   
   
-  <nav class="post-nav">
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/006-wifi-over-terminal/"><span>←</span><span>Wifi Over Terminal</span></a>
-     
-    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/004-spark-rest-api/"><span>Spark Rest Api</span><span>→</span></a>
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/006-wifi-over-terminal/"
+      ><span class="mr-1.5">←</span><span>Wifi Over Terminal</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/004-spark-rest-api/"
+      ><span>Spark Rest Api</span><span class="ml-1.5">→</span></a
+    >
     
   </nav>
   
+  
 
+  
+  
+
+  
+  
+
+  
+
+
+  
 </article>
 
-</main>
 
-    <footer class="footer">
-  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
-  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
-  <p>
-    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
-  </p>
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://sag.click/">&lt; ahmetkaygisiz /&gt;</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
 </footer>
 
   </body>

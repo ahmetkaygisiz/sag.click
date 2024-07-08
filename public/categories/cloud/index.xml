@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cloud on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/categories/cloud/</link>
-    <description>Recent content in cloud on &lt; ahmetkaygisiz /&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Cloud on &lt; ahmetkaygisiz /&gt;</title>
+    <link>http://sag.click/categories/cloud/</link>
+    <description>Recent content in Cloud on &lt; ahmetkaygisiz /&gt;</description>
+    <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 20 Feb 2022 12:40:30 +0300</lastBuildDate><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 12:40:30 +0300</lastBuildDate>
+    <atom:link href="http://sag.click/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>whoami</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/whoami/</link>
+      <link>http://sag.click/whoami/</link>
       <pubDate>Sun, 20 Feb 2022 12:40:30 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/whoami/</guid>
+      <guid>http://sag.click/whoami/</guid>
       <description>Kimim Ben? Selamlar, Ben Ahmet. Teknoloji dünyasında &#39;başkanım ben da varım&#39; demek için geldim buraya.Java ve Linux sevdiğim şeyler arasında. Docker, Kubernetes, AWS teknolojilerini tanımak için de çalışıyorum. Neler yaparım? Şu an çalıştığım yerdeki görevlerim Oracle Middleware Teknolojileri yönetimi üzerine. Rutin hep kullandığım teknolojilerin yanında yeni teknolojileri takip edebilmek istediğim için buraya notlar alıyorum. Blog tutmanın, beni yeni şeyler öğrenmeye teşvik edeceğini ve burada paylaşarak kendime not da almış olacağımı düşünerek bu blogu Laravel ile oluşturdum.</description>
     </item>
-    
   </channel>
 </rss>

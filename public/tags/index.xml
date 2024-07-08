@@ -2,11 +2,124 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/</link>
+    <link>http://sag.click/tags/</link>
     <description>Recent content in Tags on &lt; ahmetkaygisiz /&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 11 Apr 2021 18:23:40 +0300</lastBuildDate><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jul 2024 13:28:11 +0300</lastBuildDate>
+    <atom:link href="http://sag.click/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Index</title>
+      <link>http://sag.click/tags/index/</link>
+      <pubDate>Sat, 06 Jul 2024 13:28:11 +0300</pubDate>
+      <guid>http://sag.click/tags/index/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android</title>
+      <link>http://sag.click/tags/android/</link>
+      <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
+      <guid>http://sag.click/tags/android/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>http://sag.click/tags/go/</link>
+      <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
+      <guid>http://sag.click/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>http://sag.click/tags/golang/</link>
+      <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
+      <guid>http://sag.click/tags/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crud</title>
+      <link>http://sag.click/tags/crud/</link>
+      <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
+      <guid>http://sag.click/tags/crud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://sag.click/tags/java/</link>
+      <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
+      <guid>http://sag.click/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quarkus</title>
+      <link>http://sag.click/tags/quarkus/</link>
+      <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
+      <guid>http://sag.click/tags/quarkus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>http://sag.click/tags/bash/</link>
+      <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
+      <guid>http://sag.click/tags/bash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crontab</title>
+      <link>http://sag.click/tags/crontab/</link>
+      <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
+      <guid>http://sag.click/tags/crontab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://sag.click/tags/linux/</link>
+      <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
+      <guid>http://sag.click/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rest</title>
+      <link>http://sag.click/tags/rest/</link>
+      <pubDate>Mon, 14 Sep 2020 17:21:14 +0300</pubDate>
+      <guid>http://sag.click/tags/rest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spark</title>
+      <link>http://sag.click/tags/spark/</link>
+      <pubDate>Mon, 14 Sep 2020 17:21:14 +0300</pubDate>
+      <guid>http://sag.click/tags/spark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Expect</title>
+      <link>http://sag.click/tags/expect/</link>
+      <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
+      <guid>http://sag.click/tags/expect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scp</title>
+      <link>http://sag.click/tags/scp/</link>
+      <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
+      <guid>http://sag.click/tags/scp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssh</title>
+      <link>http://sag.click/tags/ssh/</link>
+      <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
+      <guid>http://sag.click/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://sag.click/tags/git/</link>
+      <pubDate>Tue, 11 Aug 2020 16:29:53 +0300</pubDate>
+      <guid>http://sag.click/tags/git/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

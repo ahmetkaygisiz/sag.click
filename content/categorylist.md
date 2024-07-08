@@ -1,7 +1,7 @@
 ---
 title: "Categories"
 date: 2022-02-20T12:40:30+03:00
-draft: true
+draft: false
 ---
 
 [Linux]({{< ref "/categories/linux" >}} "Linux")<br>

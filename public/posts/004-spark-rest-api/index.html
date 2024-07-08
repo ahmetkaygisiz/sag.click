@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -14,20 +14,52 @@
 
 
 
-<html lang="tr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="tr"
+>
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>Spark Rest Api - &lt; ahmetkaygisiz /&gt;</title>
 
   
+  <meta name="theme-color" />
+
+  
+  
+  
   
   <meta name="description" content="Merhaba,
 Spark Framework&rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal&rsquo;de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark&rsquo;a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API&rsquo;de veritabanı olarak postgres, bağlantı için de JDBC kullandım." />
-  <meta name="author" content="" />
+  <meta name="author" content="&lt; ahmetkaygisiz /&gt;" />
   
 
   
@@ -36,241 +68,345 @@ Spark Framework&rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve 
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://sag.click/main.min.css" />
 
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click/github.svg" />
+  
+  
+
+  
+  
   <script
     defer
-    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    src="http://sag.click/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
 
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
-
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
-  
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
   
 
   
-  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+  <link rel="icon" href="http://sag.click/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.80.0" />
-
-  
-  
+  <meta name="generator" content="Hugo 0.128.2">
 
   
   
   
   
   
-  
-  
-  
-  
-  <meta property="og:title" content="Spark Rest Api" />
-<meta property="og:description" content="Merhaba,
-Spark Framework&rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal&rsquo;de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark&rsquo;a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API&rsquo;de veritabanı olarak postgres, bağlantı için de JDBC kullandım." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/004-spark-rest-api/" />
-<meta property="article:published_time" content="2020-09-02T17:13:38+03:00" />
-<meta property="article:modified_time" content="2020-09-02T17:13:38+03:00" />
 
+
+  
   
   <meta itemprop="name" content="Spark Rest Api">
-<meta itemprop="description" content="Merhaba,
-Spark Framework&rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal&rsquo;de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark&rsquo;a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API&rsquo;de veritabanı olarak postgres, bağlantı için de JDBC kullandım.">
-<meta itemprop="datePublished" content="2020-09-02T17:13:38+03:00" />
-<meta itemprop="dateModified" content="2020-09-02T17:13:38+03:00" />
-<meta itemprop="wordCount" content="440">
-
-
-
-<meta itemprop="keywords" content="spark,java,rest," />
+  <meta itemprop="description" content="Merhaba,
+Spark Framework’ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal’de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark’a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API’de veritabanı olarak postgres, bağlantı için de JDBC kullandım.">
+  <meta itemprop="datePublished" content="2020-09-02T17:13:38+03:00">
+  <meta itemprop="dateModified" content="2020-09-02T17:13:38+03:00">
+  <meta itemprop="wordCount" content="440">
+  <meta itemprop="keywords" content="Spark,Java,Rest">
+  
+  <meta property="og:url" content="http://sag.click/posts/004-spark-rest-api/">
+  <meta property="og:site_name" content="&lt; ahmetkaygisiz /&gt;">
+  <meta property="og:title" content="Spark Rest Api">
+  <meta property="og:description" content="Merhaba,
+Spark Framework’ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal’de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark’a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API’de veritabanı olarak postgres, bağlantı için de JDBC kullandım.">
+  <meta property="og:locale" content="tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-09-02T17:13:38+03:00">
+    <meta property="article:modified_time" content="2020-09-02T17:13:38+03:00">
+    <meta property="article:tag" content="Spark">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Rest">
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Spark Rest Api"/>
-<meta name="twitter:description" content="Merhaba,
-Spark Framework&rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal&rsquo;de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark&rsquo;a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API&rsquo;de veritabanı olarak postgres, bağlantı için de JDBC kullandım."/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spark Rest Api">
+  <meta name="twitter:description" content="Merhaba,
+Spark Framework’ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal’de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark’a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API’de veritabanı olarak postgres, bağlantı için de JDBC kullandım.">
 
+  
+  
+  
+  <link rel="canonical" href="http://sag.click/posts/004-spark-rest-api/" />
   
   
 </head>
 
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://sag.click/"
+      >&lt; ahmetkaygisiz /&gt;</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
 
-  <body class="not-ready" data-menu="true">
-    <header class="header">
-  
-  <p class="logo">
-    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
-  </p>
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
   
 
   <script>
-    let bodyClx = document.body.classList;
-    let btnDark = document.querySelector('.btn-dark');
-    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
-    let darkVal = localStorage.getItem('dark');
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    let setDark = (isDark) => {
-      bodyClx[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
-    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
-    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
-    sysDark.addEventListener('change', (event) => setDark(event.matches));
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
   </script>
 
-  
-  
-  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
     
-    <a class="" href="/">cd ~</a>
     
-    <a class="" href="/whoami/">whoami</a>
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >cd ~</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/whoami/"
+        >whoami</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categorylist/"
+        >categories</a
+      >
+      
+    </nav>
     
-    <a class="" href="/categorylist/">categories</a>
-    
-  </nav>
-  
 
-  
-  <nav class="social">
     
-    <a
-      class="twitter"
-      style="--url: url(./twitter.svg)"
-      href="https://twitter.com/kaaygisiz"
-      target="_blank"
-    ></a>
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/kaaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/ahmetkaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
     
-    <a
-      class="github"
-      style="--url: url(./github.svg)"
-      href="https://github.com/ahmetkaygisiz"
-      target="_blank"
-    ></a>
-    
-  </nav>
-  
+  </div>
 </header>
 
 
-    <main class="main">
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
 
-<article class="post-single">
-  <header class="post-title">
-    <p>
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Spark Rest Api</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
       
-      <time datetime="2020-09-02 17:13:38 &#43;0300 &#43;03">2 Sep 2020</time>
+      <time>Sep 2, 2020</time>
       
       
-    </p>
-    <h1>Spark Rest Api</h1>
+      
+      
+    </div>
+    
   </header>
-  <section class="post-content"><p>Merhaba,</p>
+
+  <section><p>Merhaba,</p>
 <p>Spark Framework&rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal&rsquo;de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark&rsquo;a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API&rsquo;de veritabanı olarak postgres, bağlantı için de JDBC kullandım. Objelerin serialize/deserialize işleminde de Gson&rsquo;ı kullandım. Blog&rsquo;da sadece Spark ile ilgili kısmı paylaşacağım. Kodun geri kalanını incelemek isteyenler <a href="https://github.com/ahmetkaygisiz/quotes-rest-app">github</a> repoma göz atabilirler.</p>
 <p>Bir maven projesi açarak işe girişiyoruz. Sonrasında dependencies alanına gerekli bağımlılıkları ekliyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/com.sparkjava/spark-core --&gt;</span>
-<span style="color:#f92672">&lt;dependency&gt;</span>
-    <span style="color:#f92672">&lt;groupId&gt;</span>com.sparkjava<span style="color:#f92672">&lt;/groupId&gt;</span>
-    <span style="color:#f92672">&lt;artifactId&gt;</span>spark-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
-    <span style="color:#f92672">&lt;version&gt;</span>2.9.2<span style="color:#f92672">&lt;/version&gt;</span>
-<span style="color:#f92672">&lt;/dependency&gt;</span>
-</code></pre></div><p>Bu bağımlığı ekledikten sonra http methodlarını kullanabilir hale geliyorsunuz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        QuotesService quotesService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> QuotesService<span style="color:#f92672">();</span>
-
-        <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
-            <span style="color:#75715e">//quotesService.insertDataFromJsonFile(&#34;./src/main/resources/quotes.json&#34;);
-</span><span style="color:#75715e"></span>            
-            <span style="color:#75715e">// port(8080);
-</span><span style="color:#75715e"></span>            
-            <span style="color:#75715e">// GET - Get quotes randomly
-</span><span style="color:#75715e"></span>            get<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/quotes/random&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>req<span style="color:#f92672">,</span>res<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-                res<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/json&#34;</span><span style="color:#f92672">);</span>
-                <span style="color:#66d9ef">return</span> quotesService<span style="color:#f92672">.</span><span style="color:#a6e22e">getJsonRandomQuote</span><span style="color:#f92672">();</span>
-            <span style="color:#f92672">});</span>
-
-            <span style="color:#75715e">// ... methods ..
-</span><span style="color:#75715e"></span>
-        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception throwables<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            throwables<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Gördüğünüz gibi bir adet QuotesService&rsquo;im var. Bu servis içerisinde objelerin json&rsquo;a dönüştürülmesi, başlangıç için tabloların oluşturulması gibi methodlar bulunduruyor. Başlangıç için veritabanında bir miktar data olsun istediğim için netten bulup /resources dosyasının altına indirdiğim json dosyasını, insertDataFromJsonFile() methodunda gerekli deserialize işlemini yapıp veritabanına kaydettim.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/com.sparkjava/spark-core --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.sparkjava<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spark-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>2.9.2<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>Bu bağımlığı ekledikten sonra http methodlarını kullanabilir hale geliyorsunuz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        QuotesService quotesService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> QuotesService();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//quotesService.insertDataFromJsonFile(&#34;./src/main/resources/quotes.json&#34;);</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// port(8080);</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// GET - Get quotes randomly</span>
+</span></span><span style="display:flex;"><span>            get(<span style="color:#e6db74">&#34;/quotes/random&#34;</span>, (req,res) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                res.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> quotesService.<span style="color:#a6e22e">getJsonRandomQuote</span>();
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// ... methods ..</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (Exception throwables) {
+</span></span><span style="display:flex;"><span>            throwables.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Gördüğünüz gibi bir adet QuotesService&rsquo;im var. Bu servis içerisinde objelerin json&rsquo;a dönüştürülmesi, başlangıç için tabloların oluşturulması gibi methodlar bulunduruyor. Başlangıç için veritabanında bir miktar data olsun istediğim için netten bulup /resources dosyasının altına indirdiğim json dosyasını, insertDataFromJsonFile() methodunda gerekli deserialize işlemini yapıp veritabanına kaydettim.</p>
 <p>Spark bize oldukça basit bir yapı sunuyor. Gömülü bir Jetty server&rsquo;ı bulunuyor. Başlangıç portunu port(int) değeriyle değiştirmemiz mümkün. Controller olarak kullandığımız kod dizini sadece :</p>
 <p>get(&quot;/path&quot;, (request,response) -&gt; &ldquo;return string&rdquo; );
 get/post/put/delete methodları, bizim ihtiyacımız olan tüm Http methodlarını bize sağlıyor. Lambda yapısı bulundurduğu için, java 1.8 versiyonuna ihtiyaç duyuyor. response.type() ile gönderdiğimiz verinin tipini belirtebiliyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// POST - Save a quote
-</span><span style="color:#75715e"></span>post<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/quotes&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>req<span style="color:#f92672">,</span>res<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-    res<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/json&#34;</span><span style="color:#f92672">);</span>
-    res<span style="color:#f92672">.</span><span style="color:#a6e22e">status</span><span style="color:#f92672">(</span>201<span style="color:#f92672">);</span>
-
-    <span style="color:#75715e">// deserialize json
-</span><span style="color:#75715e"></span>    Quote q <span style="color:#f92672">=</span> Jsons<span style="color:#f92672">.</span><span style="color:#a6e22e">jsonToObject</span><span style="color:#f92672">(</span>req<span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">(),</span> Quote<span style="color:#f92672">.</span><span style="color:#a6e22e">TYPE_TOKEN</span><span style="color:#f92672">);</span>
-    quotesService<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>q<span style="color:#f92672">);</span>
-
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Quote saved.&#34;</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><p>Post methodunun response kodunu res.status(code) methoduyla gönderebiliyoruz.  Deserialize işleminin için request ile gönderilen body&rsquo;i request.body ile alıp static Jsons methoduma gönderiyorum. Gson ile deserialize işlemi içerisinde hangi objeye dönüştürülmesini anlamasını sağlayan Type değerini verdikten sonra objeyi elde etmiş oluyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// GET - Get quote by id
-</span><span style="color:#75715e"></span>get<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/quotes/:id&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>req<span style="color:#f92672">,</span>res<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-    res<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/json&#34;</span><span style="color:#f92672">);</span>
-
-    <span style="color:#66d9ef">return</span>  quotesService<span style="color:#f92672">.</span><span style="color:#a6e22e">getJsonQuoteById</span><span style="color:#f92672">(</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>req<span style="color:#f92672">.</span><span style="color:#a6e22e">params</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)));</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><p>Get methodunda , request parametreleri de req.params fonksiyonu ile alınıyor. delete ve put methodlarının da aşağıda görebilirsiniz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#75715e">// DELETE - Delete quote by id
-</span><span style="color:#75715e"></span>    delete<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/quotes/:id&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>req<span style="color:#f92672">,</span>res<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-        res<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/json&#34;</span><span style="color:#f92672">);</span>
-        String id <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span><span style="color:#a6e22e">params</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">);</span>
-
-        quotesService<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>id<span style="color:#f92672">));</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Quote deleted &#34;</span> <span style="color:#f92672">+</span> id<span style="color:#f92672">;</span>
-    <span style="color:#f92672">});</span>
-
-    <span style="color:#75715e">// PUT - Update a quote by
-</span><span style="color:#75715e"></span>    put<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/quotes/:id&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>req<span style="color:#f92672">,</span>res<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-        res<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/json&#34;</span><span style="color:#f92672">);</span>
-        Quote q <span style="color:#f92672">=</span> Jsons<span style="color:#f92672">.</span><span style="color:#a6e22e">jsonToObject</span><span style="color:#f92672">(</span>req<span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">(),</span> Quote<span style="color:#f92672">.</span><span style="color:#a6e22e">TYPE_TOKEN</span><span style="color:#f92672">);</span>
-
-        Quote inDb <span style="color:#f92672">=</span> quotesService<span style="color:#f92672">.</span><span style="color:#a6e22e">getQuoteById</span><span style="color:#f92672">(</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>req<span style="color:#f92672">.</span><span style="color:#a6e22e">params</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)));</span>
-        inDb<span style="color:#f92672">.</span><span style="color:#a6e22e">setAuthor</span><span style="color:#f92672">(</span>q<span style="color:#f92672">.</span><span style="color:#a6e22e">getAuthor</span><span style="color:#f92672">());</span>
-        inDb<span style="color:#f92672">.</span><span style="color:#a6e22e">setQuote</span><span style="color:#f92672">(</span>q<span style="color:#f92672">.</span><span style="color:#a6e22e">getQuote</span><span style="color:#f92672">());</span>
-
-        quotesService<span style="color:#f92672">.</span><span style="color:#a6e22e">updateQuoteById</span><span style="color:#f92672">(</span>inDb<span style="color:#f92672">);</span>
-
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Quote updated.&#34;</span><span style="color:#f92672">;</span>
-    <span style="color:#f92672">});</span>
-</code></pre></div><p>Uygulamanın boyutu da aşağıda görüldüğü üzere oldukça küçük.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kaygisiz@akua:target$ du -sh quotes-rest-app-1.0-SNAPSHOT-jar-with-dependencies.jar 
-4.0M	quotes-rest-app-1.0-SNAPSHOT-jar-with-dependencies.jar
-</code></pre></div><p>Güzel günlerde görüşmek dileğiyle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// POST - Save a quote</span>
+</span></span><span style="display:flex;"><span>post(<span style="color:#e6db74">&#34;/quotes&#34;</span>, (req,res) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>    res.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>    res.<span style="color:#a6e22e">status</span>(201);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// deserialize json</span>
+</span></span><span style="display:flex;"><span>    Quote q <span style="color:#f92672">=</span> Jsons.<span style="color:#a6e22e">jsonToObject</span>(req.<span style="color:#a6e22e">body</span>(), Quote.<span style="color:#a6e22e">TYPE_TOKEN</span>);
+</span></span><span style="display:flex;"><span>    quotesService.<span style="color:#a6e22e">save</span>(q);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Quote saved.&#34;</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Post methodunun response kodunu res.status(code) methoduyla gönderebiliyoruz.  Deserialize işleminin için request ile gönderilen body&rsquo;i request.body ile alıp static Jsons methoduma gönderiyorum. Gson ile deserialize işlemi içerisinde hangi objeye dönüştürülmesini anlamasını sağlayan Type değerini verdikten sonra objeyi elde etmiş oluyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// GET - Get quote by id</span>
+</span></span><span style="display:flex;"><span>get(<span style="color:#e6db74">&#34;/quotes/:id&#34;</span>, (req,res) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>    res.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>  quotesService.<span style="color:#a6e22e">getJsonQuoteById</span>(Integer.<span style="color:#a6e22e">parseInt</span>(req.<span style="color:#a6e22e">params</span>(<span style="color:#e6db74">&#34;id&#34;</span>)));
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Get methodunda , request parametreleri de req.params fonksiyonu ile alınıyor. delete ve put methodlarının da aşağıda görebilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#75715e">// DELETE - Delete quote by id</span>
+</span></span><span style="display:flex;"><span>    delete(<span style="color:#e6db74">&#34;/quotes/:id&#34;</span>, (req,res) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>        res.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>        String id <span style="color:#f92672">=</span> req.<span style="color:#a6e22e">params</span>(<span style="color:#e6db74">&#34;id&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        quotesService.<span style="color:#a6e22e">deleteById</span>(Integer.<span style="color:#a6e22e">parseInt</span>(id));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Quote deleted &#34;</span> <span style="color:#f92672">+</span> id;
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// PUT - Update a quote by</span>
+</span></span><span style="display:flex;"><span>    put(<span style="color:#e6db74">&#34;/quotes/:id&#34;</span>, (req,res) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>        res.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>        Quote q <span style="color:#f92672">=</span> Jsons.<span style="color:#a6e22e">jsonToObject</span>(req.<span style="color:#a6e22e">body</span>(), Quote.<span style="color:#a6e22e">TYPE_TOKEN</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Quote inDb <span style="color:#f92672">=</span> quotesService.<span style="color:#a6e22e">getQuoteById</span>(Integer.<span style="color:#a6e22e">parseInt</span>(req.<span style="color:#a6e22e">params</span>(<span style="color:#e6db74">&#34;id&#34;</span>)));
+</span></span><span style="display:flex;"><span>        inDb.<span style="color:#a6e22e">setAuthor</span>(q.<span style="color:#a6e22e">getAuthor</span>());
+</span></span><span style="display:flex;"><span>        inDb.<span style="color:#a6e22e">setQuote</span>(q.<span style="color:#a6e22e">getQuote</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        quotesService.<span style="color:#a6e22e">updateQuoteById</span>(inDb);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Quote updated.&#34;</span>;
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><p>Uygulamanın boyutu da aşağıda görüldüğü üzere oldukça küçük.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kaygisiz@akua:target$ du -sh quotes-rest-app-1.0-SNAPSHOT-jar-with-dependencies.jar 
+</span></span><span style="display:flex;"><span>4.0M	quotes-rest-app-1.0-SNAPSHOT-jar-with-dependencies.jar
+</span></span></code></pre></div><p>Güzel günlerde görüşmek dileğiyle.</p>
 </section>
 
   
   
-  <footer class="post-tags">
+  <footer class="mt-12 flex flex-wrap">
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/spark">spark</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/spark"
+      >spark</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/java">java</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/java"
+      >java</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/rest">rest</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/rest"
+      >rest</a
+    >
     
   </footer>
   
@@ -278,25 +414,58 @@ get/post/put/delete methodları, bizim ihtiyacımız olan tüm Http methodların
   
   
   
-  <nav class="post-nav">
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/005-except-ssh/"><span>←</span><span>Except Ssh</span></a>
-     
-    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/003-spring-rest-docs/"><span>Spring Rest Docs</span><span>→</span></a>
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/005-except-ssh/"
+      ><span class="mr-1.5">←</span><span>Except Ssh</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/003-spring-rest-docs/"
+      ><span>Spring Rest Docs</span><span class="ml-1.5">→</span></a
+    >
     
   </nav>
   
+  
 
+  
+  
+
+  
+  
+
+  
+
+
+  
 </article>
 
-</main>
 
-    <footer class="footer">
-  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
-  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
-  <p>
-    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
-  </p>
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://sag.click/">&lt; ahmetkaygisiz /&gt;</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
 </footer>
 
   </body>

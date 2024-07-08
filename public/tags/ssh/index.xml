@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssh on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/ssh/</link>
-    <description>Recent content in ssh on &lt; ahmetkaygisiz /&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Ssh on &lt; ahmetkaygisiz /&gt;</title>
+    <link>http://sag.click/tags/ssh/</link>
+    <description>Recent content in Ssh on &lt; ahmetkaygisiz /&gt;</description>
+    <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 03 Sep 2020 17:18:26 +0300</lastBuildDate><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Sep 2020 17:18:26 +0300</lastBuildDate>
+    <atom:link href="http://sag.click/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Except Ssh</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/005-except-ssh/</link>
+      <link>http://sag.click/posts/005-except-ssh/</link>
       <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/005-except-ssh/</guid>
-      <description>Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&amp;rsquo;daki VM&amp;rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
-*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
-Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&amp;#34;:|#|\\\$&amp;#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&amp;#34;bash $_SCRIPT&amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;#34; expect -c &amp;#34; spawn ssh $_USER@$_HOST$_nohupScriptexpect { &amp;#34;*asswor*&amp;#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_promptreturn send &amp;#34;exit&amp;#34;\r interact exit } } &amp;#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.</description>
+      <guid>http://sag.click/posts/005-except-ssh/</guid>
+      <description>Selamlar,&#xA;Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&amp;rsquo;daki VM&amp;rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)&#xA;*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.&#xA;Expect Komutu ile Remote Makinelerde Script Yürütülmesi&#xA;#!/bin/bash _prompt=&amp;#34;:|#|\\\$&amp;#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&amp;#34;bash $_SCRIPT &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;#34; expect -c &amp;#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &amp;#34;*asswor*&amp;#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &amp;#34;exit&amp;#34;\r interact exit } } &amp;#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.</description>
     </item>
-    
   </channel>
 </rss>

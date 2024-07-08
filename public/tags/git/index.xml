@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/git/</link>
-    <description>Recent content in git on &lt; ahmetkaygisiz /&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Git on &lt; ahmetkaygisiz /&gt;</title>
+    <link>http://sag.click/tags/git/</link>
+    <description>Recent content in Git on &lt; ahmetkaygisiz /&gt;</description>
+    <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 11 Aug 2020 16:29:53 +0300</lastBuildDate><atom:link href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Aug 2020 16:29:53 +0300</lastBuildDate>
+    <atom:link href="http://sag.click/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Rest Docs</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/003-spring-rest-docs/</link>
+      <link>http://sag.click/posts/003-spring-rest-docs/</link>
       <pubDate>Tue, 11 Aug 2020 16:29:53 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/003-spring-rest-docs/</guid>
-      <description>Merhabalar,
-Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&amp;rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum.</description>
+      <guid>http://sag.click/posts/003-spring-rest-docs/</guid>
+      <description>Merhabalar,&#xA;Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&amp;rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum.</description>
     </item>
-    
     <item>
       <title>Git Kullanimi</title>
-      <link>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/001-git-kullanimi/</link>
+      <link>http://sag.click/posts/001-git-kullanimi/</link>
       <pubDate>Mon, 20 Jul 2020 16:29:53 +0300</pubDate>
-      
-      <guid>http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/001-git-kullanimi/</guid>
-      <description>Selamlar, Gökkubbe altında söylenmemiş söz, yazılmamış blog konusu yoktur ama kimse hikayeyi benden dinlemedi* diyerek giriş yapıyorum (*Üsküdar&amp;rsquo;a Giderken). Genel amacım kendime notlar toparlamak olduğu için eşsiz bir bloga sahip olacağım Bil Geyts, Zukırberk gelip benden alacak teknolojideki güncel haberleri gibi bir iddiam olmadığını beyan ederek başlıyorum ilk yazıma.
-Versiyon kontrol sistemi, backend&amp;rsquo;den fronend&amp;rsquo;e kod yazıyorum diyen herkesin kullandığı bir sistem. Herhangi bir yazı yazarken, tez hazırlarken &amp;lsquo;SON&amp;rsquo;, &amp;lsquo;BU SON&amp;rsquo;, &amp;lsquo;SON_SON_SON&amp;rsquo;, &amp;lsquo;BU DA MI SON DEGIL&amp;rsquo; isimli dosyaları nereye koyacağınızı şaşırıyorsanız sizin de kesinlikle tanışmanız gereken bir sistem diye düşünüyorum.</description>
+      <guid>http://sag.click/posts/001-git-kullanimi/</guid>
+      <description>Selamlar, Gökkubbe altında söylenmemiş söz, yazılmamış blog konusu yoktur ama kimse hikayeyi benden dinlemedi* diyerek giriş yapıyorum (*Üsküdar&amp;rsquo;a Giderken). Genel amacım kendime notlar toparlamak olduğu için eşsiz bir bloga sahip olacağım Bil Geyts, Zukırberk gelip benden alacak teknolojideki güncel haberleri gibi bir iddiam olmadığını beyan ederek başlıyorum ilk yazıma.&#xA;Versiyon kontrol sistemi, backend&amp;rsquo;den fronend&amp;rsquo;e kod yazıyorum diyen herkesin kullandığı bir sistem. Herhangi bir yazı yazarken, tez hazırlarken &amp;lsquo;SON&amp;rsquo;, &amp;lsquo;BU SON&amp;rsquo;, &amp;lsquo;SON_SON_SON&amp;rsquo;, &amp;lsquo;BU DA MI SON DEGIL&amp;rsquo; isimli dosyaları nereye koyacağınızı şaşırıyorsanız sizin de kesinlikle tanışmanız gereken bir sistem diye düşünüyorum.</description>
     </item>
-    
   </channel>
 </rss>

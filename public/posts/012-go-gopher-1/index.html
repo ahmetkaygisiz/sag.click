@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -14,21 +14,53 @@
 
 
 
-<html lang="tr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="tr"
+>
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>Go Gopher-I - &lt; ahmetkaygisiz /&gt;</title>
 
   
+  <meta name="theme-color" />
+
+  
+  
+  
   
   <meta name="description" content="Merhaba,
 Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&rsquo;de go kurulum aşamasını, &ldquo;Hello, World!&rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
-İndirme ve Kurulum  Gugıl&rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum." />
-  <meta name="author" content="" />
+İndirme ve Kurulum Gugıl&rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum." />
+  <meta name="author" content="&lt; ahmetkaygisiz /&gt;" />
   
 
   
@@ -37,153 +69,245 @@ Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim i
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/app.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://sag.click/main.min.css" />
 
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/an-old-hope.min.css" />
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://sag.click/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://sag.click/github.svg" />
+  
+  
+
+  
+  
   <script
     defer
-    src="http://sag.click.s3-website.eu-central-1.amazonaws.com/highlight.min.js"
+    src="http://sag.click/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
 
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/theme.png" />
-
   
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/twitter.svg" />
-  
-  <link rel="preload" as="image" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/github.svg" />
   
 
   
-  <link rel="icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/apple-touch-icon.png" />
+  <link rel="icon" href="http://sag.click/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://sag.click/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.80.0" />
-
-  
-  
+  <meta name="generator" content="Hugo 0.128.2">
 
   
   
   
   
   
-  
-  
-  
-  
-  <meta property="og:title" content="Go Gopher-I" />
-<meta property="og:description" content="Merhaba,
-Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&rsquo;de go kurulum aşamasını, &ldquo;Hello, World!&rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
-İndirme ve Kurulum  Gugıl&rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/012-go-gopher-1/" />
-<meta property="article:published_time" content="2021-04-11T18:23:40+03:00" />
-<meta property="article:modified_time" content="2021-04-11T18:23:40+03:00" />
 
+
+  
   
   <meta itemprop="name" content="Go Gopher-I">
-<meta itemprop="description" content="Merhaba,
-Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&rsquo;de go kurulum aşamasını, &ldquo;Hello, World!&rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
-İndirme ve Kurulum  Gugıl&rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.">
-<meta itemprop="datePublished" content="2021-04-11T18:23:40+03:00" />
-<meta itemprop="dateModified" content="2021-04-11T18:23:40+03:00" />
-<meta itemprop="wordCount" content="576">
-
-
-
-<meta itemprop="keywords" content="golang,go,android," />
+  <meta itemprop="description" content="Merhaba,
+Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux’de go kurulum aşamasını, “Hello, World!” kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
+İndirme ve Kurulum Gugıl’da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path’ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.">
+  <meta itemprop="datePublished" content="2021-04-11T18:23:40+03:00">
+  <meta itemprop="dateModified" content="2021-04-11T18:23:40+03:00">
+  <meta itemprop="wordCount" content="576">
+  <meta itemprop="keywords" content="Golang,Go,Android">
+  
+  <meta property="og:url" content="http://sag.click/posts/012-go-gopher-1/">
+  <meta property="og:site_name" content="&lt; ahmetkaygisiz /&gt;">
+  <meta property="og:title" content="Go Gopher-I">
+  <meta property="og:description" content="Merhaba,
+Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux’de go kurulum aşamasını, “Hello, World!” kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
+İndirme ve Kurulum Gugıl’da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path’ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.">
+  <meta property="og:locale" content="tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-04-11T18:23:40+03:00">
+    <meta property="article:modified_time" content="2021-04-11T18:23:40+03:00">
+    <meta property="article:tag" content="Golang">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Android">
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go Gopher-I"/>
-<meta name="twitter:description" content="Merhaba,
-Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&rsquo;de go kurulum aşamasını, &ldquo;Hello, World!&rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
-İndirme ve Kurulum  Gugıl&rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum."/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Go Gopher-I">
+  <meta name="twitter:description" content="Merhaba,
+Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux’de go kurulum aşamasını, “Hello, World!” kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.
+İndirme ve Kurulum Gugıl’da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path’ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.">
 
+  
+  
+  
+  <link rel="canonical" href="http://sag.click/posts/012-go-gopher-1/" />
   
   
 </head>
 
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://sag.click/"
+      >&lt; ahmetkaygisiz /&gt;</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
 
-  <body class="not-ready" data-menu="true">
-    <header class="header">
-  
-  <p class="logo">
-    <a class="site-name" href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a><a class="btn-dark"></a>
-  </p>
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
   
 
   <script>
-    let bodyClx = document.body.classList;
-    let btnDark = document.querySelector('.btn-dark');
-    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
-    let darkVal = localStorage.getItem('dark');
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    let setDark = (isDark) => {
-      bodyClx[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
-    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
-    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
-    sysDark.addEventListener('change', (event) => setDark(event.matches));
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
   </script>
 
-  
-  
-  <nav class="menu" style="padding-left: 13%;font-weight: bold;">
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
     
-    <a class="" href="/">cd ~</a>
     
-    <a class="" href="/whoami/">whoami</a>
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >cd ~</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/whoami/"
+        >whoami</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categorylist/"
+        >categories</a
+      >
+      
+    </nav>
     
-    <a class="" href="/categorylist/">categories</a>
-    
-  </nav>
-  
 
-  
-  <nav class="social">
     
-    <a
-      class="twitter"
-      style="--url: url(./twitter.svg)"
-      href="https://twitter.com/kaaygisiz"
-      target="_blank"
-    ></a>
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/kaaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/ahmetkaygisiz"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
     
-    <a
-      class="github"
-      style="--url: url(./github.svg)"
-      href="https://github.com/ahmetkaygisiz"
-      target="_blank"
-    ></a>
-    
-  </nav>
-  
+  </div>
 </header>
 
 
-    <main class="main">
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
 
-<article class="post-single">
-  <header class="post-title">
-    <p>
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Go Gopher-I</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
       
-      <time datetime="2021-04-11 18:23:40 &#43;0300 &#43;03">11 Apr 2021</time>
+      <time>Apr 11, 2021</time>
       
       
-    </p>
-    <h1>Go Gopher-I</h1>
+      
+      
+    </div>
+    
   </header>
-  <section class="post-content"><p>Merhaba,</p>
+
+  <section><p>Merhaba,</p>
 <p>Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&rsquo;de go kurulum aşamasını, &ldquo;Hello, World!&rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.</p>
 <h2 id="indirme-ve-kurulum">İndirme ve Kurulum</h2>
 <ol>
@@ -191,100 +315,112 @@ Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim i
 <li>Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz</li>
 <li>Golang path&rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p /data/installations/golang/1.16.3
-tar -C /data/installations/golang/1.16.3 -xzf go1.16.3.linux-amd64.tar.gz
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /data/installations/golang/1.16.3
+</span></span><span style="display:flex;"><span>tar -C /data/installations/golang/1.16.3 -xzf go1.16.3.linux-amd64.tar.gz
+</span></span></code></pre></div><ol start="4">
 <li>Bu pathi sistem değişkeni olarak ekleyeceğiz fakat burada görüldüğü gibi versiyona göre dosyaladık. Buraya bir sembolik link oluşturuyoruz ve diyoruz ki en son çıkan go versiyonunu işaret et. Yeni versiyon çıktığında yapmamız gereken sadece sembolik linkin gösterdiği dosyayı değiştirmek olacak.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -s /data/installations/golang/1.6.3/go /data/installations/golang/latest 
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln -s /data/installations/golang/1.6.3/go /data/installations/golang/latest 
+</span></span></code></pre></div><ol start="5">
 <li>Şimdi sistem değişkeninde GO_HOME adresimizi belirtiyoruz.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># bash içim</span>
-vim .bashrc
-
-<span style="color:#75715e"># zsh için</span>
-vim .zshrc
-	
-export GO_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/data/installations/golang/latest&#34;</span>
-PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:</span>$GO_HOME<span style="color:#e6db74">/bin&#34;</span>
-</code></pre></div><p>Değişikliklerin uygulanması için .bashrc/.zshrc dosyamızı source ile yeniden tanıtıyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source .zshrc
-<span style="color:#75715e"># ya da</span>
-source .bashrc
-</code></pre></div><p>Ve kontrol ediyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go version
-<span style="color:#75715e"># go version go1.16.3 linux/amd64</span>
-</code></pre></div><h2 id="build--run">Build &amp; Run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bash içim</span>
+</span></span><span style="display:flex;"><span>vim .bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># zsh için</span>
+</span></span><span style="display:flex;"><span>vim .zshrc
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>export GO_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/data/installations/golang/latest&#34;</span>
+</span></span><span style="display:flex;"><span>PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:</span>$GO_HOME<span style="color:#e6db74">/bin&#34;</span>
+</span></span></code></pre></div><p>Değişikliklerin uygulanması için .bashrc/.zshrc dosyamızı source ile yeniden tanıtıyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source .zshrc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ya da</span>
+</span></span><span style="display:flex;"><span>source .bashrc
+</span></span></code></pre></div><p>Ve kontrol ediyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go version
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># go version go1.16.3 linux/amd64</span>
+</span></span></code></pre></div><h2 id="build--run">Build &amp; Run</h2>
 <p>Hello world kodumuzu yazmak için bir klasör oluşturduk ve içerisine girdik.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir 01_first_go <span style="color:#f92672">&amp;&amp;</span> cd $_
-</code></pre></div><p>Kod editörü ile dosyayı .go uzantılı dosyayı oluşturuyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># with vim</span>
-vim main.go
-
-<span style="color:#75715e"># with visual code</span>
-code main.go
-
-<span style="color:#75715e"># with sublime </span>
-subl main.go
-</code></pre></div><p>Selam verdiğimiz main.go dosyasına kodumuzu yazıyoruz ve kaydediyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#75715e">// Temel fonksiyonları kullanmamızı sağlayacak, out imkanı da sağlayan kütüphane
-</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#75715e">// Uygulamanın başlangıç noktası main() fonksiyonu
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-        
-    <span style="color:#75715e">//  Println ile selamımızı ekrana basıyoruz
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hi! I want to be a Gopher!&#34;</span>)
-}
-</code></pre></div><p>Kodumuzu yürütüyoruz ve verilen selamı alıyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run main.go
-<span style="color:#75715e"># Output : Hi! I want to be a Gopher!</span>
-</code></pre></div><p>Sırada build işlemi var. Aşağıda belirttiğim şekilde build işlemini yapabiliyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># bulunan dizindeki tüm .go uzantılı dosyaları build eder.</span>
-go build 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># parametre olarak verilen .go dosyamızı build ediyor</span>
-go build main.go
-</code></pre></div><p>Fakat ben go build komutunu yürüttüğümde şu hata ile karşılaştım : go: cannot find main module, but found. Bunun çözümü için  aşağıdaki komutu çalıştırıyoruz ve problem çözülüyor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Aşağıdaki değerin boş olduğunu gördüm.</span>
-go env | grep GO111MODULE
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># auto değerini ilgili env parametresine atadım.</span>
-go env -w GO111MODULE<span style="color:#f92672">=</span>auto
-</code></pre></div><p>Farklı Ortamlar için Build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir 01_first_go <span style="color:#f92672">&amp;&amp;</span> cd $_
+</span></span></code></pre></div><p>Kod editörü ile dosyayı .go uzantılı dosyayı oluşturuyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># with vim</span>
+</span></span><span style="display:flex;"><span>vim main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># with visual code</span>
+</span></span><span style="display:flex;"><span>code main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># with sublime </span>
+</span></span><span style="display:flex;"><span>subl main.go
+</span></span></code></pre></div><p>Selam verdiğimiz main.go dosyasına kodumuzu yazıyoruz ve kaydediyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Temel fonksiyonları kullanmamızı sağlayacak, out imkanı da sağlayan kütüphane
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Uygulamanın başlangıç noktası main() fonksiyonu
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//  Println ile selamımızı ekrana basıyoruz
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hi! I want to be a Gopher!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Kodumuzu yürütüyoruz ve verilen selamı alıyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run main.go
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output : Hi! I want to be a Gopher!</span>
+</span></span></code></pre></div><p>Sırada build işlemi var. Aşağıda belirttiğim şekilde build işlemini yapabiliyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bulunan dizindeki tüm .go uzantılı dosyaları build eder.</span>
+</span></span><span style="display:flex;"><span>go build 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># parametre olarak verilen .go dosyamızı build ediyor</span>
+</span></span><span style="display:flex;"><span>go build main.go
+</span></span></code></pre></div><p>Fakat ben go build komutunu yürüttüğümde şu hata ile karşılaştım : go: cannot find main module, but found. Bunun çözümü için  aşağıdaki komutu çalıştırıyoruz ve problem çözülüyor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Aşağıdaki değerin boş olduğunu gördüm.</span>
+</span></span><span style="display:flex;"><span>go env | grep GO111MODULE
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># auto değerini ilgili env parametresine atadım.</span>
+</span></span><span style="display:flex;"><span>go env -w GO111MODULE<span style="color:#f92672">=</span>auto
+</span></span></code></pre></div><p>Farklı Ortamlar için Build
 Go bize farklı ortamlarda yürütülebilir paketler build edebilmemizi sağlıyor. Default olarak üstte oluşturduğumuz paketin hangi ortam için build edildiğini öğrenebilmek için file komutunu kullanıyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">file 01_first_go
-<span style="color:#75715e"># Output : ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=..., not stripped</span>
-</code></pre></div><p>Benim ortamım benzeri 64-bit linux ortamlarda yürütülebilir bir executable dosyayı oluşturduk. Konu farklı ortamlara göre build edilmeye geldiğinde ise işin içerisine $GOOS ve $GOARCH değişkenleri giriyor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file 01_first_go
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output : ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=..., not stripped</span>
+</span></span></code></pre></div><p>Benim ortamım benzeri 64-bit linux ortamlarda yürütülebilir bir executable dosyayı oluşturduk. Konu farklı ortamlara göre build edilmeye geldiğinde ise işin içerisine $GOOS ve $GOARCH değişkenleri giriyor.</p>
 <p>GOOS değişkeni için aşağıdaki OS seçenekleri için kullanılabiliyor. GOARCH ise işlemci mimarisi seçenekleri sunuyor. Daha fazla ayrıntı için <a href="https://golang.org/doc/install/source#environment">https://golang.org/doc/install/source#environment</a> adresini inceleyebilirsiniz. Ben de dedim Android telefonum var neden yürütmeyeyim.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Telefon mimarisine uygun seçenekler ile build ediyorum</span>
-GOOS<span style="color:#f92672">=</span>android GOARCH<span style="color:#f92672">=</span>arm64 GOARM<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span> go build
-</code></pre></div><p>Android için build ettiğimiz paketi yeniden file komutu ile kontrol ettiğimizde ARM aarch64 mimarisinin de eklendiğini görebiliyoruz.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># yeniden dosya yapısını kontrol ediyoruz.</span>
-file 01_first_go
-<span style="color:#75715e"># Output : 01_first_go: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, Go BuildID=, not stripped</span>
-</code></pre></div><p>Burada yine paketim oluştu. Bunu alıp telefonuma attım. Terminal kullanabilmek için de Termux&rsquo;u telefonuma indirdim ve termux&rsquo;da aşağıdaki komutları çalıştırdım.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># executable hale getir.</span>
-chmod +x 01_first_go
-
-<span style="color:#75715e"># ve yürüt</span>
-./01_first_go
-<span style="color:#75715e"># Hi! I want to be a Gopher!</span>
-</code></pre></div><p>Kapanış
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Telefon mimarisine uygun seçenekler ile build ediyorum</span>
+</span></span><span style="display:flex;"><span>GOOS<span style="color:#f92672">=</span>android GOARCH<span style="color:#f92672">=</span>arm64 GOARM<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span> go build
+</span></span></code></pre></div><p>Android için build ettiğimiz paketi yeniden file komutu ile kontrol ettiğimizde ARM aarch64 mimarisinin de eklendiğini görebiliyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yeniden dosya yapısını kontrol ediyoruz.</span>
+</span></span><span style="display:flex;"><span>file 01_first_go
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output : 01_first_go: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, Go BuildID=, not stripped</span>
+</span></span></code></pre></div><p>Burada yine paketim oluştu. Bunu alıp telefonuma attım. Terminal kullanabilmek için de Termux&rsquo;u telefonuma indirdim ve termux&rsquo;da aşağıdaki komutları çalıştırdım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># executable hale getir.</span>
+</span></span><span style="display:flex;"><span>chmod +x 01_first_go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ve yürüt</span>
+</span></span><span style="display:flex;"><span>./01_first_go
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hi! I want to be a Gopher!</span>
+</span></span></code></pre></div><p>Kapanış
 Gördüğünüz üzere bir selamımızı Go dünyasına verdik. Bu yazı sonrası için teminat sayılsın.</p>
 <p>Güzel hafta sonları.</p>
 </section>
 
   
   
-  <footer class="post-tags">
+  <footer class="mt-12 flex flex-wrap">
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/golang">golang</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/golang"
+      >golang</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/go">go</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/go"
+      >go</a
+    >
      
-    <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com/tags/android">android</a>
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://sag.click/tags/android"
+      >android</a
+    >
     
   </footer>
   
@@ -292,25 +428,58 @@ Gördüğünüz üzere bir selamımızı Go dünyasına verdik. Bu yazı sonras�
   
   
   
-  <nav class="post-nav">
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a class="prev" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/013-oracle-fmw-silent/"><span>←</span><span>Oracle FMW Infrastructure Silent Installation</span></a>
-     
-    <a class="next" href="http://sag.click.s3-website.eu-central-1.amazonaws.com/posts/011-quarkus-crud/"><span>Quarkus Crud</span><span>→</span></a>
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/015-hugonun-donusu/"
+      ><span class="mr-1.5">←</span><span>Hugo&#39;nun Donusu</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://sag.click/posts/011-quarkus-crud/"
+      ><span>Quarkus Crud</span><span class="ml-1.5">→</span></a
+    >
     
   </nav>
   
+  
 
+  
+  
+
+  
+  
+
+  
+
+
+  
 </article>
 
-</main>
 
-    <footer class="footer">
-  <p>&copy; 2022 <a href="http://sag.click.s3-website.eu-central-1.amazonaws.com">&lt; ahmetkaygisiz /&gt;</a></p>
-  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
-  <p>
-    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
-  </p>
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://sag.click/">&lt; ahmetkaygisiz /&gt;</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
 </footer>
 
   </body>
