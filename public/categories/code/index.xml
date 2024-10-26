@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click/categories/code/</link>
+    <link>http://localhost:1313/categories/code/</link>
     <description>Recent content in Code on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
     <lastBuildDate>Sun, 11 Apr 2021 18:23:40 +0300</lastBuildDate>
-    <atom:link href="http://sag.click/categories/code/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Gopher-I</title>
-      <link>http://sag.click/posts/012-go-gopher-1/</link>
+      <link>http://localhost:1313/posts/012-go-gopher-1/</link>
       <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
-      <guid>http://sag.click/posts/012-go-gopher-1/</guid>
+      <guid>http://localhost:1313/posts/012-go-gopher-1/</guid>
       <description>Merhaba,&#xA;Uzun zamandır kısa kısa göz gezdirip ilerleyemediğim Go öğrenme hedefim için burada bir yazı ile işi resmiyete dökmek istedim. Kısa bir başlangıç da olsa bu yazımda linux&amp;rsquo;de go kurulum aşamasını, &amp;ldquo;Hello, World!&amp;rdquo; kodunu ve bunun farklı ortamlar için nasıl derlenebileceği konusundan bahsedeceğim.&#xA;İndirme ve Kurulum Gugıl&amp;rsquo;da golang download yazdığımızda şu adres ile karşılaşıyoruz : https://golang.org/dl/ Ortamımıza uygun paketi indiriyoruz. Linux paketi : go1.16.3.linux-amd64.tar.gz Golang path&amp;rsquo;ini oluşturuyorum ve indirdiğim paketi oraya extract ediyorum.</description>
     </item>
     <item>
       <title>Quarkus Crud</title>
-      <link>http://sag.click/posts/011-quarkus-crud/</link>
+      <link>http://localhost:1313/posts/011-quarkus-crud/</link>
       <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
-      <guid>http://sag.click/posts/011-quarkus-crud/</guid>
+      <guid>http://localhost:1313/posts/011-quarkus-crud/</guid>
       <description>Merhabalar,&#xA;Quarkus Framework&amp;rsquo;ünün fantastikliğinden bir önceki yazıda bahsetmiştik. Şimdi bu framework ile basit bir crud uygulamasını nasıl yaparız buna bakalım.&#xA;Projenin Oluşturulması Projeyi oluşturmadan önce versiyon gereksinimleri aşağıdaki gibi olmalıdır.&#xA;java -version -&amp;gt; 8 veya 11 mvn -version -&amp;gt; 3.6.2+ JAVA_HOME ortam değişkeni tanımlı olmalı Projemizi oluşturmak için aşağıdaki komutu giriyoruz.&#xA;mvn io.io.quarkus:quarkus-maven-plugin:1.10.5.Final:create \ -DprojectGroupId=com.akua \ -DprojectArtifactId=quarkus-tutorial \ -DclassName=&amp;#34;com.akua.resources.UserResources&amp;#34; \ -Dpath=&amp;#34;/users&amp;#34; Herhangi bir ekleme yapmadan quarkusun bize sunmuş olduğu dosya yapısı aşağıdaki şekildedir.</description>
     </item>
     <item>
       <title>Quarkus Framework Nedir</title>
-      <link>http://sag.click/posts/010-quarkus-framework-nedir/</link>
+      <link>http://localhost:1313/posts/010-quarkus-framework-nedir/</link>
       <pubDate>Sat, 02 Jan 2021 17:51:31 +0300</pubDate>
-      <guid>http://sag.click/posts/010-quarkus-framework-nedir/</guid>
+      <guid>http://localhost:1313/posts/010-quarkus-framework-nedir/</guid>
       <description>Yeni yıldan selamlar,&#xA;Bu yazıma &amp;ldquo;Seni yeneceğim 20XX!!!&amp;rdquo; enerjisiyle giriş yapıyorum. Her ne kadar bu enerji Google Anatycs verileriyle biraz bozulmaya yön tutsa da iyi ki blog açma hedefimi düşük tutup &amp;ldquo;kendime not alıyorum&amp;rdquo; şeklinde belirlemişim. Çünkü günlüğümü sağda solda açık bıraksam daha fazla kişi okurdu :D Neyse kısa bir dertleşme sonrası (kendimle) bugünkü konuya başlayabilirim.&#xA;Quarkus Framework&amp;rsquo;üyle karşılaşmam aslında tesadüf oldu. Spring Boot&amp;rsquo;un performansıyla ilgili bir iki gugıllama sonrasında Quarkus ile geliştirilen uygulamanın ayağa kalkış süresinin daha az, containerize edildiğinde daha küçük boyutlu olduğunu ve aynı işi daha kısa sürede bitirdiğini gördüm.</description>
     </item>
     <item>
       <title>Wifi Over Terminal</title>
-      <link>http://sag.click/posts/006-wifi-over-terminal/</link>
+      <link>http://localhost:1313/posts/006-wifi-over-terminal/</link>
       <pubDate>Mon, 14 Sep 2020 17:21:14 +0300</pubDate>
-      <guid>http://sag.click/posts/006-wifi-over-terminal/</guid>
+      <guid>http://localhost:1313/posts/006-wifi-over-terminal/</guid>
       <description>Selamlar Efendim,&#xA;Bugün, bana arada sırada gelen &amp;ldquo;Nvidia Driver&amp;rsquo;ı da neymiş yauv&amp;rdquo; gazının sonucunda yine siyah ekranla kala kaldığım bir maceraya atıldım. Bu macera esnasında daha önce herhangi bir wifi ağına Terminal&amp;rsquo;den bağlanmadığımı farkettim ve nasıl bağlanabileceğimi araştırıp buraya da not etmek istedim. Şuan çalıştığım makinenin OS&amp;rsquo;i Debian 10 (buster) yazıya başlamadan bunu da belirteyim.&#xA;Buradaki kaynakta Network Manager nasıl kullanılır oldukça güzel bir şekilde anlatmış. Ben de buradaki kaynağı takip ederek uygulamaya başlıyorum.</description>
     </item>
     <item>
       <title>Spark Rest Api</title>
-      <link>http://sag.click/posts/004-spark-rest-api/</link>
+      <link>http://localhost:1313/posts/004-spark-rest-api/</link>
       <pubDate>Wed, 02 Sep 2020 17:13:38 +0300</pubDate>
-      <guid>http://sag.click/posts/004-spark-rest-api/</guid>
+      <guid>http://localhost:1313/posts/004-spark-rest-api/</guid>
       <description>Merhaba,&#xA;Spark Framework&amp;rsquo;ü çok da uzak olmayan bir tarihte karşıma çıktı ve basitliği hafifliği sebebiyle mutlaka incelemem gerek diye düşündüm. Geçen günlerde terminal&amp;rsquo;de kendime arada motivasyon sağlamak amacıyla bir komut yazsam güzel olur diye düşünürken arkasına kendi hazırladığım bir servisi dahil edip oradan parse ederek bu isteğime ulaşabilirim hem de Spark&amp;rsquo;a bir giriş yapmış olurum dedim. Bu sebeple bu blogun konusu olan bir adet Quote API hazırladım. Bu API&amp;rsquo;de veritabanı olarak postgres, bağlantı için de JDBC kullandım.</description>
     </item>
   </channel>

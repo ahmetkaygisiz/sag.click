@@ -2,123 +2,123 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 06 Jul 2024 13:28:11 +0300</lastBuildDate>
-    <atom:link href="http://sag.click/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Oct 2024 15:42:23 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
-      <link>http://sag.click/tags/index/</link>
-      <pubDate>Sat, 06 Jul 2024 13:28:11 +0300</pubDate>
-      <guid>http://sag.click/tags/index/</guid>
+      <link>http://localhost:1313/tags/index/</link>
+      <pubDate>Sat, 26 Oct 2024 15:42:23 +0300</pubDate>
+      <guid>http://localhost:1313/tags/index/</guid>
       <description></description>
     </item>
     <item>
       <title>Android</title>
-      <link>http://sag.click/tags/android/</link>
+      <link>http://localhost:1313/tags/android/</link>
       <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
-      <guid>http://sag.click/tags/android/</guid>
+      <guid>http://localhost:1313/tags/android/</guid>
       <description></description>
     </item>
     <item>
       <title>Go</title>
-      <link>http://sag.click/tags/go/</link>
+      <link>http://localhost:1313/tags/go/</link>
       <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
-      <guid>http://sag.click/tags/go/</guid>
+      <guid>http://localhost:1313/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>http://sag.click/tags/golang/</link>
+      <link>http://localhost:1313/tags/golang/</link>
       <pubDate>Sun, 11 Apr 2021 18:23:40 +0300</pubDate>
-      <guid>http://sag.click/tags/golang/</guid>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
     <item>
       <title>Crud</title>
-      <link>http://sag.click/tags/crud/</link>
+      <link>http://localhost:1313/tags/crud/</link>
       <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
-      <guid>http://sag.click/tags/crud/</guid>
+      <guid>http://localhost:1313/tags/crud/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://sag.click/tags/java/</link>
+      <link>http://localhost:1313/tags/java/</link>
       <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
-      <guid>http://sag.click/tags/java/</guid>
+      <guid>http://localhost:1313/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Quarkus</title>
-      <link>http://sag.click/tags/quarkus/</link>
+      <link>http://localhost:1313/tags/quarkus/</link>
       <pubDate>Wed, 10 Feb 2021 18:12:48 +0300</pubDate>
-      <guid>http://sag.click/tags/quarkus/</guid>
+      <guid>http://localhost:1313/tags/quarkus/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>http://sag.click/tags/bash/</link>
+      <link>http://localhost:1313/tags/bash/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      <guid>http://sag.click/tags/bash/</guid>
+      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Crontab</title>
-      <link>http://sag.click/tags/crontab/</link>
+      <link>http://localhost:1313/tags/crontab/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      <guid>http://sag.click/tags/crontab/</guid>
+      <guid>http://localhost:1313/tags/crontab/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://sag.click/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      <guid>http://sag.click/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Rest</title>
-      <link>http://sag.click/tags/rest/</link>
+      <link>http://localhost:1313/tags/rest/</link>
       <pubDate>Mon, 14 Sep 2020 17:21:14 +0300</pubDate>
-      <guid>http://sag.click/tags/rest/</guid>
+      <guid>http://localhost:1313/tags/rest/</guid>
       <description></description>
     </item>
     <item>
       <title>Spark</title>
-      <link>http://sag.click/tags/spark/</link>
+      <link>http://localhost:1313/tags/spark/</link>
       <pubDate>Mon, 14 Sep 2020 17:21:14 +0300</pubDate>
-      <guid>http://sag.click/tags/spark/</guid>
+      <guid>http://localhost:1313/tags/spark/</guid>
       <description></description>
     </item>
     <item>
       <title>Expect</title>
-      <link>http://sag.click/tags/expect/</link>
+      <link>http://localhost:1313/tags/expect/</link>
       <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
-      <guid>http://sag.click/tags/expect/</guid>
+      <guid>http://localhost:1313/tags/expect/</guid>
       <description></description>
     </item>
     <item>
       <title>Scp</title>
-      <link>http://sag.click/tags/scp/</link>
+      <link>http://localhost:1313/tags/scp/</link>
       <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
-      <guid>http://sag.click/tags/scp/</guid>
+      <guid>http://localhost:1313/tags/scp/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssh</title>
-      <link>http://sag.click/tags/ssh/</link>
+      <link>http://localhost:1313/tags/ssh/</link>
       <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
-      <guid>http://sag.click/tags/ssh/</guid>
+      <guid>http://localhost:1313/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://sag.click/tags/git/</link>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Tue, 11 Aug 2020 16:29:53 +0300</pubDate>
-      <guid>http://sag.click/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
   </channel>

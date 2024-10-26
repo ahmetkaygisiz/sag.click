@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click/categories/linux/</link>
+    <link>http://localhost:1313/categories/linux/</link>
     <description>Recent content in Linux on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
     <lastBuildDate>Sun, 20 Feb 2022 12:40:30 +0300</lastBuildDate>
-    <atom:link href="http://sag.click/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>whoami</title>
-      <link>http://sag.click/whoami/</link>
+      <link>http://localhost:1313/whoami/</link>
       <pubDate>Sun, 20 Feb 2022 12:40:30 +0300</pubDate>
-      <guid>http://sag.click/whoami/</guid>
+      <guid>http://localhost:1313/whoami/</guid>
       <description>Kimim Ben? Selamlar, Ben Ahmet. Teknoloji dünyasında &#39;başkanım ben da varım&#39; demek için geldim buraya.Java ve Linux sevdiğim şeyler arasında. Docker, Kubernetes, AWS teknolojilerini tanımak için de çalışıyorum. Neler yaparım? Şu an çalıştığım yerdeki görevlerim Oracle Middleware Teknolojileri yönetimi üzerine. Rutin hep kullandığım teknolojilerin yanında yeni teknolojileri takip edebilmek istediğim için buraya notlar alıyorum. Blog tutmanın, beni yeni şeyler öğrenmeye teşvik edeceğini ve burada paylaşarak kendime not da almış olacağımı düşünerek bu blogu Laravel ile oluşturdum.</description>
     </item>
     <item>
       <title>Hugo and Netlify</title>
-      <link>http://sag.click/posts/009-hugo-and-netlify/</link>
+      <link>http://localhost:1313/posts/009-hugo-and-netlify/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      <guid>http://sag.click/posts/009-hugo-and-netlify/</guid>
+      <guid>http://localhost:1313/posts/009-hugo-and-netlify/</guid>
       <description>Selamlar,&#xA;Web sitelerinde genel kullanım çoğunlukla kullanıcılarla etkileşim gerektiren işler oluyor. Fakat bu etkileşime gereksinim duymadığımız Blog/Portfolio/CV gibi sadece bizim değişiklik yapacağımız, boyutları oldukça küçük web sitelerine de ihtiyacımız oluyor. Bu küçük boyutlu web siteleri için hosting ücreti ödemek ise son derece gereksiz. Bizlere ücretsiz statik web siteleri hostingi sunan servislerden bazıları şunlar : Github Pages, Netlify, Firebase vb. Bu yazımda henüz tanışmamış ve bir şekilde yolu benim bloguma düşmüş olanlara Hugo &amp;amp; Netlify&amp;rsquo;dan bahsedeceğim.</description>
     </item>
     <item>
       <title>Scrcpy Android</title>
-      <link>http://sag.click/posts/008-scrcpy-android/</link>
+      <link>http://localhost:1313/posts/008-scrcpy-android/</link>
       <pubDate>Mon, 30 Nov 2020 17:25:35 +0300</pubDate>
-      <guid>http://sag.click/posts/008-scrcpy-android/</guid>
+      <guid>http://localhost:1313/posts/008-scrcpy-android/</guid>
       <description>Merhaba,&#xA;Bu yazıda android telefonu linux üzerinden yönetebilmemizi sağlayan bir uygulamadan bahsedeceğim. Şerrefsizim benim aklıma gelmişti tarzında fakat aklımızdakinden de fazlasını bulduğumuz bir uygulama çünkü proje sahibi Genymobile :) Android&amp;rsquo;de &amp;ldquo;Hello World!&amp;rdquo; yazan herkesin yüksek ihtimal duymuş olduğunu düşünüyorum. Bu uygulama da size bir emülatör gibi kendi cihazınızı desktop üzerinden yönetmenizi sağlıyor.&#xA;Uygulamayı yüklemenin birden fazla yolu var. snap ile yüklemek bunlardan en kolayı. Mac/Windows kullananlar veya yok ben kaynağından kullanırım kolaya kaçmam diyenler için de buyrun link .</description>
     </item>
     <item>
       <title>Crontab Price Alarm</title>
-      <link>http://sag.click/posts/007-crontab-price-alarm/</link>
+      <link>http://localhost:1313/posts/007-crontab-price-alarm/</link>
       <pubDate>Sat, 31 Oct 2020 17:25:35 +0300</pubDate>
-      <guid>http://sag.click/posts/007-crontab-price-alarm/</guid>
+      <guid>http://localhost:1313/posts/007-crontab-price-alarm/</guid>
       <description>Selamlar,&#xA;Geçen günlerde hepsiburada&amp;rsquo;da bir ürün almak için belirli indirim günlerinden birini bekliyordum. Ürünün indirime girip girmediğini kontrol etmek çok zor olmasa da bunu nasıl script ile yapabilirim diye düşündüm :D. Yani sorarsanız çok gerekli miydi diye değildi. Fakat önemli olan yolda olmak dedim (çok fazla TEDX&amp;rsquo;e maruz kaldım) ve bir script hazırlamaya karar verdim. Bu script, crontab&amp;rsquo;da 1 saatte bir çalıştırılacak ve ürün indirime girdiyse bunun bildirimini bana desktop notification olarak verecekti.</description>
     </item>
     <item>
       <title>Except Ssh</title>
-      <link>http://sag.click/posts/005-except-ssh/</link>
+      <link>http://localhost:1313/posts/005-except-ssh/</link>
       <pubDate>Thu, 03 Sep 2020 17:18:26 +0300</pubDate>
-      <guid>http://sag.click/posts/005-except-ssh/</guid>
+      <guid>http://localhost:1313/posts/005-except-ssh/</guid>
       <description>Selamlar,&#xA;Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox&amp;rsquo;daki VM&amp;rsquo;imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)&#xA;*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.&#xA;Expect Komutu ile Remote Makinelerde Script Yürütülmesi&#xA;#!/bin/bash _prompt=&amp;#34;:|#|\\\$&amp;#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&amp;#34;bash $_SCRIPT &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;#34; expect -c &amp;#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &amp;#34;*asswor*&amp;#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &amp;#34;exit&amp;#34;\r interact exit } } &amp;#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.</description>
     </item>
   </channel>

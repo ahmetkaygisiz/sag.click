@@ -1,5 +1,5 @@
 ---
-title: "Hugo'nun Donusu"
+title: "Hugo'nun Dönüşü"
 date: 2024-07-06T13:28:11+03:00
 draft: false
 
@@ -49,6 +49,6 @@ $HUGO_HOME/hugo server
 ```
 
 
-To be continue...
+To be continued...
 
 

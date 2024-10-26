@@ -39,7 +39,7 @@
   style="--bg: #faf8f1"
   lang="tr"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -71,14 +71,14 @@ Expect Komutu ile Remote Makinelerde Script Yürütülmesi
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://sag.click/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://sag.click/theme.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
 
   
   
@@ -88,9 +88,9 @@ Expect Komutu ile Remote Makinelerde Script Yürütülmesi
 
   
   
-  <link rel="preload" as="image" href="http://sag.click/twitter.svg" />
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
   
-  <link rel="preload" as="image" href="http://sag.click/github.svg" />
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
   
   
 
@@ -98,7 +98,7 @@ Expect Komutu ile Remote Makinelerde Script Yürütülmesi
   
   <script
     defer
-    src="http://sag.click/highlight.min.js"
+    src="http://localhost:1313/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -108,64 +108,13 @@ Expect Komutu ile Remote Makinelerde Script Yürütülmesi
   
 
   
-  <link rel="icon" href="http://sag.click/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://sag.click/apple-touch-icon.png" />
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
 
   
   <meta name="generator" content="Hugo 0.128.2">
 
   
-  
-  
-  
-  
-
-
-  
-  
-  <meta itemprop="name" content="Except Ssh">
-  <meta itemprop="description" content="Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox’daki VM’imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
-*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
-Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
-  <meta itemprop="datePublished" content="2020-09-03T17:18:26+03:00">
-  <meta itemprop="dateModified" content="2020-09-03T17:18:26+03:00">
-  <meta itemprop="wordCount" content="564">
-  <meta itemprop="keywords" content="Linux,Expect,Scp,Ssh">
-  
-  <meta property="og:url" content="http://sag.click/posts/005-except-ssh/">
-  <meta property="og:site_name" content="&lt; ahmetkaygisiz /&gt;">
-  <meta property="og:title" content="Except Ssh">
-  <meta property="og:description" content="Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox’daki VM’imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
-*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
-Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
-  <meta property="og:locale" content="tr">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2020-09-03T17:18:26+03:00">
-    <meta property="article:modified_time" content="2020-09-03T17:18:26+03:00">
-    <meta property="article:tag" content="Linux">
-    <meta property="article:tag" content="Expect">
-    <meta property="article:tag" content="Scp">
-    <meta property="article:tag" content="Ssh">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Except Ssh">
-  <meta name="twitter:description" content="Selamlar,
-Bugün size yine geçmişte yapmış olduğum bir scriptten bahsedeceğim. İhtiyaçlar doğukça yeni fikirler geldiğinden ve VirtualBox’daki VM’imin herhangi bir ihtiyacı olmadığından geçmişten devam ediyorum :)
-*Expect komutunun kurumunu şuradaki medium yazımda anlatmıştım.
-Expect Komutu ile Remote Makinelerde Script Yürütülmesi
-#!/bin/bash _prompt=&#34;:|#|\\\$&#34; _HOST=$1 _USER=$2 _PASS=$3 _SCRIPT=$4 _nohupScript=&#34;bash $_SCRIPT &gt; /dev/null 2&gt;&amp;1 &amp;&#34; expect -c &#34; spawn ssh $_USER@$_HOST $_nohupScript expect { &#34;*asswor*&#34; { send $_PASS\r exp_continue interact -o -nobuffer -re $_prompt return send &#34;exit&#34;\r interact exit } } &#34; Bir dosya güncellemesinden sonra uygulama sunucularının yeniden başlatılması gerektiği için bu scripti hazırlamıştım.">
-
-  
-  
-  
-  <link rel="canonical" href="http://sag.click/posts/005-except-ssh/" />
   
   
 </head>
@@ -175,7 +124,7 @@ Expect Komutu ile Remote Makinelerde Script Yürütülmesi
   <div class="relative z-50 mr-auto flex items-center">
     <a
       class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
-      href="http://sag.click/"
+      href="http://localhost:1313/"
       >&lt; ahmetkaygisiz /&gt;</a
     >
     <div
@@ -405,25 +354,25 @@ $5 : Remote makinede gönderilecek absolute path adresi</p>
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://sag.click/tags/linux"
+      href="http://localhost:1313/tags/linux"
       >linux</a
     >
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://sag.click/tags/expect"
+      href="http://localhost:1313/tags/expect"
       >expect</a
     >
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://sag.click/tags/scp"
+      href="http://localhost:1313/tags/scp"
       >scp</a
     >
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://sag.click/tags/ssh"
+      href="http://localhost:1313/tags/ssh"
       >ssh</a
     >
     
@@ -438,14 +387,14 @@ $5 : Remote makinede gönderilecek absolute path adresi</p>
     
     <a
       class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://sag.click/posts/006-wifi-over-terminal/"
+      href="http://localhost:1313/posts/006-wifi-over-terminal/"
       ><span class="mr-1.5">←</span><span>Wifi Over Terminal</span></a
     >
     
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://sag.click/posts/004-spark-rest-api/"
+      href="http://localhost:1313/posts/004-spark-rest-api/"
       ><span>Spark Rest Api</span><span class="ml-1.5">→</span></a
     >
     
@@ -473,7 +422,7 @@ $5 : Remote makinede gönderilecek absolute path adresi</p>
 >
   <div class="mr-auto">
     &copy; 2024
-    <a class="link" href="http://sag.click/">&lt; ahmetkaygisiz /&gt;</a>
+    <a class="link" href="http://localhost:1313/">&lt; ahmetkaygisiz /&gt;</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >Powered by Hugo️️</a
