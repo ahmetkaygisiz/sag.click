@@ -6,7 +6,7 @@ categories : [
     "theothers",
 ]
 tags : [
-    "oracle"
+    "theothers"
 ]
 ---
 Selamlar,

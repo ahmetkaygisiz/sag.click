@@ -12,6 +12,9 @@ ignoreErrors = ["error-remote-getjson"]
 theme = "hugo-paper"
 
 [params]
+  # color style
+  color = 'linen'                           # linen, wheat, gray, light
+  
   disableHLJS = false                            # don't use highlight.js
   twitter = 'notfound'               		 # twitter.com/YOUR_TWITTER_ID
   github = 'ahmetkaygisiz'                       # github.com/YOUR_GITHUB_ID
