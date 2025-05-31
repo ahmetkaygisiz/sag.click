@@ -1,4 +1,5 @@
 # sagclick
+```
 export HUGO_INST_DIR=/mnt/c/Ake/Apps/hugo
 
 cd $HUGO_INST_DIR
@@ -19,3 +20,4 @@ $HUGO_HOME/hugo server -D
 # build the pages
 $HUGO_HOME/hugo
 $HUGO_HOME/hugo -b http://sag.click
+```
