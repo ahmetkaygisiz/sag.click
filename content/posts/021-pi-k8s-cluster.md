@@ -39,7 +39,7 @@ Bu ipler iyi güzel fakat sabit olmayacak. Bunları komutlar ile sabitlemek isti
 ``` bash
     # NODE1
     # set ip address & gateway ip
-    sudo nmcli con mod preconfigured ipv4.addresses 192.168.51.250/24
+    sudo nmcli con mod preconfigured ipv4.addresses 192.168.50.250/24
     sudo nmcli con mod preconfigured ipv4.gateway 192.168.50.1
     
     # check the conn
