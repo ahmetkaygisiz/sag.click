@@ -6,7 +6,7 @@
     <description>Recent content in Bash on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
+    <copyright>Copyright sag.click © 2025, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
     <lastBuildDate>Mon, 30 Nov 2020 17:25:35 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -29,6 +29,13 @@
       <pubDate>Sat, 31 Oct 2020 17:25:35 +0300</pubDate>
       <guid>http://localhost:1313/posts/007-crontab-price-alarm/</guid>
       <description>Selamlar,&#xA;Geçen günlerde hepsiburada&amp;rsquo;da bir ürün almak için belirli indirim günlerinden birini bekliyordum. Ürünün indirime girip girmediğini kontrol etmek çok zor olmasa da bunu nasıl script ile yapabilirim diye düşündüm :D. Yani sorarsanız çok gerekli miydi diye değildi. Fakat önemli olan yolda olmak dedim (çok fazla TEDX&amp;rsquo;e maruz kaldım) ve bir script hazırlamaya karar verdim. Bu script, crontab&amp;rsquo;da 1 saatte bir çalıştırılacak ve ürün indirime girdiyse bunun bildirimini bana desktop notification olarak verecekti.</description>
+    </item>
+    <item>
+      <title>Script - Bulktelnet</title>
+      <link>http://localhost:1313/posts/002-bulktelnet/</link>
+      <pubDate>Fri, 24 Jul 2020 16:29:53 +0300</pubDate>
+      <guid>http://localhost:1313/posts/002-bulktelnet/</guid>
+      <description>Merhabalar,&#xA;Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi.</description>
     </item>
   </channel>
 </rss>

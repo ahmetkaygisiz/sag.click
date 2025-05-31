@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Script on &lt; ahmetkaygisiz /&gt;</title>
-    <link>http://sag.click/tags/script/</link>
+    <link>http://localhost:1313/tags/script/</link>
     <description>Recent content in Script on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
+    <copyright>Copyright sag.click © 2025, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
     <lastBuildDate>Fri, 24 Jul 2020 16:29:53 +0300</lastBuildDate>
-    <atom:link href="http://sag.click/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/script/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Script - Bulktelnet</title>
-      <link>http://sag.click/posts/002-bulktelnet/</link>
+      <link>http://localhost:1313/posts/002-bulktelnet/</link>
       <pubDate>Fri, 24 Jul 2020 16:29:53 +0300</pubDate>
-      <guid>http://sag.click/posts/002-bulktelnet/</guid>
+      <guid>http://localhost:1313/posts/002-bulktelnet/</guid>
       <description>Merhabalar,&#xA;Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi.</description>
     </item>
   </channel>

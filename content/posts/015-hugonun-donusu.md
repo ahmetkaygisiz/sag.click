@@ -30,7 +30,8 @@ Host github.com
 
 ```
 wget https://github.com/gohugoio/hugo/releases/download/v0.128.2/hugo_extended_0.128.2_Linux-64bit.tar.gz
-tar -xvf hugo_extended_0.128.2_Linux-64bit.tar.gzls -rlta
+tar -xvf hugo_extended_0.128.2_Linux-64bit.tar.gz
+ls -rlta
 mkdir 0.128.2.lnx
 mv hugo LICENSE README.md 0.128.2.lnx/
 ln -s 0.128.2.lnx latest 

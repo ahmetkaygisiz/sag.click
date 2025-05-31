@@ -6,7 +6,7 @@
     <description>Recent content in Devops on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
+    <copyright>Copyright sag.click © 2025, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
     <lastBuildDate>Sun, 20 Feb 2022 12:40:30 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <link>http://localhost:1313/whoami/</link>
       <pubDate>Sun, 20 Feb 2022 12:40:30 +0300</pubDate>
       <guid>http://localhost:1313/whoami/</guid>
-      <description>Kimim Ben? Selamlar, Ben Ahmet. Teknoloji dünyasında &#39;başkanım ben da varım&#39; demek için geldim buraya.Java ve Linux sevdiğim şeyler arasında. Docker, Kubernetes, AWS teknolojilerini tanımak için de çalışıyorum. Neler yaparım? Şu an çalıştığım yerdeki görevlerim Oracle Middleware Teknolojileri yönetimi üzerine. Rutin hep kullandığım teknolojilerin yanında yeni teknolojileri takip edebilmek istediğim için buraya notlar alıyorum. Blog tutmanın, beni yeni şeyler öğrenmeye teşvik edeceğini ve burada paylaşarak kendime not da almış olacağımı düşünerek bu blogu Laravel ile oluşturdum.</description>
+      <description>Kimim Ben? Selamlar, Ben Ahmet. Teknoloji dünyasında &#39;başkanım ben da varım&#39; demek için geldim buraya. Neler yaparım? Rutin hep kullandığım teknolojilerin yanında yeni teknolojileri takip edebilmek istediğim için buraya notlar alıyorum. Blog tutmanın, beni yeni şeyler öğrenmeye teşvik edeceğini ve burada paylaşarak kendime not da almış olacağımı düşünerek bu blogu Hugo+Route53+Bucket ile oluşturdum. [CV] (###) &amp;ndash; Inprogress</description>
     </item>
     <item>
       <title>Spring Rest Docs</title>

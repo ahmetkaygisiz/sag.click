@@ -1,7 +1,13 @@
 ---
 title: "Oracle FMW Infrastructure Silent Installation"
-date: 2021-04-18T18:32:01+03:00
-draft: true
+date: 2019-04-18T18:32:01+03:00
+draft: false
+categories : [
+    "theothers",
+]
+tags : [
+    "oracle"
+]
 ---
 Selamlar,
 

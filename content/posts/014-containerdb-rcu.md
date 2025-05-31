@@ -1,7 +1,7 @@
 ---
 title: "Container DB ve RCU"
-date: 2022-02-20T18:38:43+03:00
-draft: true
+date: 2019-02-20T18:38:43+03:00
+draft: false
 ---
 Merhabalar,
 

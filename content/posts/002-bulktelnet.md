@@ -1,7 +1,7 @@
 ---
 title: "Script - Bulktelnet"
 date: 2020-07-24T16:29:53+03:00
-draft: true
+draft: false
 categories : [ "linux" ]
 tags : [
     "bash",

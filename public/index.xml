@@ -6,9 +6,16 @@
     <description>Recent content on &lt; ahmetkaygisiz /&gt;</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <copyright>Copyright sag.click © 2022, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 26 Oct 2024 15:42:23 +0300</lastBuildDate>
+    <copyright>Copyright sag.click © 2025, Ahmet Kaygısız and the sag.click; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 26 Oct 2024 16:09:14 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bir OOM Hikayesi ve İş görebilir bir Script</title>
+      <link>http://localhost:1313/posts/019-heapdump-for-oom/</link>
+      <pubDate>Sat, 26 Oct 2024 16:09:14 +0300</pubDate>
+      <guid>http://localhost:1313/posts/019-heapdump-for-oom/</guid>
+      <description>Basic Heapdump Script&#xA;#!/bin/bash _JAVA_HOME=&amp;#34;/data/jdk/latest&amp;#34; _SEARCH_TXT=&amp;#34;/my-app/&amp;#34; _DUMP_DEST=&amp;#34;/tmp&amp;#34; _FILE_NAME=&amp;#34;my_app_`hostname -i`_`date &amp;#39;+%Y%m%d_%H%M&amp;#39;`&amp;#34; _HEALTH_LOG_FILE=&amp;#34;/var/log/nginx/access-health-`date +&amp;#34;%Y%m%d&amp;#34;`.log&amp;#34; _BUCKET_NAME=&amp;#34;my-bucket-name&amp;#34; _BUCKET_DEST=&amp;#34;/java-dumps/&amp;#34; _CPU_THRESHOLD=60 _HEAP_THRESHOLD=0.7 _HEALTH_THRESHOLD=1.5 # LB healtcheck threshold is 2 sec # Get the current CPU usage (user+system) as a percentage cpu_usage=$(top -bn1 | grep &amp;#34;Cpu(s)&amp;#34; | awk &amp;#39;{print $2 + $4}&amp;#39;) # get avg of last 10 /health api response time health_res_avg=$(tail -10 $_HEALTH_LOG_FILE | sed &amp;#39;s/&amp;#34;//g&amp;#39; | awk &amp;#39;{sum += $(NF-2); count++} END {if (count &amp;gt; 0) printf &amp;#34;%.</description>
+    </item>
     <item>
       <title>İşe Yarar Linux Komutları</title>
       <link>http://localhost:1313/posts/016-ise_yarar_linux_komutlari/</link>
@@ -21,7 +28,7 @@
       <link>http://localhost:1313/posts/015-hugonun-donusu/</link>
       <pubDate>Sat, 06 Jul 2024 13:28:11 +0300</pubDate>
       <guid>http://localhost:1313/posts/015-hugonun-donusu/</guid>
-      <description>Cok uzun aralar blog için pek hoş olmuyormuş. Bu postu hatırlamak ve geri dönüş için bir açık aralık bırakmak için oluşturuyorum.&#xA;Tekrar hatırlamak için neler yaptım?&#xA;1 - GitHub&amp;rsquo;a yeni pcden bir sshkey oluşturdum. Onu sshkeys&amp;rsquo;e yapıştırdım.&#xA;ssh-keygen -t ed25519 -C &amp;#34;xxxxx&amp;#34; 2 - github&amp;rsquo;a push yapabilmek için github için oluşturduğum sshkey&amp;rsquo;i ~/.ssh/config dosyasına aşağıdaki şekilde ekledim.&#xA;Host github.com IdentityFile ~/id_github_ed25519 3- Hugo&amp;rsquo;nun versiyonunu indir&#xA;wget https://github.com/gohugoio/hugo/releases/download/v0.128.2/hugo_extended_0.128.2_Linux-64bit.tar.gz tar -xvf hugo_extended_0.128.2_Linux-64bit.tar.gzls -rlta mkdir 0.</description>
+      <description>Cok uzun aralar blog için pek hoş olmuyormuş. Bu postu hatırlamak ve geri dönüş için bir açık aralık bırakmak için oluşturuyorum.&#xA;Tekrar hatırlamak için neler yaptım?&#xA;1 - GitHub&amp;rsquo;a yeni pcden bir sshkey oluşturdum. Onu sshkeys&amp;rsquo;e yapıştırdım.&#xA;ssh-keygen -t ed25519 -C &amp;#34;xxxxx&amp;#34; 2 - github&amp;rsquo;a push yapabilmek için github için oluşturduğum sshkey&amp;rsquo;i ~/.ssh/config dosyasına aşağıdaki şekilde ekledim.&#xA;Host github.com IdentityFile ~/id_github_ed25519 3- Hugo&amp;rsquo;nun versiyonunu indir&#xA;wget https://github.com/gohugoio/hugo/releases/download/v0.128.2/hugo_extended_0.128.2_Linux-64bit.tar.gz tar -xvf hugo_extended_0.128.2_Linux-64bit.tar.gz ls -rlta mkdir 0.</description>
     </item>
     <item>
       <title>Categories</title>
@@ -35,7 +42,7 @@
       <link>http://localhost:1313/whoami/</link>
       <pubDate>Sun, 20 Feb 2022 12:40:30 +0300</pubDate>
       <guid>http://localhost:1313/whoami/</guid>
-      <description>Kimim Ben? Selamlar, Ben Ahmet. Teknoloji dünyasında &#39;başkanım ben da varım&#39; demek için geldim buraya.Java ve Linux sevdiğim şeyler arasında. Docker, Kubernetes, AWS teknolojilerini tanımak için de çalışıyorum. Neler yaparım? Şu an çalıştığım yerdeki görevlerim Oracle Middleware Teknolojileri yönetimi üzerine. Rutin hep kullandığım teknolojilerin yanında yeni teknolojileri takip edebilmek istediğim için buraya notlar alıyorum. Blog tutmanın, beni yeni şeyler öğrenmeye teşvik edeceğini ve burada paylaşarak kendime not da almış olacağımı düşünerek bu blogu Laravel ile oluşturdum.</description>
+      <description>Kimim Ben? Selamlar, Ben Ahmet. Teknoloji dünyasında &#39;başkanım ben da varım&#39; demek için geldim buraya. Neler yaparım? Rutin hep kullandığım teknolojilerin yanında yeni teknolojileri takip edebilmek istediğim için buraya notlar alıyorum. Blog tutmanın, beni yeni şeyler öğrenmeye teşvik edeceğini ve burada paylaşarak kendime not da almış olacağımı düşünerek bu blogu Hugo+Route53+Bucket ile oluşturdum. [CV] (###) &amp;ndash; Inprogress</description>
     </item>
     <item>
       <title>Go Gopher-I</title>
@@ -108,11 +115,32 @@
       <description>Merhabalar,&#xA;Spring Boot ile REST uygulamaları geliştirirken dökümantasyonu yapmaya yardımcı olan Spring REST Docs&amp;rsquo;u nedir, bize faydaları neler zorlukları neler onları temel olarak ele alacağım. Web Servisleri kullanırken en büyük problem çoğu zaman, hangi değerlerin nasıl kullanılması gerektiği konusunun muamma olması. Middleware olarak görev aldığım dönemde yıllardır kullanılan servislerin dökümanının olmaması, servisi kullanımını açtığımız her geliştiriciye nasıl kullanılmasının belirtilmesini gerektiriyordu. Başta size ağır bir yük gibi gözükse de, uzun vadede size vakit kazandıracak bir durum.</description>
     </item>
     <item>
+      <title>Script - Bulktelnet</title>
+      <link>http://localhost:1313/posts/002-bulktelnet/</link>
+      <pubDate>Fri, 24 Jul 2020 16:29:53 +0300</pubDate>
+      <guid>http://localhost:1313/posts/002-bulktelnet/</guid>
+      <description>Merhabalar,&#xA;Bugün bir üşengeçliğimin sonucunda ihtiyacı gidermek adına yazmış olduğum küçük bir scriptten bahsedeceğim. Bir önceki işimde ~20 sunucu üzerinden 25 server:port kontrol etmem istediğinde ya title&#39;ımı clickbot olarak değiştirecektim ya da olması gerektiği gibi bunu bir scripte yaptıracaktım. Script yazmak hep hoşuma gitmiştir. Linux sağolsun çok az satırda işinizi hemen pratikleştirecek bir yol bulabiliyorsunuz. Windows bu yüzden tam bir cehennem. Command Prompt işinizi kolaylaştırmak yerine daha ne kadar zorlaştırırım der gibi.</description>
+    </item>
+    <item>
       <title>Git Kullanimi</title>
       <link>http://localhost:1313/posts/001-git-kullanimi/</link>
       <pubDate>Mon, 20 Jul 2020 16:29:53 +0300</pubDate>
       <guid>http://localhost:1313/posts/001-git-kullanimi/</guid>
       <description>Selamlar, Gökkubbe altında söylenmemiş söz, yazılmamış blog konusu yoktur ama kimse hikayeyi benden dinlemedi* diyerek giriş yapıyorum (*Üsküdar&amp;rsquo;a Giderken). Genel amacım kendime notlar toparlamak olduğu için eşsiz bir bloga sahip olacağım Bil Geyts, Zukırberk gelip benden alacak teknolojideki güncel haberleri gibi bir iddiam olmadığını beyan ederek başlıyorum ilk yazıma.&#xA;Versiyon kontrol sistemi, backend&amp;rsquo;den fronend&amp;rsquo;e kod yazıyorum diyen herkesin kullandığı bir sistem. Herhangi bir yazı yazarken, tez hazırlarken &amp;lsquo;SON&amp;rsquo;, &amp;lsquo;BU SON&amp;rsquo;, &amp;lsquo;SON_SON_SON&amp;rsquo;, &amp;lsquo;BU DA MI SON DEGIL&amp;rsquo; isimli dosyaları nereye koyacağınızı şaşırıyorsanız sizin de kesinlikle tanışmanız gereken bir sistem diye düşünüyorum.</description>
+    </item>
+    <item>
+      <title>Oracle FMW Infrastructure Silent Installation</title>
+      <link>http://localhost:1313/posts/013-oracle-fmw-silent/</link>
+      <pubDate>Thu, 18 Apr 2019 18:32:01 +0300</pubDate>
+      <guid>http://localhost:1313/posts/013-oracle-fmw-silent/</guid>
+      <description>Selamlar,&#xA;Geçmişte aklımda olan fakat zamanı gelmemiş bir çalışma konusu önüme düştü. Oracle FMW, WebLogic vb. gibi ürünlerde installation wizard yani kurulum ekranları gelmeden, gerekli olan bilgileri response file adı verilen dosyalarda belirterek yükleme yapılabilmesini sağlayan kurulum şekline silent installation deniyor. Bu yazıda sadece FMW Infrastructure&amp;rsquo;ın kurulumunu yapacağız. Sonraki yazılarımın konuları da Container Oracle DB ile rcu çalıştırılması ve SOA domain kurulumu olacak. Şimdi ortam hazırlıklarıyla başlayalım.&#xA;JDK Oracle&amp;rsquo;dan java 1.</description>
+    </item>
+    <item>
+      <title>Container DB ve RCU</title>
+      <link>http://localhost:1313/posts/014-containerdb-rcu/</link>
+      <pubDate>Wed, 20 Feb 2019 18:38:43 +0300</pubDate>
+      <guid>http://localhost:1313/posts/014-containerdb-rcu/</guid>
+      <description>Merhabalar,&#xA;Oracle&amp;rsquo;ın SOA-OSB gibi ortamlarının kurulum aşamalarından biri olan RCU (Repository Creation Utility) adımı için db bağlantısını yapmak ve can sıkıcı/heves kırıcı Oracle DB kurulumunu en hafif yarayla atlatabilmek için bu yazıyı yazıyorum. Daha önce Oracle DB kurulumu yapmış olsam da bir sürü zincirleme sebepten Ubuntu ve Fedora üzerinde kurulum yaparken problem yaşadım. Bu noktada büyük bir nimet olan Docker yardımıma koştu. Her ne kadar container db&amp;rsquo;ler ile çalışmamış olsam da hem yeni bir yol bulmak hem de Oracle Support&amp;rsquo;taki &amp;ldquo;tek ayağını kaldırarak mouse&amp;rsquo;u diğer elinle kullanıp kuruluma başlarsan oluyor&amp;rdquo; çözümlerinden kurtulmak benim için güzel oldu.</description>
     </item>
   </channel>
 </rss>
